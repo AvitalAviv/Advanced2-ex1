@@ -1,18 +1,23 @@
 import signUp from './SignUpPage.css';
 import logo from './logo.png';
 import { Component } from 'react';
+import SignInPage from '../signinpage/SignInPage';
 
 class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isSignedUp: false,
+      isSignedIn: false
     };
   }
   render() {
     if (this.state.isSignedUp) {
       return <div>Enter the app</div>
 
+    }
+    if (this.state.isSignedIn) {
+      return <SignInPage />
     }
     return (
       <div className="wrapper-register-page">

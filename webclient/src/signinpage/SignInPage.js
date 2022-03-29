@@ -54,7 +54,7 @@ class SignInPage extends Component {
                         <input type="password" name="password" id="pwd" placeholder="Password"></input>
                     </div><button class="btn mt-3" >Sign in</button>
                 </form>
-                <div className="text-center fs-6"> Not registred?<a href="#" onClick={signUpFunction}>Sign up</a></div>
+                <div className="text-center fs-6"> Not registred? <a href="#" onClick={signUpFunction}>Sign up</a></div>
             </div >
         )
     }
