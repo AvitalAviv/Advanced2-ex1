@@ -1,4 +1,4 @@
-function Validation(userName, nickName, passwordFirst, passwordSecond) {
+function Validation(userName, nickName, passwordFirst, passwordSecond, file) {
     if (userName === "" || nickName == "") {
         return false;
     }
@@ -13,6 +13,9 @@ function Validation(userName, nickName, passwordFirst, passwordSecond) {
         return false;
     }
     if (passwordFirst != passwordSecond) {
+        return false;
+    }
+    if (!(file && file['type'].split('/')[0] === 'image')) {
         return false;
     }
     return true;
