@@ -24,6 +24,9 @@
  .logo {
      width: 60px;
      border-left: 3cm;
+     position:relative;
+     top: 15%;
+     left: 24%;
  }
 
  .logo img {
@@ -39,7 +42,7 @@
      font-weight: 600;
      font-size: 1.6rem;
      letter-spacing: 1.3px;
-     padding-left: 70px;
+     padding-left: 80px;
      color: #555;
  }
 
@@ -82,7 +85,7 @@
 
  .wrapper a {
      text-decoration: none;
-     font-size: 0.8rem;
+     font-size: 0.75rem;
      color: #03A9F4
  }
 
