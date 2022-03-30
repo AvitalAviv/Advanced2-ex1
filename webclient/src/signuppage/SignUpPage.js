@@ -7,15 +7,26 @@ class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSignedUp: false,
       isSignedIn: false
     };
   }
   render() {
-    if (this.state.isSignedUp) {
-      return <div>Enter the app</div>
+    const handleClickHere = (event) => {
+      event.preventDefault(); //prevent refresh
+      this.setState({ isSignedIn: true });
+  };
 
-    }
+  const handleRegister = (event) => {
+    event.preventDefault();
+    var user_name = document.getElementById("userName").value;
+    var nick_name = document.getElementById("nickName").value;
+    var password = document.getElementById("password1").value;
+    var repeated_password = document.getElementById("password2").value;
+    var user_image = document.getElementById("file").value;
+    console.log(user_name + " "+nick_name+" "+password+" "+repeated_password+" "+user_image);
+    //need to validate, save the image path (something wrong with it);
+    
+  }
     if (this.state.isSignedIn) {
       return <SignInPage />
     }
@@ -35,10 +46,10 @@ class SignUp extends Component {
           <label id="photo" for="upload">Choose image</label>
           <form action="/action_page.php"><input type="file" id="file" name="filename"></input></form>
           <br></br>
-          <button class="btn mt-3" >Register</button>
+          <button class="btn mt-3" onClick={handleRegister}>Register</button>
         </form>
         <br></br>
-        <div className="text-center fs-6"> Already registred? <a href="#">Click here</a> to login</div>
+        <div className="text-center fs-6"> Already registred? <a href="#" onClick={handleClickHere}>Click here</a> to login</div>
       </div >
     );
   }
