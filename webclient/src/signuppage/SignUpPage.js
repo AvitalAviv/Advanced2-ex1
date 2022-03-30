@@ -40,11 +40,15 @@ class SignUp extends Component {
           <div className="form-field d-flex align-items-center"> <span className="fas fa-key"></span>
             <input type="text" name="nickName" id="nickName" placeholder="Nick name"></input></div>
           <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
-            <input type="password" name="password1" id="password1" placeholder="passward"></input></div>
+            <input type="password" name="password1" id="password1" placeholder="password"></input></div>
           <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
             <input type="password" name="password2" id="password2" placeholder="repeat password"></input></div>
-          <label id="photo" for="upload">Choose image</label>
-          <form action="/action_page.php"><input type="file" id="file" name="filename"></input></form>
+            <div>choose your profile image</div>
+            
+            <label class="file"><input type="file" id="file" aria-label="File browser example"></input>
+            
+            <span class="file-custom"></span></label>
+          <br></br>
           <br></br>
           <button class="btn mt-3" onClick={handleRegister}>Register</button>
         </form>
