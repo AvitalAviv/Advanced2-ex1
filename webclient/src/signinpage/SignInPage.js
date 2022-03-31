@@ -14,7 +14,7 @@ class SignInPage extends Component {
             isSignUp: false,
             isLogged: false
         };
-        this.DbUsers = new DbUsers();
+        this.DbUsers = props.DbUsers;
     } render() {
         const dbChecker = (event) => {
 
@@ -38,7 +38,7 @@ class SignInPage extends Component {
 
         if (this.state.isSignUp) {
             return (
-                <SignUp />
+                <SignUp DbUsers={this.DbUsers} />
             )
         }
 

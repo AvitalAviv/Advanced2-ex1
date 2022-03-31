@@ -3,6 +3,8 @@ import logo from './logo.png';
 import { Component } from 'react';
 import SignInPage from '../signinpage/SignInPage';
 import Validation from '../validation/Validation';
+import DbUsers from '../users/DbUsers';
+import User from '../users/User';
 
 class SignUp extends Component {
   constructor(props) {
@@ -10,34 +12,38 @@ class SignUp extends Component {
     this.state = {
       isSignedIn: false
     };
+    this.dbUsers = props.DbUsers;
   }
   render() {
     const handleClickHere = (event) => {
       event.preventDefault(); //prevent refresh
       this.setState({ isSignedIn: true });
-  };
+    };
 
-  const handleRegister = (event) => {
-    event.preventDefault();
-    var user_name = document.getElementById("userName").value;
-    var nick_name = document.getElementById("nickName").value;
-    var password = document.getElementById("password1").value;
-    var repeated_password = document.getElementById("password2").value;
-    var user_image = document.getElementById("file").value;
-    console.log(user_name + " "+nick_name+" "+password+" "+repeated_password+" "+user_image);
-    
-    //need to change the valudation of the file and the url of the file.
-    let bool_ans = Validation(user_name, nick_name, password, repeated_password, user_image, document);
-    if (!bool_ans) {
+    const handleRegister = (event) => {
+      event.preventDefault();
+      var user_name = document.getElementById("userName").value;
+      var nick_name = document.getElementById("nickName").value;
+      var password = document.getElementById("password1").value;
+      var repeated_password = document.getElementById("password2").value;
+      var user_image = document.getElementById("file").value;
       document.getElementById("userName").value = '';
       document.getElementById("nickName").value = '';
       document.getElementById("password1").value = '';
       document.getElementById("password2").value = '';
       document.getElementById("file").value = '';
-    } 
-  }
+      console.log(user_name + " " + nick_name + " " + password + " " + repeated_password + " " + user_image);
+
+      //need to change the valudation of the file and the url of the file.
+      // let bool_ans = Validation(user_name, nick_name, password, repeated_password, user_image, document);
+      // if (!bool_ans) {
+      //   return;
+      // }
+      this.dbUsers.addUser(new User(user_name, nick_name, password, user_image));
+      //add user to data base
+    }
     if (this.state.isSignedIn) {
-      return <SignInPage />
+      return <SignInPage DbUsers={this.dbUsers} />
     }
     return (
       <div className="wrapper-register-page">
@@ -52,10 +58,10 @@ class SignUp extends Component {
             <input type="password" name="password1" id="password1" placeholder="password"></input></div>
           <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
             <input type="password" name="password2" id="password2" placeholder="repeat password"></input></div>
-            <div>choose your profile image</div>
-            
-            <label class="file"><input type="file" id="file" aria-label="File browser example"></input>
-            
+          <div>choose your profile image</div>
+
+          <label class="file"><input type="file" id="file" aria-label="File browser example"></input>
+
             <span class="file-custom"></span></label>
           <br></br>
           <br></br>
