@@ -1,9 +1,11 @@
 import App from '../App';
 import logo from './logo.png';
 import AlertWindow from '../alertwindow/AlertWindow';
-import CheckUser from '../users/CheckUser';
+import CheckUser from '../users/DbUsers';
 import { Component } from 'react';
 import SignUp from '../signuppage/SignUpPage';
+import ChatRoom from '../chatRoom/ChatRoom';
+import DbUsers from '../users/DbUsers';
 
 class SignInPage extends Component {
     constructor(props) {
@@ -12,21 +14,22 @@ class SignInPage extends Component {
             isSignUp: false,
             isLogged: false
         };
+        this.DbUsers = new DbUsers();
     } render() {
         const dbChecker = (event) => {
+
             event.preventDefault(); //prevent refresh
 
             var userName = document.getElementById("userName").value;
             var userPassword = document.getElementById("pwd").value;
-            document.getElementById('userName').value = ''
-            document.getElementById('pwd').value = ''
-
-            var doesOk = CheckUser(userName, userPassword);
-            if (doesOk != true) {
+            document.getElementById('userName').value = '';
+            document.getElementById('pwd').value = '';
+            if (this.DbUsers.checkUser(userName, userPassword) != true) {
                 AlertWindow();
             }
-            //change logged to yes
-            //need to complete whether user can enter the site
+            else {
+                this.setState({ isLogged: true });
+            }
         };
         const signUpFunction = (event) => {
             event.preventDefault(); //prevent refresh
@@ -40,7 +43,7 @@ class SignInPage extends Component {
         }
 
         if (this.state.isLogged) {
-            return (<div>omer</div>);
+            return (<ChatRoom />);
         }
 
         return (
