@@ -45,6 +45,7 @@ class SignUp extends Component {
       //add user to data base
       console.log(user_image);
       this.dbUsers.addUser(new User(user_name, nick_name, password, user_image));
+      this.setState({ isSignedIn: true });
     }
     if (this.state.isSignedIn) {
       return <SignInPage DbUsers={this.dbUsers} />
