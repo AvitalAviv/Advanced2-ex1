@@ -15,6 +15,7 @@ class SignInPage extends Component {
             isLogged: false
         };
         this.DbUsers = props.DbUsers;
+        
     } render() {
         const dbChecker = (event) => {
 
