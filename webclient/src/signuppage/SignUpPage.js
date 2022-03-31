@@ -23,7 +23,7 @@ class SignUp extends Component {
     var nick_name = document.getElementById("nickName").value;
     var password = document.getElementById("password1").value;
     var repeated_password = document.getElementById("password2").value;
-    var user_image = document.getElementById("file").value;
+    var user_image = document.getElementById("file").files[0].name;
     console.log(user_name + " "+nick_name+" "+password+" "+repeated_password+" "+user_image);
     
     //need to change the valudation of the file and the url of the file.
