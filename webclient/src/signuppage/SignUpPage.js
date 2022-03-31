@@ -2,6 +2,7 @@ import signUp from './SignUpPage.css';
 import logo from './logo.png';
 import { Component } from 'react';
 import SignInPage from '../signinpage/SignInPage';
+import Validation from '../validation/Validation';
 
 class SignUp extends Component {
   constructor(props) {
@@ -24,8 +25,16 @@ class SignUp extends Component {
     var repeated_password = document.getElementById("password2").value;
     var user_image = document.getElementById("file").value;
     console.log(user_name + " "+nick_name+" "+password+" "+repeated_password+" "+user_image);
-    //need to validate, save the image path (something wrong with it);
     
+    //need to change the valudation of the file and the url of the file.
+    let bool_ans = Validation(user_name, nick_name, password, repeated_password, user_image, document);
+    if (!bool_ans) {
+      document.getElementById("userName").value = '';
+      document.getElementById("nickName").value = '';
+      document.getElementById("password1").value = '';
+      document.getElementById("password2").value = '';
+      document.getElementById("file").value = '';
+    } 
   }
     if (this.state.isSignedIn) {
       return <SignInPage />
@@ -38,7 +47,7 @@ class SignUp extends Component {
           <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
             <input type="text" name="userName" id="userName" placeholder="User name"></input></div>
           <div className="form-field d-flex align-items-center"> <span className="fas fa-key"></span>
-            <input type="text" name="nickName" id="nickName" placeholder="Nick name"></input></div>
+            <input type="text" name="nickName" id="nickName" placeholder="Display name"></input></div>
           <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
             <input type="password" name="password1" id="password1" placeholder="password"></input></div>
           <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
