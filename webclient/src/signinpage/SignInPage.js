@@ -15,7 +15,6 @@ class SignInPage extends Component {
             isLogged: false
         };
         this.DbUsers = props.DbUsers;
-        
     } render() {
         const dbChecker = (event) => {
 
@@ -26,6 +25,7 @@ class SignInPage extends Component {
             document.getElementById('userName').value = '';
             document.getElementById('pwd').value = '';
             if (this.DbUsers.checkUser(userName, userPassword) != true) {
+                console.log(this.DbUsers);
                 AlertWindow();
             }
             else {
@@ -46,7 +46,6 @@ class SignInPage extends Component {
         if (this.state.isLogged) {
             return (<ChatRoom />);
         }
-
         return (
             <div className="wrapper">
                 <div className="logo"> <img src={logo} alt=""></img> </div>
@@ -56,7 +55,8 @@ class SignInPage extends Component {
                         <input type="text" name="userName" id="userName" placeholder="Username"></input></div>
                     <div className="form-field d-flex align-items-center"> <span className="fas fa-key"></span>
                         <input type="password" name="password" id="pwd" placeholder="Password"></input>
-                    </div><button class="btn mt-3" >Sign in</button>
+                    </div>
+                    <button class="btn mt-3" >Sign in</button>
                 </form>
                 <br></br>
                 <center><div className="text-center fs-6">Not registred? <a href="#" onClick={signUpFunction}>Sign up</a></div></center>
