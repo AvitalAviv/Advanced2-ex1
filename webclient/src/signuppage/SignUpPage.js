@@ -1,8 +1,8 @@
 import logo from './logo.png';
-import React ,{ Component } from 'react';
-//import Validation from '../validation/Validation';
+import React, { Component } from 'react';
 import User from '../users/User';
 import ChatRoom from '../chatRoom/ChatRoom';
+import "./SignUpPage.css";
 
 class SignUp extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class SignUp extends Component {
       this.setState({ isSignedIn: true });
     }
     if (this.state.isSignedIn) {
-      return (<ChatRoom user={newUser}/>);
+      return (<ChatRoom user={newUser} />);
     }
     return (
       <div className="wrapper-register-page" >

@@ -1,11 +1,8 @@
-import App from '../App';
 import logo from './logo.png';
 import AlertWindow from '../alertwindow/AlertWindow';
-import CheckUser from '../users/DbUsers';
 import React ,{ Component } from 'react';
 import SignUp from '../signuppage/SignUpPage';
 import ChatRoom from '../chatRoom/ChatRoom';
-import DbUsers from '../users/DbUsers';
 
 class SignInPage extends Component {
     constructor(props) {
@@ -24,7 +21,7 @@ class SignInPage extends Component {
             var userPassword = document.getElementById("pwd").value;
             document.getElementById('userName').value = '';
             document.getElementById('pwd').value = '';
-            if (this.DbUsers.checkUser(userName, userPassword) != true) {
+            if (this.DbUsers.checkUser(userName, userPassword) !== true) {
                 console.log(this.DbUsers);
                 AlertWindow();
             }

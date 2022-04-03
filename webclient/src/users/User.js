@@ -7,7 +7,7 @@ class User {
 
     }
     doesMe(user_name, password) {
-        if (this.user_name == user_name && this.password == password) {
+        if (this.user_name === user_name && this.password === password) {
             return true;
         }
         return false;
