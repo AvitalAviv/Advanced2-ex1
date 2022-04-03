@@ -1,9 +1,6 @@
-import signUp from './SignUpPage.css';
 import logo from './logo.png';
 import React ,{ Component } from 'react';
-import SignInPage from '../signinpage/SignInPage';
-import Validation from '../validation/Validation';
-import DbUsers from '../users/DbUsers';
+//import Validation from '../validation/Validation';
 import User from '../users/User';
 import ChatRoom from '../chatRoom/ChatRoom';
 
@@ -76,7 +73,7 @@ class SignUp extends Component {
           <button class="btn mt-3" onClick={handleRegister}>Register</button>
         </form>
         <br></br>
-        <div className="text-center fs-6"> Already registred? <a href="#" onClick={handleClickHere}>Click here</a> to login</div>
+        <div className="text-center fs-6"> Already registred? <a href="/#" onClick={handleClickHere}>Click here</a> to login</div>
       </div >
     );
   }

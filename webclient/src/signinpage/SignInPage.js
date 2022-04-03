@@ -59,7 +59,7 @@ class SignInPage extends Component {
                     <button class="btn mt-3" >Sign in</button>
                 </form>
                 <br></br>
-                <center><div className="text-center fs-6">Not registred? <a href="#" onClick={signUpFunction}>Sign up</a></div></center>
+                <center><div className="text-center fs-6">Not registred? <a href="/#" onClick={signUpFunction}>Sign up</a></div></center>
             </div >
         )
     }
