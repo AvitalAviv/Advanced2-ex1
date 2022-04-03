@@ -16,5 +16,16 @@ class DbUsers {
         }
         return false;
     }
+    printDb() {
+        console.log(this.db[0].user_name + " " + this.db[1].user_name);
+    }
+    findUser(user_name) {
+        for (var i = 0; i < this.db.length; i++) {
+            if (this.db[i].user_name === user_name) {
+                return this.db[i];
+            }
+        }
+        return null;
+    }
 }
 export default DbUsers;
