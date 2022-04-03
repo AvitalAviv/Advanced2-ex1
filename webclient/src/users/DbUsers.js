@@ -17,7 +17,9 @@ class DbUsers {
         return false;
     }
     printDb() {
-        console.log(this.db[0].user_name + " " + this.db[1].user_name);
+        for (var i = 0; i < this.db.length; i++) {
+            console.log(this.db[i].user_name);
+        }
     }
     findUser(user_name) {
         for (var i = 0; i < this.db.length; i++) {
