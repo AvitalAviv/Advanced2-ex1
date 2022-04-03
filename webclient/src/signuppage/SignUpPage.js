@@ -1,6 +1,6 @@
 import signUp from './SignUpPage.css';
 import logo from './logo.png';
-import { Component } from 'react';
+import React ,{ Component } from 'react';
 import SignInPage from '../signinpage/SignInPage';
 import Validation from '../validation/Validation';
 import DbUsers from '../users/DbUsers';
@@ -21,6 +21,7 @@ class SignUp extends Component {
       this.setState({ isSignedIn: true });
     };
 
+    var newUser;
 
     const handleRegister = (event) => {
       event.preventDefault();
@@ -45,11 +46,12 @@ class SignUp extends Component {
 
       //add user to data base
       console.log(user_image);
-      this.dbUsers.addUser(new User(user_name, nick_name, password, user_image));
+      newUser = new User(user_name, nick_name, password, user_image);
+      this.dbUsers.addUser(newUser);
       this.setState({ isSignedIn: true });
     }
     if (this.state.isSignedIn) {
-      return < ChatRoom />
+      return (<ChatRoom user={newUser}/>);
     }
     return (
       <div className="wrapper-register-page" >

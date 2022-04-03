@@ -2,7 +2,7 @@ import App from '../App';
 import logo from './logo.png';
 import AlertWindow from '../alertwindow/AlertWindow';
 import CheckUser from '../users/DbUsers';
-import { Component } from 'react';
+import React ,{ Component } from 'react';
 import SignUp from '../signuppage/SignUpPage';
 import ChatRoom from '../chatRoom/ChatRoom';
 import DbUsers from '../users/DbUsers';
