@@ -29,7 +29,7 @@ function Validation(userName, nickName, passwordFirst, passwordSecond, file) {
         alert("Your password has to contain numbers and letters");
         return false;
     }
-    if (passwordFirst != passwordSecond) {
+    if (passwordFirst !== passwordSecond) {
         alert("Repeated password incorrect");
         return false;
     }
