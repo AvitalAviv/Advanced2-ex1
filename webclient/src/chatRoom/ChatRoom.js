@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import "./ChatRoom.css"
 import SideBar from "../sideBar/SideBar"
-
-<<<<<<< HEAD
-
-
 class ChatRoom extends Component {
     constructor(props) {
         super(props);
@@ -29,4 +25,4 @@ class ChatRoom extends Component {
         )
     }
 }
-        export default ChatRoom;
+export default ChatRoom;
