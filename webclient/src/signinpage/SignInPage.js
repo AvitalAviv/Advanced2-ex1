@@ -1,6 +1,6 @@
 import logo from './logo.png';
 import AlertWindow from '../alertwindow/AlertWindow';
-import React ,{ Component } from 'react';
+import React, { Component } from 'react';
 import SignUp from '../signuppage/SignUpPage';
 import ChatRoom from '../chatRoom/ChatRoom';
 
@@ -9,9 +9,10 @@ class SignInPage extends Component {
         super(props);
         this.state = {
             isSignUp: false,
-            isLogged: false
+            isLogged: false,
         };
         this.DbUsers = props.DbUsers;
+        this.userLogged = null;
     } render() {
         const dbChecker = (event) => {
 
@@ -26,6 +27,7 @@ class SignInPage extends Component {
                 AlertWindow();
             }
             else {
+                this.userLogged = this.DbUsers.findUser(userName);
                 this.setState({ isLogged: true });
             }
         };
@@ -41,7 +43,8 @@ class SignInPage extends Component {
         }
 
         if (this.state.isLogged) {
-            return (<ChatRoom />);
+
+            return (<ChatRoom DbUsers={this.DbUsers} User={this.userLogged} />);
         }
         return (
             <div className="wrapper">

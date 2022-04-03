@@ -12,6 +12,9 @@ class User {
         }
         return false;
     }
+    printName() {
+        console.log(this.user_name);
+    }
 }
 
 export default User;

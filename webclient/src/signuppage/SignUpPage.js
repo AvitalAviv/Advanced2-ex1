@@ -11,15 +11,13 @@ class SignUp extends Component {
       isSignedIn: false
     };
     this.dbUsers = props.DbUsers;
+    this.newUser = null;
   }
   render() {
     const handleClickHere = (event) => {
       event.preventDefault(); //prevent refresh
       this.setState({ isSignedIn: true });
     };
-
-    var newUser;
-
     const handleRegister = (event) => {
       event.preventDefault();
       var user_name = document.getElementById("userName").value;
@@ -43,12 +41,12 @@ class SignUp extends Component {
 
       //add user to data base
       console.log(user_image);
-      newUser = new User(user_name, nick_name, password, user_image);
-      this.dbUsers.addUser(newUser);
+      this.newUser = new User(user_name, nick_name, password, user_image);
+      this.dbUsers.addUser(this.newUser);
       this.setState({ isSignedIn: true });
     }
     if (this.state.isSignedIn) {
-      return (<ChatRoom user={newUser} />);
+      return (<ChatRoom User={this.newUser} DbUsers={this.dbUsers} />);
     }
     return (
       <div className="wrapper-register-page" >

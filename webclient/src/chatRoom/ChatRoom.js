@@ -1,16 +1,30 @@
-import React from 'react'
+import React, { Component } from 'react'
 import "./ChatRoom.css"
 import SideBar from "../sideBar/SideBar"
 
-function ChatRoom() {
-    return (
-    <div class="chatItem">
-        <img src="logo.png" id="image"> </img>
-        <div>nick name</div>
-        <div>last message </div>
-        <div>last modified </div>
-    </div>
-    )
-}
+class ChatRoom extends Component {
+    constructor(props) {
+        super(props);
+        this.user = props.User;
+        this.dbUsers = props.DbUsers;
+    }
 
-export default ChatRoom
+    render() {
+        const handleClick = (event) => {
+            event.preventDefault();
+            this.dbUsers.printDb();
+            this.user.printName();
+        }
+        return (
+            <div className="chatRoom">
+                <div className="chatRoom_body">
+                    <SideBar />
+                    <button class="btn mt-3" onClick={handleClick}>print db</button>
+                    {/*body*/}
+                </div>
+            </div>
+        )
+    }
+
+}
+export default ChatRoom;
