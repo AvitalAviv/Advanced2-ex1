@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import User from '../users/User';
 import ChatRoom from '../chatRoom/ChatRoom';
 import "./SignUpPage.css";
+import SignInPage from '../signinpage/SignInPage';
 
 class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSignedIn: false
+      isSignedIn: false,
+      isLogged: false
     };
     this.dbUsers = props.DbUsers;
     this.newUser = null;
@@ -16,7 +18,7 @@ class SignUp extends Component {
   render() {
     const handleClickHere = (event) => {
       event.preventDefault(); //prevent refresh
-      this.setState({ isSignedIn: true });
+      this.setState({ isLogged: true });
     };
     const handleRegister = (event) => {
       event.preventDefault();
@@ -47,6 +49,9 @@ class SignUp extends Component {
     }
     if (this.state.isSignedIn) {
       return (<ChatRoom User={this.newUser} DbUsers={this.dbUsers} />);
+    }
+    if (this.state.isLogged) {
+      return (<SignInPage DbUsers={this.dbUsers} />);
     }
     return (
       <div className="wrapper-register-page" >
