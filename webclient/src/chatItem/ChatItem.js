@@ -1,10 +1,22 @@
 import "./ChatItem.css";
 import React, { Component } from 'react';
 
-function ChatItem({ nick_name, user_image, last_message, last_modified }) {
-    return(
-        <div>hello</div>
-    );
+
+class ChatItem extends Component {
+    constructor(props) {
+        super(props);
+        this.userChar = props.userChar;
+    };
+    render() {
+        return (
+            <div>
+                <div>-user name -</div>
+                <div>last massage</div>
+                <div>time</div>
+                <div>on click put in Link</div>
+            </div>
+        )
+    }
 }
 
 export default ChatItem;
