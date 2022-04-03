@@ -16,14 +16,14 @@ class ChatRoom extends Component {
             event.preventDefault();
         }
 
-
         return (
             <div className="chatRoom">
-                <div className="chatRoom_body">
-                    <SideBar isNew={this.isNew} />
-                    <button class="btn mt-3" onClick={handleClick}>print db</button>
-                    {/*body*/}
+                
+                <div className="chatRoom__body">
+                    <SideBar/>
+                    {/* chat */}
                 </div>
+
             </div>
         )
     }
