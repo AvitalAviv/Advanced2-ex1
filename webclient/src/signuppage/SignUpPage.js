@@ -5,6 +5,7 @@ import SignInPage from '../signinpage/SignInPage';
 import Validation from '../validation/Validation';
 import DbUsers from '../users/DbUsers';
 import User from '../users/User';
+import ChatRoom from '../chatRoom/ChatRoom';
 
 class SignUp extends Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class SignUp extends Component {
       this.setState({ isSignedIn: true });
     }
     if (this.state.isSignedIn) {
-      return <SignInPage DbUsers={this.dbUsers} />
+      return < ChatRoom />
     }
     return (
       <div className="wrapper-register-page" >
