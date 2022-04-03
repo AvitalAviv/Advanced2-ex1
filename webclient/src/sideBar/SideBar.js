@@ -1,5 +1,6 @@
 import "./SideBar.css"
 import React from "react";
+import ChatItem from "../chatItem/ChatItem";
 
 function sideBar() {
     return (
@@ -11,7 +12,7 @@ function sideBar() {
 
             </div>
             <div className="sidebar_chats">
-
+                <ChatItem />
             </div>
 
         </div>

@@ -20,7 +20,7 @@ function Validation(userName, nickName, passwordFirst, passwordSecond, file) {
         alert("Password less than 8 characters");
         return false;
     }
-    if (nickName < 8) {
+    if (nickName.length < 8) {
         alert("Display name less than 8 characters");
         return false;
     }
