@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 class ChatItem extends Component {
     constructor(props) {
         super(props);
-        this.userChar = props.userChar;
+        this.userChat = props.userChat;
     };
     render() {
         return (
