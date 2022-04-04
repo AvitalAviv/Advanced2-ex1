@@ -21,7 +21,7 @@ class ChatRoom extends Component {
             <div className="chatRoom">
                 <div className="chatRoom__body">
                     <SideBar Dbusers={this.dbUsers} User={this.user} />
-                    <ChatWindow />
+                    <ChatWindow User={this.user} />
                 </div>
 
             </div>
