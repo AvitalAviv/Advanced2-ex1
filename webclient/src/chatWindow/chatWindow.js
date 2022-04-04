@@ -7,9 +7,9 @@ class ChatWindow extends Component {
         super(props);
     }
 
-    render () {
-        return(
-            
+    render() {
+        return (
+
             <div className='chat__window'>
 
                 <div className='chat__header'>
@@ -17,7 +17,7 @@ class ChatWindow extends Component {
                         <img src={logo} class="rounded-circle"></img>
                         <h6 className="chatWindow__header__userName">User Name</h6>
                     </div>
-                    
+
                 </div>
 
                 <div className='chat__body'>

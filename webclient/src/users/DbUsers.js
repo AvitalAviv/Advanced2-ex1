@@ -1,9 +1,10 @@
+import Chat from "./chat/Chat";
 import User from "./User";
 
 class DbUsers {
     constructor() {
         this.db = [new User("Omer", "scrum master", "123", "None"),
-        new User("Avital", "Avitlos", "123", "None")];
+        new User("Avital", "Avitalos", "123", "None"),];
     }
     addUser(user) {
         this.db.push(user);
