@@ -1,4 +1,27 @@
 .chat__window {
-    flex: 0.73;
-    background-color: aqua;
+    flex: 0.65;
+
 }
+
+.chat__header__info {
+    margin-bottom: 15%;
+}
+
+.chat__window .chat__header {
+    display: flex;
+    padding: 1.5%;
+    align-items: center;
+    border-bottom: 1.5px solid #03A9F4;
+}
+
+.chat__header__info .chatWindow__header__userName {
+    padding-left: 30%;
+    margin-top: -15%;
+    padding-bottom: 15%;
+}
+
+.chat__window .chat__header .chat__header__info .rounded-circle {
+    width: 20%;
+}
+
+
