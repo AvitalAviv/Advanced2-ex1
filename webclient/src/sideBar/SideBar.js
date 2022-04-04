@@ -20,6 +20,7 @@ class SideBar extends Component {
     render() {
 
         const addModalClose = () => {
+            debugger;
             var user_nickname = document.getElementById("nickName").value;
             document.getElementById("nickName").value = "";
             if (this.user.nick_name === user_nickname) {
@@ -46,7 +47,7 @@ class SideBar extends Component {
 
                 <div className="sidebar__header">
                     <img src={logo} class="rounded-circle"></img>
-                    <h4 className="sidebar__header__userName">User Name</h4>
+                    <h4 className="sidebar__header__userName">{this.user.nick_name}</h4>
 
                     <button type="button" class="btn btn-primary" id='addButton' onClick={handleClick} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer">Add</button>
 

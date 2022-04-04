@@ -5,6 +5,7 @@ import logo from '../chatWindow/logo.png';
 class ChatWindow extends Component {
     constructor(props) {
         super(props);
+        this.user = props.User;
     }
 
     render() {
@@ -15,7 +16,7 @@ class ChatWindow extends Component {
                 <div className='chat__header'>
                     <div className='chat__header__info'>
                         <img src={logo} class="rounded-circle"></img>
-                        <h5 className="chatWindow__header__userName">User Name</h5>
+                        <h5 className="chatWindow__header__userName">other user nickname</h5>
                     </div>
 
                 </div>

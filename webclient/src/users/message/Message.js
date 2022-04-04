@@ -11,3 +11,4 @@ class Message {
         return this.value;
     }
 }
+export default Message;
