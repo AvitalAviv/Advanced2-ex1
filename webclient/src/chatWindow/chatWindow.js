@@ -15,7 +15,7 @@ class ChatWindow extends Component {
                 <div className='chat__header'>
                     <div className='chat__header__info'>
                         <img src={logo} class="rounded-circle"></img>
-                        <h6 className="chatWindow__header__userName">User Name</h6>
+                        <h5 className="chatWindow__header__userName">User Name</h5>
                     </div>
 
                 </div>
