@@ -29,5 +29,14 @@ class DbUsers {
         }
         return null;
     }
+    findUserByNickname(nickname) {
+        for (var i = 0; i < this.db.length; i++) {
+            if (this.db[i].nick_name === nickname) {
+                return true;
+            }
+        }
+        //display error
+        return false;
+    }
 }
 export default DbUsers;

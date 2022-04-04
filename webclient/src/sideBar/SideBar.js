@@ -12,34 +12,32 @@ import { AddContact } from "../addcontact/AddContact.js";
 class SideBar extends Component {
     constructor(props) {
         super(props);
-        this.user = props.user;
+        this.user = props.User;
         this.dbUsers = props.Dbusers;
         this.state = { addModalShow: false };
     }
 
     render() {
 
-        const addModalClose = (event) => {
-            event.preventDefault();
-            console.log(document.getElementById("nickName").value);
-            this.setState({ addModalShow: false });
+        const addModalClose = () => {
+            var user_nickname = document.getElementById("nickName").value;
+            if (this.user.nick_name === user_nickname) {
+                alert("Error, can't have chat with yourself.");
+            }
+            else if (this.dbUsers.findUserByNickname(user_nickname)) {
+                console.log("Now add the user char");
+                this.setState({ addModalShow: false });
+            }
+            else {
+                alert("Nickname does not exist.");
+            }
+        }
+        const handleClick = () => {
+            this.setState({ addModalShow: true });
         }
 
-
-
-        const handleClick = (event) => {
-            event.preventDefault();
-            this.setState({ addModalShow: true });
-            console.log(this.state.addModalShow);
-
-            // var button = event.relatedTarget;
-            // var recipient = button.getAttribute('data-bs-whatever');
-            // console.log(recipient);
-            // // var modalTitle = exampleModal.querySelector('.modal-title');
-            // // var modalBodyInput = exampleModal.querySelector('.modal-body input');
-            // // modalTitle.textContent = 'New message to ' + recipient;
-            // // modalBodyInput.value = recipient;
-
+        const closeButton = () => {
+            this.setState({ addModalShow: false });
         }
 
         return (
@@ -53,7 +51,7 @@ class SideBar extends Component {
 
                 </div>
 
-                <AddContact show={this.state.addModalShow} onHide={addModalClose} />
+                <AddContact show={this.state.addModalShow} onHide={closeButton} closeFunc={addModalClose} />
                 <div className="sidebar__chats">
                     <ChatItem />
                     <ChatItem />
