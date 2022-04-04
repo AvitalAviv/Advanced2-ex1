@@ -7,6 +7,7 @@ class chatWindow extends Component {
     }
 
     render () {
+        console.log("avital");
         return(
             <div>hello</div>
         );
