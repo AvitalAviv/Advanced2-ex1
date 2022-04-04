@@ -13,9 +13,9 @@ class ChatItem extends Component {
             <div className="chat__item">
                 <img src={logo} class="rounded-circle"></img>
                 <div className="chat__item__info">
-                    <h5>room name</h5>
-                    <p>last message...</p>
-                    <p>time</p>
+                    <div className="chat__item__roomName">room name</div>
+                    <div className="chat__item__lastMessage">last message...</div>
+                    <div className="chat__item__time">5 minutes ago</div>
                 </div>
             </div>
         )

@@ -30,7 +30,7 @@ class SideBar extends Component {
 
                 <div className="sidebar__header">
                     <img src={logo} class="rounded-circle"></img>
-                    <h5>User Name</h5>
+                    <h5 className="sidebar__header__userName">User Name</h5>
 
                     <button type="button" class="btn btn-primary" onClick={addClick} data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add</button>
                     

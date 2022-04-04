@@ -49,7 +49,7 @@ class SignInPage extends Component {
         return (
             <div className="wrapper">
                 <div className="logo"> <img src={logo} alt=""></img> </div>
-                <div className="text-center mt-4 name"> TalkToMe </div>
+                <div className="text-center mt-4 name" id='Headline'> TalkToMe </div>
                 <form className="p-3 mt-3" onSubmit={dbChecker}>
                     <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
                         <input type="text" name="userName" id="userName" placeholder="Username"></input></div>

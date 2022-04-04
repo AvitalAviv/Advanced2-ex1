@@ -56,7 +56,7 @@ class SignUp extends Component {
     return (
       <div className="wrapper-register-page" >
         <div className="logo"> <img src={logo} alt=""></img> </div>
-        <div className="text-center mt-4 name"> Sign up </div>
+        <div className="text-center mt-4 name" id='Headline'> Sign up </div>
         <form className="p-3 mt-3">
           <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
             <input type="text" name="userName" id="userName" placeholder="User name"></input></div>

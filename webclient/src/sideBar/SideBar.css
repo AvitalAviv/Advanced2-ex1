@@ -12,7 +12,8 @@
 }
 
 .sidebar__header .rounded-circle {
-    width: 40px; 
+    width: 16%;
+    
 }
 
 .sidebar__headerRight {
@@ -22,6 +23,9 @@
     min-width: 10vw;
 }
 
+.sidebar__header__userName {
+    margin-top: 4%;
+}
 .sidebar__chats {
     flex: 1;
     background-color: rgb(230, 230, 233);

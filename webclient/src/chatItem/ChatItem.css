@@ -1,3 +1,36 @@
-.chat__item .rounded-circle {
-    width: 40px; 
+.chat__item {
+    display: flex;
+    padding: 5%;
+    cursor: pointer;
+    border-bottom: 1px solid #f6f6ff; 
+    margin-bottom: 0.5%;
+    height: 13%;
+
 }
+
+
+.chat__item__info {
+    margin-left: 3%;
+}
+
+.chat__item:hover {
+    background-color: #ebebeb;
+}
+
+.chat__item__roomName {
+    font-size: 110%;
+    margin-top: -8%;
+}
+
+.chat__item__lastMessage {
+    font-size: 80%;
+}
+
+.chat__item__time {
+    position: absolute;
+    margin-top: -3.1%;
+    margin-left: 11%;
+    margin-right: 73%;
+    font-size: 65%;
+}
+

@@ -43,6 +43,10 @@ body {
     color: #555;
 }
 
+#Headline {
+    margin-left: -35%;
+}
+
 .wrapper-register-page .form-field input {
     width: 100%;
     display: block;
