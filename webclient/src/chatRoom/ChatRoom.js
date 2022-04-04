@@ -20,8 +20,8 @@ class ChatRoom extends Component {
             <div className="chatRoom">
 
                 <div className="chatRoom__body">
-                    <SideBar/>
-                    <chatWindow/>
+                    <SideBar />
+                    <chatWindow />
                 </div>
 
             </div>
