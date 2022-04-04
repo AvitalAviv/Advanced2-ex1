@@ -20,14 +20,16 @@ class SideBar extends Component {
     render() {
 
         const addModalClose = (event) => {
+            event.preventDefault();
             this.setState({ addModalShow: false });
         }
 
 
 
         const handleClick = (event) => {
+            event.preventDefault();
             this.setState({ addModalShow: true });
-            console.log("omer")
+            console.log(this.state.addModalShow);
 
             // var button = event.relatedTarget;
             // var recipient = button.getAttribute('data-bs-whatever');
@@ -51,7 +53,6 @@ class SideBar extends Component {
                 </div>
 
                 <AddContact show={this.state.addModalShow} onHide={addModalClose} />
-
                 <div className="sidebar__chats">
                     <ChatItem />
                     <ChatItem />

@@ -19,7 +19,6 @@ class ChatRoom extends Component {
 
         return (
             <div className="chatRoom">
-
                 <div className="chatRoom__body">
                     <SideBar/>
                     <ChatWindow/>

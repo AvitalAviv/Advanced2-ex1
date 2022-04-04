@@ -10,23 +10,22 @@ export class AddContact extends Component {
     render() {
         return (
             <Modal
+                {...this.props}
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        Start new chat
+                        Add new contact
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div className="container">
-                        to add form field.
-                    </div>
-
+                    <div className="form-field d-flex align-items-center"> <span className="fas fa-key"></span>
+                        <input type="text" name="nickName" id="nickName" placeholder="Display name"></input></div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="danger" onClick={this.props.onHide}>Close</Button>
+                    <Button onClick={this.props.onHide}>Add</Button>
                 </Modal.Footer>
             </Modal>
         );
