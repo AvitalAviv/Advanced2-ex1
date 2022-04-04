@@ -21,6 +21,7 @@ class SideBar extends Component {
 
         const addModalClose = () => {
             var user_nickname = document.getElementById("nickName").value;
+            document.getElementById("nickName").value = "";
             if (this.user.nick_name === user_nickname) {
                 alert("Error, can't have chat with yourself.");
             }
