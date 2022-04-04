@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "./ChatRoom.css"
 import SideBar from "../sideBar/SideBar"
-import chatWindow from "../chatWindow/chatWindow"
+import ChatWindow from "../chatWindow/ChatWindow"
 
 class ChatRoom extends Component {
     constructor(props) {
@@ -19,10 +19,9 @@ class ChatRoom extends Component {
 
         return (
             <div className="chatRoom">
-
                 <div className="chatRoom__body">
-                    <SideBar />
-                    <chatWindow />
+                    <SideBar/>
+                    <ChatWindow/>
                 </div>
 
             </div>

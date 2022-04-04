@@ -22,7 +22,7 @@ export class AddContact extends Component {
                 </Modal.Header>
                 <Modal.Body>
                     <div className="form-field d-flex align-items-center"> <span className="fas fa-key"></span>
-                        <input type="text" name="nickName" id="nickName" placeholder="Display name"></input></div>
+                        <input type="text" class="form-control" name="nickName" id="nickName" placeholder="Display name"></input></div>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={this.props.onHide}>Add</Button>
