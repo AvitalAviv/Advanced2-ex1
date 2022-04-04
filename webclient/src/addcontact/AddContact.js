@@ -9,13 +9,13 @@ export class AddContact extends Component {
     }
     render() {
         return (
-            <Modal
+            <Modal backdrop='static' animation='true'
                 {...this.props}
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
-                <Modal.Header closeButton onClick={() => { }}>
+                <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
                         Add new contact
                     </Modal.Title>
@@ -25,7 +25,7 @@ export class AddContact extends Component {
                         <input type="text" class="form-control" name="nickName" id="nickName" placeholder="Display name"></input></div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={this.props.onHide}>Add</Button>
+                    <Button onClick={this.props.closeFunc}>Add</Button>
                 </Modal.Footer>
             </Modal>
         );

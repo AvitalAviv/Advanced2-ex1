@@ -19,7 +19,7 @@ class SideBar extends Component {
 
     render() {
 
-        const addModalClose = (event) => {
+        const addModalClose = () => {
             var user_nickname = document.getElementById("nickName").value;
             if (this.user.nick_name === user_nickname) {
                 alert("Error, can't have chat with yourself.");
@@ -32,11 +32,12 @@ class SideBar extends Component {
                 alert("Nickname does not exist.");
             }
         }
-
-
-
-        const handleClick = (event) => {
+        const handleClick = () => {
             this.setState({ addModalShow: true });
+        }
+
+        const closeButton = () => {
+            this.setState({ addModalShow: false });
         }
 
         return (
@@ -50,7 +51,7 @@ class SideBar extends Component {
 
                 </div>
 
-                <AddContact show={this.state.addModalShow} onHide={addModalClose} />
+                <AddContact show={this.state.addModalShow} onHide={closeButton} closeFunc={addModalClose} />
                 <div className="sidebar__chats">
                     <ChatItem />
                     <ChatItem />
