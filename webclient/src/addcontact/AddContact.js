@@ -15,7 +15,7 @@ export class AddContact extends Component {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
-                <Modal.Header closeButton>
+                <Modal.Header closeButton onClick={() => { }}>
                     <Modal.Title id="contained-modal-title-vcenter">
                         Add new contact
                     </Modal.Title>

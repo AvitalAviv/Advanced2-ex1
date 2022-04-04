@@ -20,8 +20,8 @@ class ChatRoom extends Component {
         return (
             <div className="chatRoom">
                 <div className="chatRoom__body">
-                    <SideBar/>
-                    <ChatWindow/>
+                    <SideBar Dbusers={this.dbUsers} User={this.user} />
+                    <ChatWindow />
                 </div>
 
             </div>
