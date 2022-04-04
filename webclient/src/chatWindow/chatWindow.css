@@ -11,7 +11,7 @@
 }
 
 .chat__window .chat__header {
-    height: 15.5%;
+    height: 14.2%;
     position: relative;
     display: flex;
     padding-left: 3%;
@@ -39,8 +39,13 @@
     background-repeat: repeat;
     background-position: center;
     padding: 10%;
-    overflow: scroll;
 }
 
+.chat__down__window {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+}
 
 
