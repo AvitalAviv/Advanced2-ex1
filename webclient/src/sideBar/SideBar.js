@@ -21,6 +21,7 @@ class SideBar extends Component {
 
         const addModalClose = (event) => {
             event.preventDefault();
+            console.log(document.getElementById("nickName").value);
             this.setState({ addModalShow: false });
         }
 
