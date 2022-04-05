@@ -1,19 +1,36 @@
-.chatRoom {
+#card {
+    background-color: rgb(205, 212, 212);
+    padding-right: 2%;
+    padding-left: 2%;
+    height: 85vh;
+    width: 96vw;
+    place-self: center;
+    box-shadow: -1px 4px 20px -6px lightslategray;
+    
+}
+
+#title {
+    padding-left: 5%;
+    margin-top: 2%;
+    font-weight: 2000%;
+}
+
+#sidebar__header {
+    background-color: rgb(223, 223, 233);
+}
+
+#sidebar__chats{
     display: grid;
-    background-color: #ecf0f3;
-    place-items: center;
-    height: 100vh;
+    overflow: hidden;
 }
 
-.chatRoom__body {
-    display: flex;
-    background-color: #dfd8d8;
-    /*margin-top: -50px; */
-    height: 90vh;
-    width: 90vw;
-    box-shadow: -1px 4px 20px -6px #2c2424;
+#sidebar__chats_scroll {
+   display: grid;
+   position: relative;
+   overflow-y: scroll;
+   flex-direction: row;
 }
 
-.chat__item {
-    background-color: rgb(238, 241, 241);
+#sidebar__header__right {
+    
 }

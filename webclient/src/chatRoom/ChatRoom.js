@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "./ChatRoom.css"
 import SideBar from "../sideBar/SideBar"
 import ChatWindow from "../chatWindow/ChatWindow"
+import ChatItem from "../chatItem/ChatItem";
 
 class ChatRoom extends Component {
     constructor(props) {
@@ -18,12 +19,37 @@ class ChatRoom extends Component {
         }
 
         return (
-            <div className="chatRoom">
-                <div className="chatRoom__body">
-                    <SideBar Dbusers={this.dbUsers} User={this.user} />
-                    <ChatWindow User={this.user} />
+            <div class="container-fluid" id="chatRoom">
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                <h1 class="h3 mb-3" id="title">TalkToMe</h1>
+                <div class="card" id="card">
+                    <div class="row g-0">
+                        <div class="col-12 col-lg-3 col-xl-4 border-right" id="sidebar__header">
+                            <SideBar Dbusers={this.dbUsers} User={this.user} />
+                        </div>
+                    </div>  
+                    <div class="row h-100 g-0" id="sidebar__chats" >
+                        <div class=" col-12 col-lg-3 col-xl-4 border-right" id="sidebar__chats_scroll">
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                            <ChatItem/>
+                        </div>
+                    </div>
                 </div>
-
+               
+                {/*<ChatWindow User={this.user} /> */}
             </div>
         )
     }

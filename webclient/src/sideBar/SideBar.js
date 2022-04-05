@@ -41,27 +41,25 @@ class SideBar extends Component {
         const closeButton = () => {
             this.setState({ addModalShow: false });
         }
-
+                    //<button type="button" class="btn btn-primary" id='addButton' onClick={handleClick} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer">Add</button>
+                //<AddContact show={this.state.addModalShow} onHide={closeButton} closeFunc={addModalClose} />
         return (
-            <div className="sidebar" >
-
-                <div className="sidebar__header">
-                    <img src={logo} class="rounded-circle"></img>
-                    <h4 className="sidebar__header__userName">{this.user.nick_name}</h4>
-
-                    <button type="button" class="btn btn-primary" id='addButton' onClick={handleClick} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer">Add</button>
+            <div className="side__bar" id="side__bar">
+                <div className="side__bar__upper" id="side__bar__upper1">
+                    <div className="px-4 d-none d-md-block" id="side__bar__upper2">
+				        <div class="d-flex align-items-center" id="side__bar__upper3">
+					        <div class="d-flex flex-grow-1" id="side__bar__items">
+                                <img src={logo} class="rounded-circle d-flex align-items-center" width="55" height="55" id="side_bar_img"></img>
+                                <h4 class="d-flex align-items-center" id="side_bar_nickName">{this.user.nick_name}</h4>
+                                <button type="button" class="btn btn-outline-secondary d-flex align-items-center" id='side_bar_Button' onClick={handleClick} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer">Add</button>
+					        </div>
+				        </div>
+			        </div>
 
                 </div>
-
-                <AddContact show={this.state.addModalShow} onHide={closeButton} closeFunc={addModalClose} />
-                <div className="sidebar__chats">
-                    <ChatItem />
-                    <ChatItem />
-                    <ChatItem />
-                    <ChatItem />
-                </div>
-
             </div>
+
+           
         );
     }
 }

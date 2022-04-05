@@ -11,15 +11,18 @@ class ChatItem extends Component {
     render() {
         return (
             <div className="chat__item">
-                <img src={logo} class="rounded-circle"></img>
-                <div className="chat__item__info">
-                    <div className="chat__item__roomName">room name</div>
-                    <div className="chat__item__lastMessage">last message...</div>
-                    <div className="chat__item__time">5 minutes ago</div>
-                </div>
+                <a href="/#" class="list-group-item list-group-item-action border-0">
+                    <div class="d-flex align-items-center">
+                        <img src={logo} class="rounded-circle mr-1" alt="Vanessa Tucker" width="40" height="40"></img>
+                        <div class="flex-grow-1 ml-3" id="side_bar_room_name">Room name </div>
+                        <div class="flex-grow-1 ml-3" id="side_bar_last_message">last message... </div>
+                        <div class="flex-grow-1 ml-3" id="side_bar_time">time </div>
+                    </div>
+                </a>
             </div>
         )
     }
 }
 
 export default ChatItem;
+
