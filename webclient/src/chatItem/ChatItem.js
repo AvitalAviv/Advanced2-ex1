@@ -13,7 +13,7 @@ class ChatItem extends Component {
             <div className="chat__item">
                 <a href="/#" class="list-group-item list-group-item-action border-0">
                     <div class="d-flex align-items-center">
-                        <img src={logo} class="rounded-circle mr-1" alt="Vanessa Tucker" width="40" height="40"></img>
+                        <img src={logo} className="rounded-circle mr-1" alt="Vanessa Tucker" width="40" height="40"></img>
                         <div class="flex-grow-1 ml-3" id="side_bar_room_name">Room name </div>
                         <div class="flex-grow-1 ml-3" id="side_bar_last_message">last message... </div>
                         <div class="flex-grow-1 ml-3" id="side_bar_time">time </div>
