@@ -41,8 +41,12 @@ class SideBar extends Component {
         const closeButton = () => {
             this.setState({ addModalShow: false });
         }
+        //need to fix the button of adding new person
+
                     //<button type="button" class="btn btn-primary" id='addButton' onClick={handleClick} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer">Add</button>
                 //<AddContact show={this.state.addModalShow} onHide={closeButton} closeFunc={addModalClose} />
+
+                
         return (
             <div className="side__bar" id="side__bar">
                 <div className="side__bar__upper" id="side__bar__upper1">
@@ -58,8 +62,6 @@ class SideBar extends Component {
 
                 </div>
             </div>
-
-           
         );
     }
 }
