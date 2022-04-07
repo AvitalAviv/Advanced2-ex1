@@ -28,11 +28,10 @@
    position: relative;
    overflow-y: scroll;
    flex-direction: row;
+   background-color: white;
+   padding-bottom: 17.58%;
 }
 
-#sidebar__header__right {
-    
-}
  .chat-window-upper {
     padding-top: 1%;
     padding-bottom: 1%;
@@ -40,4 +39,9 @@
 
  .upper-bar {
     background-color: rgb(223, 223, 233);
+ }
+
+ .chat-window-messages {
+     background-color: blue;
+
  }
