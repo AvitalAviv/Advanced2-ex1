@@ -20,7 +20,6 @@ class SideBar extends Component {
     render() {
 
         const addModalClose = () => {
-            debugger;
             var user_nickname = document.getElementById("nickName").value;
             document.getElementById("nickName").value = "";
             if (this.user.nick_name === user_nickname) {
@@ -43,13 +42,12 @@ class SideBar extends Component {
         }
         //need to fix the button of adding new person
 
-                    //<button type="button" class="btn btn-primary" id='addButton' onClick={handleClick} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer">Add</button>
-                //<AddContact show={this.state.addModalShow} onHide={closeButton} closeFunc={addModalClose} />
+        // <button type="button" class="btn btn-primary" id='addButton' onClick={handleClick} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer">Add</button>
 
-                
+
         return (
-			<div class="d-flex align-items-center" id="side__bar__upper3">
-				
+            <div class="d-flex align-items-center" id="side__bar__upper3">
+                <div class="px-2 d-flex align-items-center" id="side__bar__items">
                     <div className="row d-flex flex-grow-1 align-items-center">
                         <div className="col-4 flex-grow-1 d-flex align-items-center ">
                             <img src={logo} class="rounded-circle side_bar_img" width="55" height="55" id="side_bar_img"></img>
@@ -59,10 +57,12 @@ class SideBar extends Component {
                         </div>
                         <div className="col-4 flex-grow-1 d-flex align-items-center">
                             <button type="button" class="btn btn-outline-secondary d-flex align-items-center" id='side_bar_Button' onClick={handleClick} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer">Add</button>
+                            <AddContact show={this.state.addModalShow} onHide={closeButton} closeFunc={addModalClose} />
+
                         </div>
                     </div>
-				</div>
-			      
+                </div>
+            </div>
         );
     }
 }
