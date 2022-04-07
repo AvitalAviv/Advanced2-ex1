@@ -30,33 +30,27 @@ class ChatRoom extends Component {
                         </div>
                         <div className="col-8 d-flex align-items-center col-lg-8 col-xl-9 chat-window-upper" id="aa">
                             <ChatWindowUpper/>
+
                         </div>
                     </div>
                     <div class="row h-100 g-0" id="sidebar__chats" >
                         <div class="col-4 col-lg-4 col-xl-3 border-right" id="sidebar__chats_scroll">
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
-                            <ChatItem/>
+                            <lu>
+                                <ChatItem userChat={this.user.chats[0]} />
+                                <ChatItem userChat={this.user.chats[1]} />
+                                <ChatItem userChat={this.user.chats[2]} />
+                                <ChatItem userChat={this.user.chats[3]} />
+                                <ChatItem userChat={this.user.chats[4]} />
+                            </lu>
+
                         </div>
                         <div>
                             
                         </div>
                     </div>
-         </div>
-        {/*<ChatWindow User={this.user} /> */}
-    </div>
+                </div>
+                {/*<ChatWindow User={this.user} /> */}
+            </div>
         )
     }
 

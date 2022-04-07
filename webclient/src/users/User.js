@@ -18,9 +18,6 @@ class User {
     addChat(chat) {
         this.chats.push(chat);
     }
-
-
-
 }
 
 export default User;
