@@ -26,8 +26,6 @@ class ChatItem extends Component {
     // </div>
 
     render() {
-        var d = new Date();
-        var time = d.getTime();
         return (
             <div className="chat__item">
                 <a href="/#" class="list-group-item list-group-item-action border-0">
@@ -42,7 +40,7 @@ class ChatItem extends Component {
                                         <h6 class="flex-grow-1" id="side_bar_room_name">{this.userChat.two_user}</h6>
                                     </div>
                                     <div className="col-4 d-flex align-items-center">
-                                        <div class="flex-grow-1" id="side_bar_time">{time - this.userChat.getLastMessage().time} </div>
+                                        <div class="flex-grow-1" id="side_bar_time">{this.userChat.getLastMessage().time.getHours() + ":" + this.userChat.getLastMessage().time.getMinutes()} </div>
                                     </div>
                                 </div>
                                 <div className="row">

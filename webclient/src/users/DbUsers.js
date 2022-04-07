@@ -5,7 +5,7 @@ import Message from "./message/Message";
 class DbUsers {
     constructor() {
         const d = new Date();
-        var time = d.getTime();
+        var current = new Date();
 
         this.db = [
             new User("Omer", "scrum master", "123", "None"),
@@ -23,11 +23,11 @@ class DbUsers {
         var chat_five = new Chat("Omer", "David");
 
         //add messages to chat
-        chat_one.addMessage("Omer", new Message("text", "Naama!", time));
-        chat_two.addMessage("Ron", new Message("audio", "path", time));
-        chat_three.addMessage("Niv", new Message("image", "C:\Users\omera\OneDrive - Bar-Ilan University\Desktop\advance programming\Advanced2-ex1\webclient\src\signuppage\logo.png", time));
-        chat_four.addMessage("Dvir", new Message("video", "path", time));
-        chat_five.addMessage("David", new Message("text", "How are you? Maybe well go to drink coffe sometimes", time));
+        chat_one.addMessage("Omer", new Message("text", "Naama!", current));
+        chat_two.addMessage("Ron", new Message("audio", "path", current));
+        chat_three.addMessage("Niv", new Message("image", "C:\Users\omera\OneDrive - Bar-Ilan University\Desktop\advance programming\Advanced2-ex1\webclient\src\signuppage\logo.png", current));
+        chat_four.addMessage("Dvir", new Message("video", "path", current));
+        chat_five.addMessage("David", new Message("text", "How are you? Maybe well go to drink coffe sometimes", current));
 
         //add chats to user
         this.db[0].addChat(chat_one);
