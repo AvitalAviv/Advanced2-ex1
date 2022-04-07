@@ -6,6 +6,7 @@ class ChatItem extends Component {
     constructor(props) {
         super(props);
         this.userChat = props.userChat;
+        console.log(this.userChat);
         //need to set default photo to user that do not entered a photo
     };
 
@@ -25,6 +26,8 @@ class ChatItem extends Component {
     // </div>
 
     render() {
+        var d = new Date();
+        var time = d.getTime();
         return (
             <div className="chat__item">
                 <a href="/#" class="list-group-item list-group-item-action border-0">
@@ -36,14 +39,14 @@ class ChatItem extends Component {
                             <div className="col-10 align-items-center">
                                 <div className="row">
                                     <div className="col-8 d-flex align-items-center">
-                                        <h6 class="flex-grow-1" id="side_bar_room_name">Room name</h6>
+                                        <h6 class="flex-grow-1" id="side_bar_room_name">{this.userChat.two_user}</h6>
                                     </div>
                                     <div className="col-4 d-flex align-items-center">
-                                        <div class="flex-grow-1" id="side_bar_time">time </div>
+                                        <div class="flex-grow-1" id="side_bar_time">{time - this.userChat.getLastMessage().time} </div>
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div class="flex-grow-1" id="side_bar_last_message">last message... </div>
+                                    <div class="flex-grow-1" id="side_bar_last_message">{this.userChat.getLastMessage().getMessageForRevirew()}</div>
                                 </div>
                             </div>
                         </div>

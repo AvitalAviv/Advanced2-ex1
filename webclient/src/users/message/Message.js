@@ -10,5 +10,17 @@ class Message {
     getValue() {
         return this.value;
     }
+    getMessageForRevirew() {
+        if (this.type === "text") {
+            if (this.value.length > 25) {
+                return this.value.slice(0, 25) + "...";
+            }
+            return this.value;
+        }
+        if (this.type === "audio") {
+            return "audio";
+        }
+        return "photo";
+    }
 }
 export default Message;

@@ -27,7 +27,7 @@ class DbUsers {
         chat_two.addMessage("Ron", new Message("audio", "path", time));
         chat_three.addMessage("Niv", new Message("image", "C:\Users\omera\OneDrive - Bar-Ilan University\Desktop\advance programming\Advanced2-ex1\webclient\src\signuppage\logo.png", time));
         chat_four.addMessage("Dvir", new Message("video", "path", time));
-        chat_five.addMessage("David", new Message("text", "How are you?", time));
+        chat_five.addMessage("David", new Message("text", "How are you? Maybe well go to drink coffe sometimes", time));
 
         //add chats to user
         this.db[0].addChat(chat_one);
