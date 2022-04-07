@@ -15,7 +15,7 @@
 }
 
 #sidebar__header {
-    background-color: rgb(223, 223, 233);
+
 }
 
 #sidebar__chats{
@@ -33,7 +33,11 @@
 #sidebar__header__right {
     
 }
+ .chat-window-upper {
+    padding-top: 1%;
+    padding-bottom: 1%;
+ }
 
-#aa {
-    background-color: aquamarine;
-}
+ .upper-bar {
+    background-color: rgb(223, 223, 233);
+ }

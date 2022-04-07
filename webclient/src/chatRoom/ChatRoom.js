@@ -24,11 +24,11 @@ class ChatRoom extends Component {
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
                 <h1 className="h3 mb-3" id="title">TalkToMe</h1>
                 <div className="card" id="card">
-                    <div className="row g-0 d-flex align-items-center">
+                    <div className="row g-0 d-flex align-items-center upper-bar">
                         <div className="col-4 align-items-center col-lg-4 col-xl-3 border-right" id="sidebar__header">
-                            <SideBar Dbusers={this.dbUsers} User={this.user} />
+                            <SideBar Dbusers={this.dbUsers} User={this.user}/>
                         </div>
-                        <div className="col-8 align-items-center col-lg-8 col-xl-9 border-left" id="aa">
+                        <div className="col-8 d-flex align-items-center col-lg-8 col-xl-9 chat-window-upper" id="aa">
                             <ChatWindowUpper/>
                         </div>
                     </div>
@@ -49,6 +49,9 @@ class ChatRoom extends Component {
                             <ChatItem/>
                             <ChatItem/>
                             <ChatItem/>
+                        </div>
+                        <div>
+                            
                         </div>
                     </div>
          </div>
