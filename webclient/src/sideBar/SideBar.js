@@ -49,20 +49,20 @@ class SideBar extends Component {
                 
         return (
 			<div class="d-flex align-items-center" id="side__bar__upper3">
-				<div class="px-2 d-flex align-items-center" id="side__bar__items">
+				
                     <div className="row d-flex flex-grow-1 align-items-center">
-                        <div className="col flex-grow-1 d-flex align-items-center">
-                            <img src={logo} class="rounded-circle" width="55" height="55" id="side_bar_img"></img>
+                        <div className="col-4 flex-grow-1 d-flex align-items-center ">
+                            <img src={logo} class="rounded-circle side_bar_img" width="55" height="55" id="side_bar_img"></img>
                         </div>
-                        <div className="col flex-grow-1 d-flex align-items-center">
-                            <h4 class="d-flex align-items-center" id="side_bar_nickName">{this.user.nick_name}</h4>
+                        <div className="col-4 flex-grow-1 d-flex align-items-center">
+                            <h4 class="d-flex align-items-center side_bar_nickName" id="side_bar_nickName">{this.user.nick_name}</h4>
                         </div>
-                        <div className="col flex-grow-1 d-flex align-items-center">
+                        <div className="col-4 flex-grow-1 d-flex align-items-center">
                             <button type="button" class="btn btn-outline-secondary d-flex align-items-center" id='side_bar_Button' onClick={handleClick} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer">Add</button>
                         </div>
                     </div>
 				</div>
-			</div>        
+			      
         );
     }
 }

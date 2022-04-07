@@ -1,24 +1,24 @@
 #side__bar__upper3 {
     display: flex;
-}
-
-#side__bar__items {
+    align-items: center;
     padding-top: 4%;
     padding-bottom: 4%;
-    align-items: center;
 }
 
-#side_bar_img {
-    margin-right: 13%;
-}
-
-#side_bar_nickName {
-    padding-top: 2%;
-    color: #5f5c5c;
-    font-weight: 660;
-}
 
 #side_bar_Button {
     margin-left: 13%;
     margin-right: 13%;
+}
+
+.side_bar_img {
+    align-items: center;
+    margin-left: 13%;
+}
+
+.side_bar_nickName {
+    padding-top: 2%;
+    color: #5f5c5c;
+    font-weight: 660;
+    align-items: center;
 }
