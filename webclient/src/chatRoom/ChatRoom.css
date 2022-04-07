@@ -19,7 +19,7 @@
 }
 
 #sidebar__chats{
-    display: grid;
+
     overflow: hidden;
 }
 
@@ -43,5 +43,5 @@
 
  .chat-window-messages {
      background-color: blue;
-
+     align-items:baseline;
  }

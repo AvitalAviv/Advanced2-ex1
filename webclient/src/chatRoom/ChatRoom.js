@@ -33,7 +33,7 @@ class ChatRoom extends Component {
                         </div>
                     </div>
                     <div class="row h-100 g-0" id="sidebar__chats" >
-                        <div className="col col-4 col-lg-4 col-xl-3 border-right" id="sidebar__chats_scroll" style={{position: "relative"}}>
+                        <div className="col-4 col-lg-4 col-xl-3 border-right" id="sidebar__chats_scroll">
                             <lu>
                                 <ChatItem userChat={this.user.chats[0]} />
                                 <ChatItem userChat={this.user.chats[1]} />
@@ -43,7 +43,14 @@ class ChatRoom extends Component {
                             </lu>
                         </div>
                         <div className="col-8 col-lg-8 col-xl-9 chat-window-messages">
-                            fg
+                            <div className="container">
+                                <div className="row-4">
+                                    chat
+                                    </div>
+                            <div className="col align-self-end"  style={{background: "yellow", marginTop: "41.7%", paddingBottom: "1%"}}>
+                                ghm
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
