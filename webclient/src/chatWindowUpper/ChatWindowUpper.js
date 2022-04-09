@@ -1,6 +1,7 @@
 import './ChatWindowUpper.css';
 import React, { Component } from 'react';
 import logo from "../chatWindowUpper/logo.png";
+import omerPhoto from "/home/omer/Desktop/Advanced2-ex1/webclient/src/usersPhotos/omer.jpg";
 
 class ChatWindowUpper extends Component {
     constructor(props) {

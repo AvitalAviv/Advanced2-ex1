@@ -35,11 +35,11 @@ class ChatRoom extends Component {
                     <div class="row h-100 g-0" id="sidebar__chats" >
                         <div className="col-4 col-lg-4 col-xl-3 border-right" id="sidebar__chats_scroll">
                             <lu>
-                                <ChatItem userChat={this.user.chats[0]} />
-                                <ChatItem userChat={this.user.chats[1]} />
-                                <ChatItem userChat={this.user.chats[2]} />
-                                <ChatItem userChat={this.user.chats[3]} />
-                                <ChatItem userChat={this.user.chats[4]} />
+                                <ChatItem userChat={this.user.chats[0]} User={this.user} Dbusers={this.dbUsers}/>
+                                <ChatItem userChat={this.user.chats[1]} User={this.user} Dbusers={this.dbUsers}/>
+                                <ChatItem userChat={this.user.chats[2]} User={this.user} Dbusers={this.dbUsers}/>
+                                <ChatItem userChat={this.user.chats[3]} User={this.user} Dbusers={this.dbUsers}/>
+                                <ChatItem userChat={this.user.chats[4]} User={this.user} Dbusers={this.dbUsers}/>
                             </lu>
                         </div>
                         <div className="col-8 col-lg-8 col-xl-9 chat-window-messages">

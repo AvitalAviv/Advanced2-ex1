@@ -6,7 +6,8 @@ class ChatItem extends Component {
     constructor(props) {
         super(props);
         this.userChat = props.userChat;
-        console.log(this.userChat);
+        this.user = props.User;
+        this.db = props.Dbusers;
         //need to set default photo to user that do not entered a photo
     };
 
@@ -25,14 +26,14 @@ class ChatItem extends Component {
     // </div>
     // </div>
 
-    render() {
+    render() {      
         return (
             <div className="chat__item">
                 <a href="/#" class="list-group-item list-group-item-action border-0">
                     <div className="containter-fluid">
                         <div className="row">
                             <div className="px-2 col-2 d-flex align-items-center">
-                                <img src={logo} className="rounded-circle" id="image__chat__item" width="40" height="40"></img>
+                                <img src={this.userChat.second_user_photo} className="rounded-circle" id="image__chat__item" width="40" height="40"></img>
                             </div>
                             <div className="col-10 align-items-center">
                                 <div className="row">

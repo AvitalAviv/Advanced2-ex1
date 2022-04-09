@@ -1,6 +1,13 @@
 import Chat from "./chat/Chat";
 import User from "./User";
 import Message from "./message/Message";
+import omerphoto from "../usersPhotos/omer.jpg";
+import avitalphoto from "../usersPhotos/avital.jpg";
+import davidphoto from "../usersPhotos/david.jpg";
+import dvitphoto from "../usersPhotos/dvir.jpg";
+import nivphoto from "../usersPhotos/niv.jpg";
+import ronphoto from "../usersPhotos/ron.jpg";
+
 
 class DbUsers {
     constructor() {
@@ -8,26 +15,26 @@ class DbUsers {
         var current = new Date();
 
         this.db = [
-            new User("Omer", "scrum master", "123", "None"),
-            new User("Avital", "Avitalos", "123", "None"),
-            new User("Ron", "Ronen", "123", "None"),
-            new User("Niv", "NivNah", "123", "None"),
-            new User("Dvir", "Avitalos", "123", "None"),
-            new User("David", "King", "123", "None"),
+            new User("Omer", "scrum master", "123", omerphoto),
+            new User("Avital", "Avitalos", "123", avitalphoto),
+            new User("Ron", "Ronen", "123", ronphoto),
+            new User("Niv", "NivNah", "123", nivphoto),
+            new User("Dvir", "Dviri", "123", dvitphoto),
+            new User("David", "King", "123", davidphoto),
         ];
         //creating chats between Omer to all parties
-        var chat_one = new Chat("Omer", "Avital");
-        var chat_two = new Chat("Omer", "Ron");
-        var chat_three = new Chat("Omer", "Niv");
-        var chat_four = new Chat("Omer", "Dvir");
-        var chat_five = new Chat("Omer", "David");
+        var chat_one = new Chat("scrum master", "Avitalos",omerphoto,avitalphoto);
+        var chat_two = new Chat("scrum master", "Ronen",omerphoto,ronphoto);
+        var chat_three = new Chat("scrum master", "NivNah",omerphoto,nivphoto);
+        var chat_four = new Chat("Omer", "Dviri",omerphoto,dvitphoto);
+        var chat_five = new Chat("Omer", "King",omerphoto,davidphoto);
 
         //add messages to chat
-        chat_one.addMessage("Omer", new Message("text", "Naama!", current));
-        chat_two.addMessage("Ron", new Message("audio", "path", current));
-        chat_three.addMessage("Niv", new Message("image", "C:\Users\omera\OneDrive - Bar-Ilan University\Desktop\advance programming\Advanced2-ex1\webclient\src\signuppage\logo.png", current));
-        chat_four.addMessage("Dvir", new Message("video", "path", current));
-        chat_five.addMessage("David", new Message("text", "How are you? Maybe well go to drink coffe sometimes", current));
+        chat_one.addMessage("scrum master", new Message("text", "Naama!", current));
+        chat_two.addMessage("Ronen", new Message("audio", "path", current));
+        chat_three.addMessage("NivNah", new Message("image", "C:\Users\omera\OneDrive - Bar-Ilan University\Desktop\advance programming\Advanced2-ex1\webclient\src\signuppage\logo.png", current));
+        chat_four.addMessage("Dviri", new Message("video", "path", current));
+        chat_five.addMessage("King", new Message("text", "How are you? Maybe well go to drink coffe sometimes", current));
 
         //add chats to user
         this.db[0].addChat(chat_one);
