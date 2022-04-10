@@ -12,10 +12,19 @@ class ChatRoom extends Component {
         super(props);
         this.user = props.User;
         this.dbUsers = props.DbUsers;
-        this.currentChat = this.user.chats[0];
+        this.isNew = true ? this.user.user_name === "Omer" || this.user.user_name === "Avital" : false;
+        this.state = {
+            currentChat: null
+        }
     }
 
     render() {
+
+
+        if (this.state.currentChat !== null) {
+            console.log(this.state.currentChat.last_message.value);
+        }
+
         return (
             <div class="container-fluid" id="chatRoom">
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -33,26 +42,18 @@ class ChatRoom extends Component {
                         <div className="col-4 col-lg-4 col-xl-3 border-right" id="sidebar__chats_scroll">
                             <lu>
                                 {this.user.chats.map((chat, key) => {
-
-                                    return <div onClick={() => { console.log(chat); this.currentChat = chat }}><ChatItem userChat={chat} User={this.user} DbUsers={this.dbUsers} key={key} /></div>
+                                    return <div onClick={() => this.setState({ currentChat: chat })}><ChatItem userChat={chat} User={this.user} DbUsers={this.dbUsers} key={key} /></div>
                                 })}
                             </lu>
                         </div>
-                        <div className="col-8 col-lg-8 col-xl-9">
-                            <div className="row-4 chat-messages p-4 chat-window-messages">
-                                <MessageFromMe chat={this.currentChat} />
-                                <MessageFromOther chat={this.currentChat} />
+                        <div className="container-fluid col-8 col-lg-8 col-xl-9 chat-window-all" style={{background: "red"}}>
+                            <div class="chat-messages h-100 p-4">
+                                
                             </div>
-
                             {/* <div className="col align-self-end" style={{ background: "yellow", paddingBottom: "1%" }}>
                                     ghm
                             </div> */}
-                            <div className="py-2 px-4 h-100 border-top chat-window-text-box">
-                                <div className="input-group">
-                                    <input type="text" class="form-control" placeholder="Type your message..."></input>
-                                    <button class="btn btn-outline-secondary btn-sm">Send</button>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div >
