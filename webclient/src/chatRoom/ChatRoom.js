@@ -26,30 +26,29 @@ class ChatRoom extends Component {
                 <div className="card" id="card">
                     <div className="row g-0 d-flex align-items-center upper-bar">
                         <div className="col-4 align-items-center col-lg-4 col-xl-3 border-right" id="sidebar__header">
-                            <SideBar Dbusers={this.dbUsers} User={this.user}/>
+                            <SideBar Dbusers={this.dbUsers} User={this.user} />
                         </div>
                         <div className="col-8 d-flex align-items-center col-lg-8 col-xl-9 chat-window-upper" id="aa">
-                            <ChatWindowUpper/>
+                            <ChatWindowUpper />
                         </div>
                     </div>
                     <div class="row h-100 g-0" id="sidebar__chats" >
                         <div className="col-4 col-lg-4 col-xl-3 border-right" id="sidebar__chats_scroll">
                             <lu>
-                                <ChatItem userChat={this.user.chats[0]} User={this.user} Dbusers={this.dbUsers}/>
-                                <ChatItem userChat={this.user.chats[1]} User={this.user} Dbusers={this.dbUsers}/>
-                                <ChatItem userChat={this.user.chats[2]} User={this.user} Dbusers={this.dbUsers}/>
-                                <ChatItem userChat={this.user.chats[3]} User={this.user} Dbusers={this.dbUsers}/>
-                                <ChatItem userChat={this.user.chats[4]} User={this.user} Dbusers={this.dbUsers}/>
+                                {this.user.chats.map((chat, key) => {
+                                    return <ChatItem userChat={chat} User={this.user} DbUsers={this.dbUsers} key={key} />
+                                })}
+
                             </lu>
                         </div>
                         <div className="col-8 col-lg-8 col-xl-9 chat-window-messages">
                             <div className="container">
                                 <div className="row-4">
                                     chat
-                                    </div>
-                            <div className="col align-self-end"  style={{background: "yellow", marginTop: "41.7%", paddingBottom: "1%"}}>
-                                ghm
-                            </div>
+                                </div>
+                                <div className="col align-self-end" style={{ background: "yellow", marginTop: "41.7%", paddingBottom: "1%" }}>
+                                    ghm
+                                </div>
                             </div>
                         </div>
                     </div>
