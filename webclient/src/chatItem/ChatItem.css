@@ -19,3 +19,7 @@
 .side-bar-image {
     align-content: center;
 }
+
+.rounded-circle {
+    clip-path: circle();
+}

@@ -14,10 +14,6 @@
     font-weight: 2000%;
 }
 
-#sidebar__header {
-
-}
-
 #sidebar__chats{
 
     overflow: hidden;
@@ -42,25 +38,30 @@
  }
 
  .chat-window-messages {
-     
      overflow-y: scroll;
      background-color: blue;
+     
  }
 
  .chat-window-text-box {
-     width: 100%;
-     height: 50px;
-     bottom: -40%;
+    position: absolute;
+    
     background-color: rgb(223, 223, 233);
  }
 
-
 .chat-messages {
-    display: flex;
-    flex-direction: column;
-    position: sticky;
+    position: absolute;
+    background-color: blue;
+    overflow-y: scroll;
 }
 
+.chat-window-all {
+    position: relative;
+    flex-direction: row;
+    background-color: white;
+    padding-bottom: 17.58%;
+    height: 100%;
+}
 
 .py-3 {
     padding-top: 1rem!important;
