@@ -58,7 +58,6 @@ class SideBar extends Component {
                         <div className="col flex-grow-1 d-flex align-items-center">
                             <button type="button" class="btn btn-outline-secondary d-flex align-items-center" id='side_bar_Button' onClick={handleClick} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer">Add</button>
                             <AddContact show={this.state.addModalShow} onHide={closeButton} closeFunc={addModalClose} />
-
                         </div>
                     </div>
                 </div>

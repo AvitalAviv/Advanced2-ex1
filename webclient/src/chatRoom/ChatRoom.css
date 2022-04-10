@@ -2,8 +2,8 @@
     background-color: rgb(205, 212, 212);
     padding-right: 2%;
     padding-left: 2%;
-    height: 85vh;
-    width: 96vw;
+    height: 92vh;
+    width: 98vw;
     place-self: center;
     box-shadow: -1px 4px 20px -6px lightslategray;
 }
@@ -42,6 +42,28 @@
  }
 
  .chat-window-messages {
+     
+     overflow-y: scroll;
      background-color: blue;
-     align-items:baseline;
  }
+
+ .chat-window-text-box {
+    background-color: rgb(223, 223, 233);
+ }
+
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+}
+
+
+.py-3 {
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
+.px-4 {
+    padding-right: 1.5rem!important;
+    padding-left: 1.5rem!important;
+}
