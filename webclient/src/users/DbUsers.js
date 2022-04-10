@@ -23,11 +23,11 @@ class DbUsers {
             new User("David", "King", "123", davidphoto),
         ];
         //creating chats between Omer to all parties
-        var chat_one = new Chat("scrum master", "Avitalos",omerphoto,avitalphoto);
-        var chat_two = new Chat("scrum master", "Ronen",omerphoto,ronphoto);
-        var chat_three = new Chat("scrum master", "NivNah",omerphoto,nivphoto);
-        var chat_four = new Chat("Omer", "Dviri",omerphoto,dvitphoto);
-        var chat_five = new Chat("Omer", "King",omerphoto,davidphoto);
+        var chat_one = new Chat("scrum master", "Avitalos", omerphoto, avitalphoto);
+        var chat_two = new Chat("scrum master", "Ronen", omerphoto, ronphoto);
+        var chat_three = new Chat("scrum master", "NivNah", omerphoto, nivphoto);
+        var chat_four = new Chat("Omer", "Dviri", omerphoto, dvitphoto);
+        var chat_five = new Chat("Omer", "King", omerphoto, davidphoto);
 
         //add messages to chat
         chat_one.addMessage("scrum master", new Message("text", "Naama!", current));

@@ -11,12 +11,16 @@ class ChatRoom extends Component {
         this.user = props.User;
         this.dbUsers = props.DbUsers;
         this.isNew = true ? this.user.user_name === "Omer" || this.user.user_name === "Avital" : false;
+        this.state = {
+            currentChat: null
+        }
     }
 
     render() {
-        const handleClick = (event) => {
-            console.log(this.isNew);
-            event.preventDefault();
+
+
+        if (this.state.currentChat !== null) {
+            console.log(this.state.currentChat);
         }
 
         return (
@@ -36,10 +40,8 @@ class ChatRoom extends Component {
                         <div className="col-4 col-lg-4 col-xl-3 border-right" id="sidebar__chats_scroll">
                             <lu>
                                 {this.user.chats.map((chat, key) => {
-                                    return <ChatItem userChat={chat} User={this.user} DbUsers={this.dbUsers} key={key} />
-                                })}
-
-                            </lu>
+                                    return <div onClick={() => this.setState({ currentChat: chat })}><ChatItem userChat={chat} User={this.user} DbUsers={this.dbUsers} key={key} /></div>
+                                })}</lu>
                         </div>
                         <div className="col-8 col-lg-8 col-xl-9 chat-window-messages">
                             <div className="container">
@@ -52,9 +54,9 @@ class ChatRoom extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
                 {/*<ChatWindow User={this.user} /> */}
-            </div>
+            </div >
         )
     }
 
