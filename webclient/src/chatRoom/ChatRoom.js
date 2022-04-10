@@ -20,7 +20,7 @@ class ChatRoom extends Component {
 
 
         if (this.state.currentChat !== null) {
-            console.log(this.state.currentChat);
+            console.log(this.state.currentChat.last_message.value);
         }
 
         return (
