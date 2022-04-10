@@ -1,5 +1,5 @@
 class Chat {
-    constructor(one_user, two_user,one_user_photo,second_user_photo) {
+    constructor(one_user, two_user, one_user_photo, second_user_photo) {
         this.one_user = one_user;
         this.two_user = two_user;
         this.one_user_message = [];

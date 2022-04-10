@@ -1,20 +1,23 @@
 import './MessageFromMe.css';
 import React, { Component } from 'react';
 import logo from '../messageFromMe/MessageFromMe';
+import Chat from '../users/chat/Chat';
+import MessageMe from '../messageFromMe/MessageMe';
 
 class MessageFromMe extends Component {
     constructor(props) {
         super(props);
+        this.chat = props.chat;
+        this.name = null;
     }
     render() {
-        return(
-            <div class="chat-message-right pb-4">
-                <div class="text-muted small text-nowrap mt-2">2:33 am</div>
-                <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                    <div class="font-weight-bold mb-1">You</div>
-                    Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.
-                </div>
+        return (
+            <div>
+                {this.chat.one_user_message.map((message, key) => {
+                    return <MessageMe time={message.time} name={this.chat.two_user} value={message.value} key={key} />
+                })}
             </div>
+
         );
     }
 }
