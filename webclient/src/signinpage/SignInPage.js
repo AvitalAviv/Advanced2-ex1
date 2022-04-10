@@ -43,7 +43,7 @@ class SignInPage extends Component {
         }
 
         if (this.state.isLogged) {
-
+            // window.location.href = '/chat';
             return (<ChatRoom DbUsers={this.DbUsers} User={this.userLogged} />);
         }
         return (
