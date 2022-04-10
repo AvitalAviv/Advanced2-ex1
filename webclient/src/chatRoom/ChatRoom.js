@@ -6,13 +6,14 @@ import ChatItem from "../chatItem/ChatItem";
 import ChatWindowUpper from "../chatWindowUpper/ChatWindowUpper";
 import MessageFromMe from '../messageFromMe/MessageFromMe';
 import MessageFromOther from '../messageFromOther/MessageFromOther';
-
+import ToolBar from '../toolBar/ToolBar';
 
 class ChatRoom extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentState: 0
+            currentState: 0,
+            a_chat: "null"
         }
         this.currentChat = "null";
         this.userChats = props.User.chats;
@@ -21,11 +22,11 @@ class ChatRoom extends Component {
     }
     render() {
         const present = () => {
-            if (this.state.currentState > 0) {
+            if (this.state.a_chat !== "null") {
                 return (
                     <div class="chat-messages p-4">
-                        <MessageFromMe chat={this.currentChat} />
-                        <MessageFromOther chat={this.currentChat} />
+                        <MessageFromMe chat={this.state.a_chat} />
+                        <MessageFromOther chat={this.state.a_chat} />
                     </div>
                 )
             }
@@ -47,7 +48,7 @@ class ChatRoom extends Component {
                         <div className="col-4 col-lg-4 col-xl-3 border-right" id="sidebar__chats_scroll">
                             <lu>
                                 {this.userChats.map((chat, key) => {
-                                    return <div onClick={() => { this.currentChat = chat; this.setState({ currentState: this.state.currentState + 1 }); console.log(this.currentChat) }}><ChatItem userChat={chat} User={this.user} DbUsers={this.dbUsers} key={key} /></div>
+                                    return <div onClick={() => { this.currentChat = chat; this.setState({ a_chat: chat }); console.log(this.state.a_chat); }}><ChatItem userChat={chat} User={this.user} DbUsers={this.dbUsers} key={key} /></div>
                                 })}
                             </lu>
                         </div>

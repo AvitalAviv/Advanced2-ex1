@@ -8,6 +8,7 @@ class MessageFromMe extends Component {
     constructor(props) {
         super(props);
         this.chat = props.chat;
+        debugger;
         this.name = null;
     }
     render() {
