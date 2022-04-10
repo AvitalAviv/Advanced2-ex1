@@ -38,21 +38,22 @@ class ChatRoom extends Component {
                                 })}
                             </lu>
                         </div>
-                        <div className="col-8 col-lg-8 col-xl-9">
-                            <div className="row-4 chat-messages p-4 chat-window-messages">
-                                <MessageFromMe chat={this.currentChat} />
-                                <MessageFromOther chat={this.currentChat} />
-                            </div>
+                        <div className="col-8 col-lg-8 col-xl-9 position-relative chat-window-all">
+						    <div class="chat-messages p-4">
+                                <MessageFromMe chat={this.currentChat}/>
+                                <MessageFromOther chat={this.currentChat}/>
 
+                            </div>
+                        
                             {/* <div className="col align-self-end" style={{ background: "yellow", paddingBottom: "1%" }}>
                                     ghm
                             </div> */}
-                            <div className="py-2 px-4 h-100 border-top chat-window-text-box">
-                                <div className="input-group">
-                                    <input type="text" class="form-control" placeholder="Type your message..."></input>
-                                    <button class="btn btn-outline-secondary btn-sm">Send</button>
+                            <div class="flex-grow-0 py-3 px-4 border-top chat-window-text-box">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Type your message"></input>
+                                    <button class="btn btn-primary">Send</button>
                                 </div>
-                            </div>
+					        </div>
                         </div>
                     </div>
                 </div >

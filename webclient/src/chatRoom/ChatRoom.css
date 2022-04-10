@@ -38,20 +38,19 @@
  }
 
  .chat-window-messages {
+     height: 66%;
      overflow-y: scroll;
      background-color: blue;
-     
  }
 
  .chat-window-text-box {
-    position: absolute;
-    
     background-color: rgb(223, 223, 233);
+    
  }
 
 .chat-messages {
-    position: absolute;
     background-color: blue;
+    height: 100%;
     overflow-y: scroll;
 }
 
@@ -60,7 +59,7 @@
     flex-direction: row;
     background-color: white;
     padding-bottom: 17.58%;
-    height: 100%;
+
 }
 
 .py-3 {
