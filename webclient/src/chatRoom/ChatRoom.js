@@ -10,7 +10,19 @@ import MessageFromOther from '../messageFromOther/MessageFromOther';
 
 
 function ChatRoom(props) {
-    const [currentChat, seCurrentChat] = useState(props.User.chats[1]);
+    const [currentChat, setCurrentChat] = useState({ Chat: "" });
+    const [currentState, setCurrentState] = useState(false);
+
+    function present() {
+        if (currentState) {
+            return (
+                <div class="chat-messages p-4">
+                    <MessageFromMe chat={currentChat} />
+                    <MessageFromOther chat={currentChat} />
+                </div>
+            )
+        }
+    }
 
     return (
         <div class="container-fluid" id="chatRoom">
@@ -29,15 +41,12 @@ function ChatRoom(props) {
                     <div className="col-4 col-lg-4 col-xl-3 border-right" id="sidebar__chats_scroll">
                         <lu>
                             {props.User.chats.map((chat, key) => {
-                                return <div onClick={() => seCurrentChat(chat)}><ChatItem userChat={chat} User={props.User} DbUsers={props.DbUsers} key={key} /></div>
+                                return <div onClick={()=>{setCurrentChat(chat);setCurrentState(true)}}><ChatItem userChat={chat} User={props.User} DbUsers={props.DbUsers} key={key} /></div>
                             })}
                         </lu>
                     </div>
                     <div className="col-8 col-lg-8 col-xl-9 position-relative chat-window-all">
-                        <div class="chat-messages p-4">
-                            <MessageFromMe chat={currentChat} />
-                            <MessageFromOther chat={currentChat} />
-                        </div>
+                        {present()}
 
                         {/* <div className="col align-self-end" style={{ background: "yellow", paddingBottom: "1%" }}>
                                     ghm
