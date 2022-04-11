@@ -3,6 +3,7 @@ import AlertWindow from '../alertwindow/AlertWindow';
 import React, { Component } from 'react';
 import SignUp from '../signuppage/SignUpPage';
 import ChatRoom from '../chatRoom/ChatRoom';
+import './SignInPage.css';
 
 class SignInPage extends Component {
     constructor(props) {
