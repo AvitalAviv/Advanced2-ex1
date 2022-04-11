@@ -1,8 +1,9 @@
 class Message {
-    constructor(type, value, time) {
+    constructor(type, value, time, sender) {
         this.type = type;
         this.value = value;
         this.time = time;
+        this.sender = sender;
     }
     getType() {
         return this.type;
@@ -21,6 +22,9 @@ class Message {
             return "audio";
         }
         return "photo";
+    }
+    getMessageSender() {
+        return this.sender;
     }
 }
 export default Message;

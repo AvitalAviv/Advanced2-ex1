@@ -27,21 +27,6 @@ function LeftSideChat({ User, DbUsers, setSelected }) {
                 <ChatItem/>
                 <ChatItem/>
                 <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>                
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
             </div>
 
         </div>
