@@ -1,27 +1,25 @@
-import signUp from './SignUpPage.css';
 import logo from './logo.png';
-import { Component } from 'react';
-import SignInPage from '../signinpage/SignInPage';
-import Validation from '../validation/Validation';
-import DbUsers from '../users/DbUsers';
+import React, { Component } from 'react';
 import User from '../users/User';
 import ChatRoom from '../chatRoom/ChatRoom';
+import "./SignUpPage.css";
+import SignInPage from '../signinpage/SignInPage';
 
 class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSignedIn: false
+      isSignedIn: false,
+      isLogged: false
     };
     this.dbUsers = props.DbUsers;
+    this.newUser = null;
   }
   render() {
     const handleClickHere = (event) => {
       event.preventDefault(); //prevent refresh
-      this.setState({ isSignedIn: true });
+      this.setState({ isLogged: true });
     };
-
-
     const handleRegister = (event) => {
       event.preventDefault();
       var user_name = document.getElementById("userName").value;
@@ -45,16 +43,20 @@ class SignUp extends Component {
 
       //add user to data base
       console.log(user_image);
-      this.dbUsers.addUser(new User(user_name, nick_name, password, user_image));
+      this.newUser = new User(user_name, nick_name, password, user_image);
+      this.dbUsers.addUser(this.newUser);
       this.setState({ isSignedIn: true });
     }
     if (this.state.isSignedIn) {
-      return < ChatRoom />
+      return (<ChatRoom User={this.newUser} DbUsers={this.dbUsers} />);
+    }
+    if (this.state.isLogged) {
+      return (<SignInPage DbUsers={this.dbUsers} />);
     }
     return (
       <div className="wrapper-register-page" >
         <div className="logo"> <img src={logo} alt=""></img> </div>
-        <div className="text-center mt-4 name"> Sign up </div>
+        <div className="text-center mt-4 name" id='Headline'> Sign up </div>
         <form className="p-3 mt-3">
           <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
             <input type="text" name="userName" id="userName" placeholder="User name"></input></div>
@@ -74,7 +76,7 @@ class SignUp extends Component {
           <button class="btn mt-3" onClick={handleRegister}>Register</button>
         </form>
         <br></br>
-        <div className="text-center fs-6"> Already registred? <a href="#" onClick={handleClickHere}>Click here</a> to login</div>
+        <div className="text-center fs-6"> Already registred? <a href="/#" onClick={handleClickHere}>Click here</a> to login</div>
       </div >
     );
   }

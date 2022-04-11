@@ -20,7 +20,7 @@ function Validation(userName, nickName, passwordFirst, passwordSecond, file) {
         alert("Password less than 8 characters");
         return false;
     }
-    if (nickName < 8) {
+    if (nickName.length < 8) {
         alert("Display name less than 8 characters");
         return false;
     }
@@ -29,7 +29,7 @@ function Validation(userName, nickName, passwordFirst, passwordSecond, file) {
         alert("Your password has to contain numbers and letters");
         return false;
     }
-    if (passwordFirst != passwordSecond) {
+    if (passwordFirst !== passwordSecond) {
         alert("Repeated password incorrect");
         return false;
     }
