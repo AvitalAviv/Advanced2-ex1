@@ -6,7 +6,7 @@ import ChatItem from '../chatItem/ChatItem';
 function LeftSideChat(props) {
     return (
         <div className="col-4 container d-flex flex-column" style={{ background: "lightblue" }}>
-            <div className="row d-flex flex-row" style={{ background: "white", height: "14.6%" }}>
+            <div className="row d-flex flex-row" style={{ background: "white", height: "12.7%" }}>
                 <table>
                     <tr>
                         <td style={{ width: "22%", background: "orange" }}>image</td>
@@ -19,7 +19,6 @@ function LeftSideChat(props) {
                 <button id="Ronen"><ChatItem chat={props.DbUsers.db["Omer"].chats["Ronen"]} setSelected={props.setSelected} /></button>
                 <button id="Avitalos"><ChatItem chat={props.DbUsers.db["Omer"].chats["Avitalos"]} setSelected={props.setSelected} /></button>
             </div>
-
         </div>
     );
 }

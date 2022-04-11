@@ -4,6 +4,7 @@ class Message {
         this.value = value;
         this.time = time;
         this.nick_name = nick_name;
+
     }
     getType() {
         return this.type;
@@ -22,6 +23,9 @@ class Message {
             return "audio";
         }
         return "photo";
+    }
+    getMessageSender() {
+        return this.sender;
     }
 }
 export default Message;

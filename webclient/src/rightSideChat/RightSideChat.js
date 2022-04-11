@@ -1,6 +1,7 @@
 import { Component, useState } from 'react';
 import "./RightSideChat.css"
 import React from 'react'
+import MessageRender from '../messageRender/MessageRender';
 
 function RightSideChat() {
     return (
@@ -15,18 +16,18 @@ function RightSideChat() {
                 </table>
             </div>
             <div className="row d-flex flex-row align-content-start flex-wrap" style={{ background: "lightskyblue", height: "79.3%", overflowY: "scroll" }}>
-                <div style={{ height: "20%", background: "black", color: "white" }}>M 1</div>
-                <div style={{ height: "20%", background: "black", color: "white" }}>M 2</div>
-                <div style={{ height: "20%", background: "black", color: "white" }}>M 3</div>
-                <div style={{ height: "20%", background: "black", color: "white" }}>M 4</div>
-                <div style={{ height: "20%", background: "black", color: "white" }}>M 5</div>
-                <div style={{ height: "20%", background: "black", color: "white" }}>M 6</div>
+                <MessageRender flag={"0"} data={"omgggggggg bey"}/>
+                <MessageRender flag={"1"} data={"good morningg my friend"}/>
             </div>
             <div className="row d-flex flex-row flex-wrap" style={{ background: "white", height: "8%" }}>
                 <table>
                     <tr>
                         <td style={{ width: "8%", background: "maroon" }}>record</td>
-                        <td style={{ width: "84%", background: "crimson", whiteSpace: "nowrap" }}>message text</td>
+                    
+                        <div class="input-group" style={{ width: "84%", background: "crimson", whiteSpace: "nowrap" }}>
+                            <input type="text" id="user_textbox_input" class="form-control" placeholder="Type your message"></input>
+                            <button class="btn btn-secondary btn-sm">Send</button>
+                        </div>
                     </tr>
                 </table>
             </div>
