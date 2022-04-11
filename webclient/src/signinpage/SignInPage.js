@@ -20,14 +20,17 @@ class SignInPage extends Component {
 
             var userName = document.getElementById("userName").value;
             var userPassword = document.getElementById("pwd").value;
+            var user = this.DbUsers.findUser(userName);
+            //need to add if user is udefine
             document.getElementById('userName').value = '';
             document.getElementById('pwd').value = '';
-            if (this.DbUsers.checkUser(userName, userPassword) !== true) {
+            if (user.getPassword() !== userPassword) {
                 console.log(this.DbUsers);
                 AlertWindow();
+
             }
             else {
-                this.userLogged = this.DbUsers.findUser(userName);
+                this.userLogged = user;
                 this.setState({ isLogged: true });
             }
         };

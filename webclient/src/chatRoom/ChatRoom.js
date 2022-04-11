@@ -7,29 +7,27 @@ import ChatWindowUpper from "../chatWindowUpper/ChatWindowUpper";
 import MessageFromMe from '../messageFromMe/MessageFromMe';
 import MessageFromOther from '../messageFromOther/MessageFromOther';
 import ToolBar from '../toolBar/ToolBar';
+import ChatPreview from '../chatPreview/ChatPreview';
 
 class ChatRoom extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentState: 0,
-            a_chat: "null"
+            current_chat_partner: ""
         }
-        this.currentChat = "null";
+        this.chat_name = "";
         this.userChats = props.User.chats;
         this.dbusers = props.DbUsers;
         this.user = props.User;
+        // debugger;
     }
     render() {
-        const present = () => {
-            if (this.state.a_chat !== "null") {
-                return (
-                    <div class="chat-messages p-4">
-                        <MessageFromMe chat={this.state.a_chat} />
-                        <MessageFromOther chat={this.state.a_chat} />
-                    </div>
-                )
-            }
+        const showChatWindow = () => {
+            return (
+                <div class="chat-messages p-4">
+                    <ChatPreview current_chat_partner={this.state.current_chat_partner} dbUsers={this.dbusers} User={this.user} />
+                </div>
+            )
         }
         return (
             <div class="container-fluid" id="chatRoom">
@@ -47,17 +45,23 @@ class ChatRoom extends Component {
                     <div class="row h-100 g-0" id="sidebar__chats" >
                         <div className="col-4 col-lg-4 col-xl-3 border-right" id="sidebar__chats_scroll">
                             <lu>
-                                {this.userChats.map((chat, key) => {
-                                    return <div onClick={() => { this.currentChat = chat; this.setState({ a_chat: chat }); console.log(this.state.a_chat); }}><ChatItem userChat={chat} User={this.user} DbUsers={this.dbUsers} key={key} /></div>
-                                })}
+                                <div onClick={(event) => { console.log(event.currentTarget); this.setState({ current_chat_partner: "Avitalos" }); }}>
+                                    {< ChatItem userChat={this.userChats["Avitalos"]} User={this.user} DbUsers={this.dbusers} />}
+                                </div>
+                                <div onClick={(event) => { console.log(event.currentTarget); this.setState({ current_chat_partner: "Ronen" }); }}>
+                                    {< ChatItem userChat={this.userChats["Ronen"]} User={this.user} DbUsers={this.dbusers} />}
+                                </div>
+
+                                {/* {this.userChats.map((chat, key) => {
+                                    return <div onClick={() => this.setState({ current_chat_partner: chat.two_user })}><ChatItem userChat={chat} User={this.user} DbUsers={this.dbUsers} key={key} /></div>
+                                })} */}
                             </lu>
+                            {showChatWindow()}
+                            {/* <button onClick={() => { console.log(this.state.current_chat_partner) }}>Check state</button> */}
                         </div>
                         <div className="col-8 col-lg-8 col-xl-9 position-relative chat-window-all">
-                            {present()}
-
-                            {/* <div className="col align-self-end" style={{ background: "yellow", paddingBottom: "1%" }}>
-                                    ghm
-                            </div> */}
+                            <div class="chat-messages p-4">
+                            </div>
                             <div class="flex-grow-1 d-flex py-2 px-3 border-buttom align-items-center chat-window-text-box">
                                 <div className='sending-options px-3'>
                                     <button type="button" class="btn btn-secondary btn-sm" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
@@ -74,7 +78,7 @@ class ChatRoom extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
             </div >
         )
     }

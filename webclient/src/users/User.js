@@ -4,7 +4,7 @@ class User {
         this.nick_name = nick_name;
         this.password = password;
         this.img_url = img_url;
-        this.chats = [];
+        this.chats = {};
     }
     doesMe(user_name, password) {
         if (this.user_name === user_name && this.password === password) {
@@ -15,9 +15,12 @@ class User {
     printName() {
         console.log(this.user_name);
     }
-    addChat(chat) {
-        this.chats.push(chat);
+    getPassword() {
+        return this.password;
     }
+    // addChat(chat, name) {
+    //     this.chat[name] = chat;
+    // }
 }
 
 export default User;

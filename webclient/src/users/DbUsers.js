@@ -14,14 +14,15 @@ class DbUsers {
         const d = new Date();
         var current = new Date();
 
-        this.db = [
-            new User("Omer", "scrum master", "123", omerphoto),
-            new User("Avital", "Avitalos", "123", avitalphoto),
-            new User("Ron", "Ronen", "123", ronphoto),
-            new User("Niv", "NivNah", "123", nivphoto),
-            new User("Dvir", "Dviri", "123", dvitphoto),
-            new User("David", "King", "123", davidphoto),
-        ];
+        this.db = {
+            "Omer": new User("Omer", "scrum master", "123", omerphoto),
+            "Avital": new User("Avital", "Avitalos", "123", avitalphoto),
+            "Ron": new User("Ron", "Ronen", "123", ronphoto),
+            "Niv": new User("Niv", "NivNah", "123", nivphoto),
+            "Dvir": new User("Dvir", "Dviri", "123", dvitphoto),
+            "David": new User("David", "King", "123", davidphoto)
+
+        }
         //creating chats between Omer to all parties
         var chat_one = new Chat("scrum master", "Avitalos", omerphoto, avitalphoto);
         var chat_two = new Chat("scrum master", "Ronen", omerphoto, ronphoto);
@@ -37,11 +38,13 @@ class DbUsers {
         chat_five.addMessage("King", new Message("text", "How are you? Maybe well go to drink coffe sometimes", current));
 
         //add chats to user
-        this.db[0].addChat(chat_one);
-        this.db[0].addChat(chat_two);
-        this.db[0].addChat(chat_three);
-        this.db[0].addChat(chat_four);
-        this.db[0].addChat(chat_five);
+        this.db["Omer"].chats["Avitalos"] = chat_one;
+        this.db["Omer"].chats["Ronen"] = chat_two;
+
+        // this.db["Omer"].addChat(chat_two, "Ronen");
+        // this.db["Omer"].addChat(chat_three, "NivNah");
+        // this.db["Omer"].addChat(chat_four, "Dviri");
+        // this.db["Omer"].addChat(chat_five, "King");
     }
 
     addUser(user) {
@@ -61,12 +64,7 @@ class DbUsers {
         }
     }
     findUser(user_name) {
-        for (var i = 0; i < this.db.length; i++) {
-            if (this.db[i].user_name === user_name) {
-                return this.db[i];
-            }
-        }
-        return null;
+        return this.db[user_name];
     }
     findUserByNickname(nickname) {
         for (var i = 0; i < this.db.length; i++) {

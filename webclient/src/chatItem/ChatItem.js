@@ -26,10 +26,10 @@ class ChatItem extends Component {
     // </div>
     // </div>
 
-    render() {      
+    render() {
         return (
             <div className="chat__item">
-                <a href="/#" class="list-group-item list-group-item-action border-0">
+                <a class="list-group-item list-group-item-action border-0">
                     <div className="containter-fluid">
                         <div className="row">
                             <div className="px-2 col-2 d-flex align-items-center">

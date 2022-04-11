@@ -7,6 +7,7 @@ class Chat {
         this.last_message = "";
         this.one_user_photo = one_user_photo;
         this.second_user_photo = second_user_photo;
+        this.number = 0;
 
     }
     addMessage(user_name, message) {

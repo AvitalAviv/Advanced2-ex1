@@ -7,15 +7,17 @@ import MessageMe from '../messageFromMe/MessageMe';
 class MessageFromMe extends Component {
     constructor(props) {
         super(props);
-        this.chat = props.chat;
-        debugger;
-        this.name = null;
+        this.state = {
+            chat_partner: props.current_chat_partner
+        }
+        this.user = props.User;
+        this.dbUsers = props.dbUsers;
     }
     render() {
         return (
             <div>
-                {this.chat.one_user_message.map((message, key) => {
-                    return <MessageMe time={message.time} name={this.chat.two_user} value={message.value} key={key} />
+                {this.dbUsers[this.user.name][this.state.chat_partner].map((message, key) => {
+                    return <MessageMe time={message.time} name={this.user.name} value={message.value} key={key} />
                 })}
             </div>
 

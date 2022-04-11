@@ -6,8 +6,11 @@ import MessageOther from './MessageOther';
 class MessageFromOther extends Component {
     constructor(props) {
         super(props);
-        this.chat = props.chat;
-        this.name = null;
+        this.state = {
+            chat_partner: props.current_chat_partner
+        }
+        this.user = props.User;
+        this.dbUsers = props.dbUsers;
     }
 
     render() {
