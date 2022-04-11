@@ -1,0 +1,14 @@
+.chat-message-left {
+    display: flex;
+    flex-shrink: 0;
+    margin-right: auto;
+}
+
+.user_message_name {
+    
+}
+
+.user_message_value {
+
+}
+
