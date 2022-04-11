@@ -18,9 +18,6 @@ class User {
     getPassword() {
         return this.password;
     }
-    // addChat(chat, name) {
-    //     this.chat[name] = chat;
-    // }
 }
 
 export default User;
