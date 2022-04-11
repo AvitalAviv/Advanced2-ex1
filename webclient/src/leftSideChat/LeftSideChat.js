@@ -3,8 +3,8 @@ import "./LeftSideChat.css"
 import React from 'react'
 import ChatItem from '../chatItem/ChatItem';
 
-function LeftSideChat() {
-    return(
+function LeftSideChat({ User, DbUsers, setSelected }) {
+    return (
         <div className="col-4 container d-flex flex-column" style={{ background: "lightblue" }}>
             <div className="row d-flex flex-row" style={{ background: "white", height: "14.6%" }}>
                 <table>
@@ -16,16 +16,17 @@ function LeftSideChat() {
                 </table>
             </div>
             <div className="row d-flex align-content-start" style={{ background: "pink", height: "100%", overflowY: "scroll" }}>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                <ChatItem/>
-                </div>
+                <ChatItem />
+                <ChatItem />
+                <ChatItem />
+                <ChatItem />
+                <ChatItem />
+                <ChatItem />
+                <ChatItem />
+                <ChatItem />
+                <ChatItem />
+            </div>
+
         </div>
     );
 }
