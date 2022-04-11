@@ -1,0 +1,25 @@
+#side_bar_last_message {
+    font-size: 80%;
+}
+
+#image__chat__item{
+    align-content: center;
+}
+
+#image__chat__item {
+   
+}
+
+
+#side_bar_time {
+    font-size: 70%;
+    color: solid lightslategray;
+}
+
+.side-bar-image {
+    align-content: center;
+}
+
+.rounded-circle {
+    clip-path: circle();
+}

@@ -1,6 +1,7 @@
 import { Component, useState } from 'react';
 import "./LeftSideChat.css"
 import React from 'react'
+import ChatItem from '../chatItem/ChatItem';
 
 function LeftSideChat() {
     return(
@@ -14,13 +15,16 @@ function LeftSideChat() {
                     </tr>
                 </table>
             </div>
-            <div className="row d-flex align-content-start flex-wrap" style={{ background: "pink", height: "100%", overflowY: "scroll" }}>
-                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 1</div>
-                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 2</div>
-                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 3</div>
-                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 4</div>
-                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 5</div>
-                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 6</div>
+            <div className="row d-flex align-content-start" style={{ background: "pink", height: "100%", overflowY: "scroll" }}>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
                 </div>
         </div>
     );
