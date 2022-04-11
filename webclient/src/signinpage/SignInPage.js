@@ -51,7 +51,7 @@ class SignInPage extends Component {
             return (<ChatRoom DbUsers={this.DbUsers} User={this.userLogged} />);
         }
         return (
-            <div className="wrapper">
+            <div className="wrapper sign-in-page">
                 <div className="logo"> <img src={logo} alt=""></img> </div>
                 <div className="text-center mt-4 name" id='Headline'> TalkToMe </div>
                 <form className="p-3 mt-3" onSubmit={dbChecker}>

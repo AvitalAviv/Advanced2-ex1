@@ -4,7 +4,7 @@ import logo from '../logo.png';
 
 function about(){
     return (
-        <div className="wrapper">
+        <div className="wrapper wrapper-about">
                 <div className="logo"> <img src={logo} alt=""></img> </div>
                 <div className="text-center mt-4 name"> TalkToMe </div>
                 <div> <center><h3>Advanced programming 2</h3><br></br>
