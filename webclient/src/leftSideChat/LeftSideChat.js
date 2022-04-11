@@ -15,12 +15,12 @@ function LeftSideChat() {
                 </table>
             </div>
             <div className="row d-flex align-content-start flex-wrap" style={{ background: "pink", height: "100%", overflowY: "scroll" }}>
-                    <div style={{ height: "20%", background: "black", color: "white" }}>Block 1</div>
-                    <div style={{ height: "20%", background: "black", color: "white" }}>Block 2</div>
-                    <div style={{ height: "20%", background: "black", color: "white" }}>Block 3</div>
-                    <div style={{ height: "20%", background: "black", color: "white" }}>Block 4</div>
-                    <div style={{ height: "20%", background: "black", color: "white" }}>Block 5</div>
-                    <div style={{ height: "20%", background: "black", color: "white" }}>Block 6</div>
+                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 1</div>
+                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 2</div>
+                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 3</div>
+                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 4</div>
+                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 5</div>
+                    <div style={{ height: "15%", background: "black", color: "white" }}>Block 6</div>
                 </div>
         </div>
     );
