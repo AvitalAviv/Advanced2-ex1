@@ -6,7 +6,7 @@ import ChatItem from '../chatItem/ChatItem';
 function LeftSideChat() {
     return(
         <div className="col-4 container d-flex flex-column" style={{ background: "lightblue" }}>
-            <div className="row d-flex flex-row" style={{ background: "white", height: "14.6%" }}>
+            <div className="row d-flex flex-row" style={{ background: "white", height: "12.7%" }}>
                 <table>
                     <tr>
                         <td style={{ width: "22%", background: "orange" }}>image</td>
@@ -15,7 +15,7 @@ function LeftSideChat() {
                     </tr>
                 </table>
             </div>
-            <div className="row d-flex align-content-start" style={{ background: "pink", height: "100%", overflowY: "scroll" }}>
+            <div className="row align-self-end d-flex" style={{ background: "pink", height: "87.2%", width: "100%", marginTop:"20.5%", overflowY: "scroll",position:"absolute", maxHeight: "100%"}}>
                 <ChatItem/>
                 <ChatItem/>
                 <ChatItem/>
@@ -25,7 +25,23 @@ function LeftSideChat() {
                 <ChatItem/>
                 <ChatItem/>
                 <ChatItem/>
-                </div>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>                <ChatItem/>
+                <ChatItem/>
+                <ChatItem/>
+            </div>
         </div>
     );
 }
