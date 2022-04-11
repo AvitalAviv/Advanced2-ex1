@@ -10,6 +10,7 @@ class ToolBar extends Component {
         super(props);
     }
 
+    
     render() {
 
         const popover = (
