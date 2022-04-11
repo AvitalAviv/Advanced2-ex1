@@ -3,7 +3,7 @@ import "./LeftSideChat.css"
 import React from 'react'
 import ChatItem from '../chatItem/ChatItem';
 
-function LeftSideChat({ User, DbUsers, setSelected }) {
+function LeftSideChat(props) {
     return (
         <div className="col-4 container d-flex flex-column" style={{ background: "lightblue" }}>
             <div className="row d-flex flex-row" style={{ background: "white", height: "14.6%" }}>
@@ -16,15 +16,8 @@ function LeftSideChat({ User, DbUsers, setSelected }) {
                 </table>
             </div>
             <div className="row d-flex align-content-start" style={{ background: "pink", height: "100%", overflowY: "scroll" }}>
-                <ChatItem />
-                <ChatItem />
-                <ChatItem />
-                <ChatItem />
-                <ChatItem />
-                <ChatItem />
-                <ChatItem />
-                <ChatItem />
-                <ChatItem />
+                <button id="Ronen"><ChatItem chat={props.DbUsers.db["Omer"].chats["Ronen"]} setSelected={props.setSelected} /></button>
+                <button id="Avitalos"><ChatItem chat={props.DbUsers.db["Omer"].chats["Avitalos"]} setSelected={props.setSelected} /></button>
             </div>
 
         </div>

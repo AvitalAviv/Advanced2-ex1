@@ -31,16 +31,16 @@ class DbUsers {
         var chat_five = new Chat("Omer", "King", omerphoto, davidphoto);
 
         //add messages to chat
-        chat_one.addMessage("scrum master", new Message("text", "Naama!", current));
-        chat_two.addMessage("Ronen", new Message("audio", "path", current));
-        chat_three.addMessage("NivNah", new Message("image", "C:\Users\omera\OneDrive - Bar-Ilan University\Desktop\advance programming\Advanced2-ex1\webclient\src\signuppage\logo.png", current));
-        chat_four.addMessage("Dviri", new Message("video", "path", current));
-        chat_five.addMessage("King", new Message("text", "How are you? Maybe well go to drink coffe sometimes", current));
+        chat_one.addMessage(new Message("Avitalos", "text", "Naama!", current));
+        chat_two.addMessage(new Message("Ronen", "audio", "path", current));
+        chat_three.addMessage(new Message("NivNah", "image", "C:\Users\omera\OneDrive - Bar-Ilan University\Desktop\advance programming\Advanced2-ex1\webclient\src\signuppage\logo.png", current));
+        chat_four.addMessage(new Message("Dviri", "video", "path", current));
+        chat_five.addMessage(new Message("King", "text", "How are you? Maybe well go to drink coffe sometimes", current));
 
         //add chats to user
         this.db["Omer"].chats["Avitalos"] = chat_one;
+        this.db["Avital"].chats["scruem master"] = chat_one;
         this.db["Omer"].chats["Ronen"] = chat_two;
-
         // this.db["Omer"].addChat(chat_two, "Ronen");
         // this.db["Omer"].addChat(chat_three, "NivNah");
         // this.db["Omer"].addChat(chat_four, "Dviri");
