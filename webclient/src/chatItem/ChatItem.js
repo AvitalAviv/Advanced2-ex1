@@ -5,7 +5,7 @@ import logo from '../chatItem/logo.png';
 
 function ChatItem(props) {
     let chat = props.chat;
-    
+
     //{this.userChat.getLastMessage().time.getHours() + ":" + this.userChat.getLastMessage().time.getMinutes()}
     // {this.userChat.getLastMessage().getMessageForRevirew()}
     //{this.userChat.getLastMessage().getMessageForRevirew()}
@@ -22,7 +22,7 @@ function ChatItem(props) {
                                 <div className="col-8 d-flex align-items-center">
                                     <h6 class="flex-grow-1" id="side_bar_room_name">{chat.two_user}</h6>
                                 </div>
-                                <div className="col-4 d-flex align-items-center">
+                                <div className="col-4 d-flex align-items-center" >
                                     <div class="flex-grow-1" id="side_bar_time"> {chat.getLastMessage().time.getHours() + ":" + chat.getLastMessage().time.getMinutes()} </div>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@ function ChatItem(props) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 export default ChatItem;
