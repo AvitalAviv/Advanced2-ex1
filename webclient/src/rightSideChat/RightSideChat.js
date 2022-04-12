@@ -7,11 +7,12 @@ import Message from '../users/message/Message';
 
 function RightSideChat(props) {
     let current_chat = props.selected;
-    debugger;
     const SendText = (event) => {
         var input = document.getElementById("user-input-textbox").value;
         document.getElementById("user-input-textbox").value = "";
-        props.selected.addMessage(new Message(props.User.nick_name, "text", input, new Date()));
+        var current = new Date();
+        var time_now = current.getHours() + ':' + current.getMinutes();
+        props.selected.addMessage(new Message(props.User.nick_name, "text", input, time_now));
         props.setSelected(props.selected);
         // console.log(input);
     }
@@ -28,6 +29,11 @@ function RightSideChat(props) {
                 </table>
             </div>
             <div className="row d-flex flex-row align-content-start flex-wrap" style={{ background: "lightskyblue", height: "79.3%", overflowY: "scroll" }}>
+                {current_chat.messages.map((message, key) => {
+                    return (
+                        <MessageRender message={message} key={key} User={props.User} />
+                    )
+                })}
                 {/* <MessageRender flag={"0"} data={"omgggggggg bey"}/>
                 <MessageRender flag={"1"} data={"good morningg my friend"}/> */}
 
