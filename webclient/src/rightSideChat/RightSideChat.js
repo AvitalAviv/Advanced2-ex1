@@ -6,6 +6,9 @@ import Message from '../users/message/Message';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 import Chat from '../users/chat/Chat';
+import ImageInput from './ImageInput';
+import VideoInput from './VideoInput';
+import VoiceInput from './VoiceInput';
 
 
 function RightSideChat(props) {
@@ -34,12 +37,15 @@ function RightSideChat(props) {
 
     const popover = (
         <Popover rootClose id="popover-basic">
-            <Popover.Body>
-                <div class="btn-group" role="group" aria-label="...">
-                    <div class="btn-group" role="group" aria-label="..." width="100%">
-                        hello
-                    </div>
+          <Popover.Body>
+            <div class="btn-group" role="group" aria-label="...">
+                <div class="btn-group" role="group" aria-label="..." width="100%">
+
+                    <VideoInput/>
+                    <VoiceInput/>
+                    <ImageInput/>
                 </div>
+            </div>
             </Popover.Body>
         </Popover>
     );
@@ -56,7 +62,7 @@ function RightSideChat(props) {
 
     return (
         <div className="col-8 container d-flex flex-column" style={{ background: "black", color: "white" }}>
-            <div className="row d-flex flex-row" style={{ background: "lightsalmon", height: "11.3%" }}>
+            <div className="row d-flex flex-row" style={{ background: "lightsalmon", height: "12.7%" }}>
                 <table>
                     <tr>
                         <img src={photo_preview} style={{ width: "20%", background: "hotpink" }}></img>
@@ -65,6 +71,7 @@ function RightSideChat(props) {
                     </tr>
                 </table>
             </div>
+            
             <div className="row d-flex flex-row align-content-start flex-wrap" style={{ background: "lightskyblue", height: "79.3%", overflowY: "scroll" }}>
                 {current_chat.messages.map((message, key) => {
                     return (
@@ -72,6 +79,7 @@ function RightSideChat(props) {
                     )
                 })}
             </div>
+
             <div className="row d-flex flex-row flex-wrap" style={{ background: "white" }}>
                 <table>
                     <tr>
