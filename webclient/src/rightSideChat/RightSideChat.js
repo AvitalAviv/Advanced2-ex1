@@ -13,7 +13,7 @@ function RightSideChat(props) {
         var current = new Date();
         var time_now = current.getHours() + ':' + current.getMinutes();
         props.selected.addMessage(new Message(props.User.nick_name, "text", input, time_now));
-        props.setSelected(props.selected);
+        props.setSelected(props.selected.concat([]));
         // console.log(input);
     }
 
@@ -34,9 +34,6 @@ function RightSideChat(props) {
                         <MessageRender message={message} key={key} User={props.User} />
                     )
                 })}
-                {/* <MessageRender flag={"0"} data={"omgggggggg bey"}/>
-                <MessageRender flag={"1"} data={"good morningg my friend"}/> */}
-
             </div>
             <div className="row d-flex flex-row flex-wrap" style={{ background: "white" }}>
                 <table>
