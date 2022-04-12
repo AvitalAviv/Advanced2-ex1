@@ -9,17 +9,17 @@ function LeftSideChat(props) {
             <div className="row d-flex flex-row" style={{ background: "white", height: "12.7%" }}>
                 <table>
                     <tr>
-                        <td style={{ width: "22%", background: "orange" }}>image</td>
-                        <td style={{ width: "55%", background: "purple" }}>user name</td>
+                        <img src={props.User.img_url} style={{ width: "22%", background: "orange" }}></img>
+                        <td style={{ width: "55%", background: "purple" }}>{props.User.nick_name}</td>
                         <td style={{ width: "12%", background: "yellow" }}>icon</td>
                     </tr>
                 </table>
             </div>
             <div className="row d-flex align-content-start" style={{ background: "pink", height: "100%", overflowY: "scroll" }}>
-                <button id="Ronen"><ChatItem chat={props.DbUsers.db["Omer"].chats["Ronen"]} setSelected={props.setSelected} /></button>
-                <button id="Avitalos"><ChatItem chat={props.DbUsers.db["Omer"].chats["Avitalos"]} setSelected={props.setSelected} /></button>
+                <button id="Avitalos" onClick={(e) => props.setSelected(props.DbUsers.db["Omer"].chats["Avitalos"])} > <ChatItem chat={props.DbUsers.db["Omer"].chats["Avitalos"]} setSelected={props.setSelected} /></button>
+                <button id="Ronen" onClick={(e) => props.setSelected(props.DbUsers.db["Omer"].chats["Ronen"])}><ChatItem chat={props.DbUsers.db["Omer"].chats["Ronen"]} setSelected={props.setSelected} /></button>
             </div>
-        </div>
+        </div >
     );
 }
 export default LeftSideChat;
