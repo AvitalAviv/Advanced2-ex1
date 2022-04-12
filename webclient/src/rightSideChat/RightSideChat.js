@@ -7,7 +7,6 @@ import Message from '../users/message/Message';
 
 function RightSideChat(props) {
     let current_chat = props.selected;
-    debugger;
     const SendText = (event) => {
         var input = document.getElementById("user-input-textbox").value;
         document.getElementById("user-input-textbox").value = "";
