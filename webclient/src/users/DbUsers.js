@@ -42,7 +42,7 @@ class DbUsers {
 
         //add chats to user
         this.db["Omer"].chats["Avitalos"] = chat_one;
-        this.db["Avital"].chats["scruem master"] = chat_one;
+        this.db["Avital"].chats["scrum master"] = chat_one;
         this.db["Omer"].chats["Ronen"] = chat_two;
         // this.db["Omer"].addChat(chat_two, "Ronen");
         // this.db["Omer"].addChat(chat_three, "NivNah");
