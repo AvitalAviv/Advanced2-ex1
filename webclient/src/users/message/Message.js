@@ -4,7 +4,6 @@ class Message {
         this.value = value;
         this.time = time;
         this.nick_name = nick_name;
-
     }
     getType() {
         return this.type;

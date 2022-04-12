@@ -15,6 +15,8 @@ class DbUsers {
         var current = new Date();
 
         this.db = {
+            //key user(me), value - user (object).
+            //in the user - chat is a field.
             "Omer": new User("Omer", "scrum master", "123", omerphoto),
             "Avital": new User("Avital", "Avitalos", "123", avitalphoto),
             "Ron": new User("Ron", "Ronen", "123", ronphoto),
