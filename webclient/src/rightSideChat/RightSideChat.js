@@ -13,7 +13,6 @@ function RightSideChat(props) {
         document.getElementById("user-input-textbox").value = "";
         props.selected.addMessage(new Message(props.User.nick_name, "text", input, new Date()));
         props.setSelected(props.selected);
-        debugger;
         // console.log(input);
     }
 
@@ -36,14 +35,11 @@ function RightSideChat(props) {
             <div className="row d-flex flex-row flex-wrap" style={{ background: "white" }}>
                 <table>
                     <tr>
-
-                        <td style={{ background: "maroon" }}>record</td>
-
+                        <td style={{ width: "8%", background: "maroon" }}>record</td>
                         <div class="input-group flex-row px-2 py-1" style={{ background: "crimson", whiteSpace: "nowrap" }}>
                             <input id="user-input-textbox" type="text" class="form-control" placeholder="Type your message..."></input>
                             <button onClick={(event) => { SendText(event) }} class="btn btn-secondary btn-sm">Send</button>
                         </div>
-                        <td style={{ width: "8%", background: "maroon" }}>record</td>
                     </tr>
                 </table>
             </div>
