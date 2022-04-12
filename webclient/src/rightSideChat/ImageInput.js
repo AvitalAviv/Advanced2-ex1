@@ -1,14 +1,19 @@
 import React, { Component , useState } from 'react';
 import { Modal, Form , Button } from 'react-bootstrap';
+import Message from '../users/message/Message';
 
-function ImageInput() {
+function ImageInput(props) {
     const [show, setShow] = useState(false);
-  
+    const [imageURL, setImageURL] = useState("null");
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const ClickImage = () => {
-        console.log("123");
+    const ClickImage = (event) => {
+        setShow(false);
+        var image = document.getElementById('image-user-input').files[0].name;
+        //image.src = URL.createObjectURL(event.target.files[0]);
+        console.log(image);
+        debugger;
     }
 
     return (
@@ -25,8 +30,8 @@ function ImageInput() {
             <Modal.Body>
                 <form>
                     <div class="form-group align-items-center d-flex">
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1"></input>
-                        <button type="submit" onClick={ClickImage} class="btn btn-secondary">Submit</button>
+                        <input type="file" id="image-user-input" class="form-control-file" accept="image/*"></input>
+                        <button type="button" onClick={ClickImage} class="btn btn-secondary">Submit</button>
                     </div>
                 </form>
             </Modal.Body>

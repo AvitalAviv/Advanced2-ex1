@@ -68,7 +68,7 @@ class SignUp extends Component {
             <input type="password" name="password2" id="password2" placeholder="repeat password"></input></div>
           <div>choose your profile image</div>
 
-          <label class="file"><input type="file" id="file" aria-label="File browser example"></input>
+          <label class="file"><input type="file" accept="image/*" id="file" aria-label="File browser example"></input>
 
             <span class="file-custom"></span></label>
           <br></br>

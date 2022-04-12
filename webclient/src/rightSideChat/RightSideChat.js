@@ -12,7 +12,6 @@ import VoiceInput from './VoiceInput';
 
 
 function RightSideChat(props) {
-    debugger;
     let user = props.User;
     let current_chat = props.selected[0];
     let photo_preview = current_chat.second_user_photo;
@@ -40,10 +39,9 @@ function RightSideChat(props) {
           <Popover.Body>
             <div class="btn-group" role="group" aria-label="...">
                 <div class="btn-group" role="group" aria-label="..." width="100%">
-
                     <VideoInput/>
                     <VoiceInput/>
-                    <ImageInput/>
+                    <ImageInput User={props.User} selected={props.selected[0]}/>
                 </div>
             </div>
             </Popover.Body>
