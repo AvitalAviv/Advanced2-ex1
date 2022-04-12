@@ -66,21 +66,11 @@ class DbUsers {
         }
         return false;
     }
-    printDb() {
-        for (var i = 0; i < this.db.length; i++) {
-            console.log(this.db[i].user_name);
-        }
-    }
+
     findUser(user_name) {
         return this.db[user_name];
     }
-    findUserByNickname(nickname) {
-        for (var i = 0; i < this.db.length; i++) {
-            if (this.db[i].nick_name === nickname) {
-                return true;
-            }
-        }
-        //display error
+    findUserByName(name) {
         return false;
     }
 }

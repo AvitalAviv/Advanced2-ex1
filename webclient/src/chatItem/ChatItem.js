@@ -12,6 +12,13 @@ function ChatItem(props) {
         nick_name_preview = chat.one_user;
         photo_preview = chat.one_user_photo;
     }
+    // var chat_last_message_time = chat.last_message.time
+    var chat_last_message_time = "";
+    var message_for_review = "";
+    if (chat.last_message) {
+        chat_last_message_time = chat.last_message.time;
+        message_for_review = chat.last_message.getMessageForRevirew();
+    }
     //{this.userChat.getLastMessage().time.getHours() + ":" + this.userChat.getLastMessage().time.getMinutes()}
     // {this.userChat.getLastMessage().getMessageForRevirew()}
     //{this.userChat.getLastMessage().getMessageForRevirew()}
@@ -29,11 +36,11 @@ function ChatItem(props) {
                                     <h6 class="flex-grow-1" id="side_bar_room_name">{nick_name_preview}</h6>
                                 </div>
                                 <div className="col-4 d-flex align-items-center" >
-                                    <div class="flex-grow-1" id="side_bar_time"> {chat.last_message.time} </div>
+                                    <div class="flex-grow-1" id="side_bar_time"> {chat_last_message_time} </div>
                                 </div>
                             </div>
                             <div className="row">
-                                <div class="flex-grow-1" id="side_bar_last_message">{chat.last_message.getMessageForRevirew()}</div>
+                                <div class="flex-grow-1" id="side_bar_last_message">{message_for_review}</div>
                             </div>
                         </div>
                     </div>
