@@ -54,6 +54,7 @@ class DbUsers {
         // this.db["Omer"].addChat(chat_five, "King");
     }
 
+    //need to check again   
     addUser(user) {
         this.db.push(user);
     }
