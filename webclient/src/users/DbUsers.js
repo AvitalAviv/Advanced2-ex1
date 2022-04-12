@@ -41,9 +41,13 @@ class DbUsers {
         chat_five.addMessage(new Message("King", "text", "How are you? Maybe well go to drink coffe sometimes", time_now));
 
         //add chats to user
-        this.db["Omer"].chats["Avitalos"] = chat_one;
-        this.db["Avital"].chats["scruem master"] = chat_one;
-        this.db["Omer"].chats["Ronen"] = chat_two;
+        this.db["Omer"].chats.set("Avitalos", chat_one);
+        this.db["Avital"].chats.set("scrum master", chat_one);
+        this.db["Omer"].chats.set("Ronen", chat_two);
+
+        // this.db["scrum master"].chats["Avitalos"] = chat_one;
+        // this.db["Avital"].chats["scrum master"] = chat_one;
+        // this.db["scrum master"].chats["Ronen"] = chat_two;
         // this.db["Omer"].addChat(chat_two, "Ronen");
         // this.db["Omer"].addChat(chat_three, "NivNah");
         // this.db["Omer"].addChat(chat_four, "Dviri");

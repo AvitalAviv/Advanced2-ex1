@@ -7,7 +7,6 @@ function MessageRender(props) {
     if (props.message.nick_name === props.User.nick_name) {
         flag = true;
     }
-    debugger;
     if (flag) {
         return (
             <div class="chat-message-right pb-4">

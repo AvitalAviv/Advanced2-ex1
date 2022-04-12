@@ -6,7 +6,16 @@ import Message from '../users/message/Message';
 
 
 function RightSideChat(props) {
+    debugger;
+
+    let user = props.User;
     let current_chat = props.selected;
+    let photo_preview = current_chat.second_user_photo;
+    let nick_name_preview = current_chat.two_user;
+    if (user.nick_name === nick_name_preview) {
+        photo_preview = current_chat.one_user_photo;
+        nick_name_preview = current_chat.one_user;
+    }
     const SendText = (event) => {
         var input = document.getElementById("user-input-textbox").value;
         document.getElementById("user-input-textbox").value = "";
@@ -22,8 +31,8 @@ function RightSideChat(props) {
             <div className="row d-flex flex-row" style={{ background: "lightsalmon", height: "12.7%" }}>
                 <table>
                     <tr>
-                        <img src={current_chat.second_user_photo} style={{ width: "20%", background: "hotpink" }}></img>
-                        <td style={{ width: "70%", background: "darkseagreen" }}>{current_chat.two_user}</td>
+                        <img src={photo_preview} style={{ width: "20%", background: "hotpink" }}></img>
+                        <td style={{ width: "70%", background: "darkseagreen" }}>{nick_name_preview}</td>
                         {/* <td style={{ width: "10%", background: "cadetblue" }}>icon</td> */}
                     </tr>
                 </table>
