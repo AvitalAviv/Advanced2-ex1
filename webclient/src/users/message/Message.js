@@ -9,6 +9,12 @@ class Message {
         return this.type;
     }
     getValue() {
+        if (this.type === "text") {
+            return <div>{this.value}</div>
+        }
+        if (this.type === "image") {
+            return <img src={this.value} alt="Responsive image" class="img-thumbnail"></img>
+        }
         return this.value;
     }
     getMessageForRevirew() {
@@ -21,7 +27,9 @@ class Message {
         if (this.type === "audio") {
             return "audio";
         }
-        return "photo";
+        if (this.type === "video") {
+            return "video"
+        }
     }
     getMessageSender() {
         return this.sender;
