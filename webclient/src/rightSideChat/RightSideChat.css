@@ -10,4 +10,5 @@
 
   .chat-background {
       background-image: URL(https://i.pinimg.com/564x/8d/12/a5/8d12a5b5d5333d6695d86f3917976ac1.jpg);
+      background-repeat: no-repeat;
   }

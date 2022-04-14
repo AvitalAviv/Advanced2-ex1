@@ -16,6 +16,7 @@ function ImageInput(props) {
         props.selected.messages.push(new_message);
         props.setSelected([props.selected].concat([]));
         setShow(false);
+        debugger;
     }
 
     return (

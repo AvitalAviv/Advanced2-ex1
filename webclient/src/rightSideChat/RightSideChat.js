@@ -41,7 +41,7 @@ function RightSideChat(props) {
                 <div class="btn-group" role="group" aria-label="...">
                     <div class="btn-group" role="group" aria-label="..." width="100%">
                         <VideoInput />
-                        <VoiceInput />
+                        <VoiceInput User={props.User} selected={props.selected[0]} setSelected={props.setSelected}/>
                         <ImageInput User={props.User} selected={props.selected[0]} setSelected={props.setSelected} />
                     </div>
                 </div>
@@ -71,7 +71,7 @@ function RightSideChat(props) {
                 </table>
             </div>
 
-            <div className="row d-flex flex-row align-content-start flex-wrap chat-background" style={{ height: "81%", overflowY: "scroll" }}>
+            <div className="row d-flex flex-row align-content-start flex-wrap chat-background" style={{ height: "81%", overflowY: "scroll", paddingTop:"1%"}}>
                 {current_chat.messages.map((message, key) => {
                     return (
                         <MessageRender message={message} key={key} User={props.User} />

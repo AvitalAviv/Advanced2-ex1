@@ -15,6 +15,10 @@ class Message {
         if (this.type === "image") {
             return <img src={this.value} alt="Responsive image" class="img-thumbnail"></img>
         }
+        if (this.type === "audio") {
+            return <audio controls src={this.value} ></audio>
+            
+        }
         return this.value;
     }
     getMessageForRevirew() {
