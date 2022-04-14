@@ -22,8 +22,9 @@ class User {
     }
     //search the chat with the other user name
     searchChat(other_user_name) {
+        debugger;
         for (var i = 0; i < this.chats.length; i++) {
-            if (this.chats[i].two_user === other_user_name) {
+            if (this.chats[i].two_user === other_user_name || this.chats[i].one_user === other_user_name) {
                 return true;
             }
         }
