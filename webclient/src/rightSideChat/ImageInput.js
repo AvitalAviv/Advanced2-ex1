@@ -10,9 +10,8 @@ function ImageInput(props) {
 
     const ClickImage = (event) => {
         setShow(false);
-        var image = document.getElementById('image-user-input').files[0].name;
-        //image.src = URL.createObjectURL(event.target.files[0]);
-        console.log(image);
+        // var image = document.getElementById('image-user-input').files[0].name;
+        setImageURL(URL.createObjectURL(event.target.files[0]));
         debugger;
     }
 
