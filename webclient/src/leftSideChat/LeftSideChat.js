@@ -6,17 +6,26 @@ import { Modal } from 'react-bootstrap';
 import { Alert } from 'bootstrap';
 import Chat from '../users/chat/Chat';
 
+/**
+ * left side of the chat room - including all the chat items components and add chat button
+ * @param {database,user} props 
+ * @returns 
+ */
 function LeftSideChat(props) {
-    // debugger;
     const [show, setShow] = useState(false);
 
+    /**
+     * 
+     * @returns new chat item component
+     */
     const handleModalClick = () => {
-        debugger;
         var input_nick_name = document.getElementById("nick_name_other").value;
         var other_user = props.DbUsers.db.get(input_nick_name);
+
         //check if user in db and it's not myself
         if (other_user && props.User.user_name !== input_nick_name) {
             var input_user_name = props.DbUsers.user_nickname_db.get(input_nick_name);
+            //search the chat in the user chats, if exist - do nothing.
             if (props.DbUsers.db.get(props.User.user_name).searchChat(input_user_name)) {
                 setShow(false);
                 return;
@@ -34,6 +43,7 @@ function LeftSideChat(props) {
     const hideModule = () => {
         setShow(false);
     }
+    //get the chats from the db
     var chats = props.DbUsers.db.get(props.User.user_name).chats;
     return (
         <div className="col-4 container d-flex flex-column" style={{ background: "lightblue", minHeight: "70%" }}>

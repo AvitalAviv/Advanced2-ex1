@@ -2,6 +2,11 @@ import React, { Component, useState } from 'react';
 import { Modal, Form, Button } from 'react-bootstrap';
 import Message from '../users/message/Message';
 
+/**
+ * video option sending function
+ * @param {user,db} props 
+ * @returns - new video message
+ */
 function VideoInput(props) {
     const [show, setShow] = useState(false);
 
@@ -9,6 +14,7 @@ function VideoInput(props) {
     const handleShow = () => setShow(true);
     var video_url = "null";
 
+    //add the video message to the current chat db
     const ClickVideo = () => {
         var current = new Date();
         var time_now = current.getHours() + ':' + current.getMinutes();

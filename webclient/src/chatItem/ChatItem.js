@@ -2,7 +2,11 @@ import { Component, useState } from 'react';
 import "./ChatItem.css"
 import React from 'react'
 import logo from '../chatItem/logo.png';
-
+/**
+ * chat item.
+ * @param {user, chat} props 
+ * @returns - return chat item component.
+ */
 function ChatItem(props) {
     let chat = props.chat;
     let user = props.User;
@@ -12,16 +16,12 @@ function ChatItem(props) {
         nick_name_preview = chat.one_user;
         photo_preview = chat.one_user_photo;
     }
-    // var chat_last_message_time = chat.last_message.time
     var chat_last_message_time = "";
     var message_for_review = "";
     if (chat.last_message) {
         chat_last_message_time = chat.last_message.time;
         message_for_review = chat.last_message.getMessageForRevirew();
     }
-    //{this.userChat.getLastMessage().time.getHours() + ":" + this.userChat.getLastMessage().time.getMinutes()}
-    // {this.userChat.getLastMessage().getMessageForRevirew()}
-    //{this.userChat.getLastMessage().getMessageForRevirew()}
     return (
         <div className="chat__item">
             <div class="list-group-item list-group-item-action border-0">

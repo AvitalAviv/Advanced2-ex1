@@ -1,4 +1,12 @@
-
+/**
+ * Validation function for signing in
+ * @param {*} userName 
+ * @param {*} nickName 
+ * @param {*} passwordFirst 
+ * @param {*} passwordSecond 
+ * @param {*} file 
+ * @returns - true or false
+ */
 function Validation(userName, nickName, passwordFirst, passwordSecond, file) {
     if (userName === "") {
         alert("Please enter user name");
@@ -33,10 +41,6 @@ function Validation(userName, nickName, passwordFirst, passwordSecond, file) {
         alert("Repeated password incorrect");
         return false;
     }
-    // if (!(file && file['type'].split('/')[0] === 'image')) {
-    //     alert("photo being loaded in the wrong format");
-    //     return;
-    // }
     return true;
 }
 

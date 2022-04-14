@@ -5,6 +5,9 @@ import SignUp from '../signuppage/SignUpPage';
 import ChatRoom from '../chatRoom/ChatRoom';
 import './SignInPage.css';
 
+/**
+ * sign in page 
+ */
 class SignInPage extends Component {
     constructor(props) {
         super(props);
@@ -15,6 +18,7 @@ class SignInPage extends Component {
         this.DbUsers = props.DbUsers;
         this.userLogged = null;
     } render() {
+        //check if the creditional are valid
         const dbChecker = (event) => {
 
             event.preventDefault(); //prevent refresh
@@ -35,11 +39,13 @@ class SignInPage extends Component {
                 this.setState({ isLogged: true });
             }
         };
+        //call the sign up page
         const signUpFunction = (event) => {
             event.preventDefault(); //prevent refresh
             this.setState({ isSignUp: true });
         };
 
+        //moving to sign up page
         if (this.state.isSignUp) {
             return (
                 <SignUp DbUsers={this.DbUsers} />

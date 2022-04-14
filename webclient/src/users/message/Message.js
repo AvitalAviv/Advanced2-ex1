@@ -1,4 +1,7 @@
 
+/**
+ * Message Object
+ */
 class Message {
     constructor(nick_name, type, value, time) {
         this.type = type;
@@ -9,6 +12,10 @@ class Message {
     getType() {
         return this.type;
     }
+    /**
+     * function that return the html code , depending the type
+     * @returns html code
+     */
     getValue() {
         if (this.type === "text") {
             return <div>{this.value}</div>
@@ -28,6 +35,10 @@ class Message {
         }
         return this.value;
     }
+    /**
+     * message preview - for chat item - presenting the message according to the type
+     * @returns - text
+     */
     getMessageForRevirew() {
         if (this.type === "text") {
             if (this.value.length > 25) {

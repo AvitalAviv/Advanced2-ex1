@@ -6,6 +6,9 @@ import "./SignUpPage.css";
 import SignInPage from '../signinpage/SignInPage';
 import default_logo from "../usersPhotos/default_logo.png";
 
+/**
+ * sign up page 
+ */
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -18,10 +21,12 @@ class SignUp extends Component {
     this.image_url = "null";
   }
   render() {
+    //get back to logging page
     const handleClickHere = (event) => {
       event.preventDefault(); //prevent refresh
       this.setState({ isLogged: true });
     };
+    //function that add the user to db
     const handleRegister = (event) => {
       event.preventDefault();
       var user_name = document.getElementById("userName").value;
@@ -47,9 +52,11 @@ class SignUp extends Component {
       this.dbUsers.addUser(this.newUser);
       this.setState({ isSignedIn: true });
     }
+    //user is signed in so go to chat room
     if (this.state.isSignedIn) {
       return (<ChatRoom User={this.newUser} DbUsers={this.dbUsers} />);
     }
+    //user go back to sign in
     if (this.state.isLogged) {
       return (<SignInPage DbUsers={this.dbUsers} />);
     }
@@ -82,5 +89,4 @@ class SignUp extends Component {
     );
   }
 }
-
 export default SignUp;
