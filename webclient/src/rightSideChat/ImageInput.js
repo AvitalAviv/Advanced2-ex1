@@ -5,13 +5,24 @@ import Message from '../users/message/Message';
 function ImageInput(props) {
     const [show, setShow] = useState(false);
     const [imageURL, setImageURL] = useState("null");
+    var image_url = "null";
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const ClickImage = (event) => {
+    const ClickImage = () => {
+        // console.log(event.target.input.files[0]);
+        // console.log(props);
+        var current = new Date();
+        var time_now = current.getHours() + ':' + current.getMinutes();
+        var new_message = new Message(props.User.nick_name, "image", image_url, time_now);
+        props.selected.messages.push(new_message);
+        props.setSelected([props.selected].concat([]));
+        // console.log(document.getElementById("image-user-input").value)
+        // debugger;
         setShow(false);
-        setImageURL(URL.createObjectURL(event.target.files[0]));
-        debugger;
+        // console.log(event.target.files[0])
+        // setImageURL(URL.createObjectURL(event.target.files[0]));
+        // console.log(imageURL);
     }
 
     return (
@@ -28,7 +39,9 @@ function ImageInput(props) {
                 <Modal.Body>
                     <form>
                         <div class="form-group align-items-center d-flex">
-                            <input type="file" id="image-user-input" class="form-control-file" accept="image/*"></input>
+                            <input type="file" onChange={(event) => {
+                                image_url = URL.createObjectURL(event.target.files[0]);
+                            }} id="image-user-input" class="form-control-file" accept="image/*"></input>
                             <button type="button" onClick={ClickImage} class="btn btn-secondary">Submit</button>
                         </div>
                     </form>
