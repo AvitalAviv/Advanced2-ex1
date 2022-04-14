@@ -10,19 +10,12 @@ function ImageInput(props) {
     const handleShow = () => setShow(true);
 
     const ClickImage = () => {
-        // console.log(event.target.input.files[0]);
-        // console.log(props);
         var current = new Date();
         var time_now = current.getHours() + ':' + current.getMinutes();
         var new_message = new Message(props.User.nick_name, "image", image_url, time_now);
         props.selected.messages.push(new_message);
         props.setSelected([props.selected].concat([]));
-        // console.log(document.getElementById("image-user-input").value)
-        // debugger;
         setShow(false);
-        // console.log(event.target.files[0])
-        // setImageURL(URL.createObjectURL(event.target.files[0]));
-        // console.log(imageURL);
     }
 
     return (
