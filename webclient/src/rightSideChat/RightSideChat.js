@@ -59,12 +59,12 @@ function RightSideChat(props) {
     );
 
     return (
-        <div className="col-8 container d-flex flex-column" style={{ background: "black", color: "white" }}>
-            <div className="row d-flex flex-row" style={{ background: "lightsalmon", height: "12.7%" }}>
-                <table>
-                    <tr>
-                        <img src={photo_preview} style={{ width: "20%", background: "hotpink" }}></img>
-                        <td style={{ width: "70%", background: "darkseagreen" }}>{nick_name_preview}</td>
+        <div className="col-8 container d-flex flex-column" style={{height:"100%", background: "black", color: "black" }}>
+            <div className="row d-flex flex-row" style={{ background: "#cbced1", height: "11.27%" }}>
+                <table >
+                    <tr className='align-items-center' style={{position:"center"}}>
+                        <img className='rounded-circle align-self-center' alt="avatar" src={photo_preview} style={{ width: "47%", background: "#cbced1", marginLeft: "40%", marginTop: "6%", position:"center"}}></img>
+                        <td style={{ width: "80%", background: "#cbced1", fontSize:"125%"}}>{nick_name_preview}</td>
                         {/* <td style={{ width: "10%", background: "cadetblue" }}>icon</td> */}
                     </tr>
                 </table>
