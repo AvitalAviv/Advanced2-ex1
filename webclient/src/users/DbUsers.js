@@ -26,6 +26,15 @@ class DbUsers {
             "David": new User("David", "King", "123", davidphoto)
 
         }
+        this.user_nickname_db = new Map();
+        this.user_nickname_db.set("Omer", "scrum master");
+        this.user_nickname_db.set("Ron", "Ronen");
+        this.user_nickname_db.set("Niv", "NivNah");
+        this.user_nickname_db.set("Dvir", "Dviri");
+        this.user_nickname_db.set("David", "King");
+        this.user_nickname_db.set("Avital", "Avitalos");
+
+
         //creating chats between Omer to all parties
         var chat_one = new Chat("scrum master", "Avitalos", omerphoto, avitalphoto);
         var chat_two = new Chat("scrum master", "Ronen", omerphoto, ronphoto);
@@ -43,7 +52,18 @@ class DbUsers {
         //add chats to user
         this.db["Omer"].chats.push(chat_one);
         this.db["Avital"].chats.push(chat_one);
-        this.db["Omer"].chats.push(chat_two);
+        this.db["Omer"].chats.push(chat_three);
+        this.db["Omer"].chats.push(chat_four);
+        this.db["Omer"].chats.push(chat_five);
+
+        this.db["Niv"].chats.push(chat_three);
+        this.db["Dvir"].chats.push(chat_four);
+        this.db["David"].chats.push(chat_five);
+
+
+
+
+
 
         // this.db["scrum master"].chats["Avitalos"] = chat_one;
         // this.db["Avital"].chats["scrum master"] = chat_one;
@@ -59,6 +79,7 @@ class DbUsers {
         this.db.push(user);
     }
     checkUser(user_name, password) {
+
         for (var i = 0; i < this.db.length; i++) {
             if (this.db[i].doesMe(user_name, password)) {
                 return true;

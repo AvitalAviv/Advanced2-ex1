@@ -18,6 +18,14 @@ class User {
     getPassword() {
         return this.password;
     }
+    searchChat(other_user_name) {
+        for (var i = 0; i < this.chats.length; i++) {
+            if (this.chats[i].two_user === other_user_name) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 export default User;
