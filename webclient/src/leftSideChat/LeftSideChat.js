@@ -11,16 +11,17 @@ function LeftSideChat(props) {
     const [show, setShow] = useState(false);
 
     const handleModalClick = () => {
+        debugger;
         var input_nick_name = document.getElementById("nick_name_other").value;
-        var other_user = props.DbUsers.db[input_nick_name];
+        var other_user = props.DbUsers.db.get(input_nick_name);
         //check if user in db and it's not myself
         if (other_user && props.User.user_name !== input_nick_name) {
             var input_user_name = props.DbUsers.user_nickname_db.get(input_nick_name);
-            if (props.DbUsers.db[props.User.user_name].searchChat(input_user_name)) {
+            if (props.DbUsers.db.get(props.User.user_name).searchChat(input_user_name)) {
                 setShow(false);
                 return;
             }
-            props.DbUsers.db[props.User.user_name].chats.push(new Chat(props.User.nick_name, other_user.nick_name, props.User.img_url, other_user.img_url));
+            props.DbUsers.db.get(props.User.user_name).chats.push(new Chat(props.User.nick_name, other_user.nick_name, props.User.img_url, other_user.img_url));
             setShow(false);
         } else {
             alert("Wrong user name");
@@ -33,14 +34,14 @@ function LeftSideChat(props) {
     const hideModule = () => {
         setShow(false);
     }
-    var chats = props.DbUsers.db[props.User.user_name].chats;
+    var chats = props.DbUsers.db.get(props.User.user_name).chats;
     return (
-        <div className="col-4 container d-flex flex-column" style={{ background: "lightblue" ,  minHeight: "70%"}}>
+        <div className="col-4 container d-flex flex-column" style={{ background: "lightblue", minHeight: "70%" }}>
             <div className="row d-flex flex-row" style={{ background: "white", height: "12.7%" }}>
                 <table>
                     <tr>
-                        <td className='align-items-center left-side-image' style={{ width: "20%", background: "#cbced1", position: "center"}}>
-                        <img className='rounded-circle align-self-center avatar' alt="Avatar" src={props.User.img_url} style={{}}></img>
+                        <td className='align-items-center left-side-image' style={{ width: "20%", background: "#cbced1", position: "center" }}>
+                            <img className='rounded-circle align-self-center avatar' alt="Avatar" src={props.User.img_url} style={{}}></img>
                         </td>
                         <td style={{ width: "55%", background: "#cbced1", fontSize: "130%", paddingLeft: "4%" }}>{props.User.nick_name}</td>
                         <td style={{ width: "20%", background: "#cbced1" }}>
