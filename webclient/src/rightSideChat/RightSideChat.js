@@ -1,5 +1,6 @@
 import { Component, useState } from 'react';
 import "./RightSideChat.css"
+import backgroundImage from '../rightSideChat/background.jpg';
 import React from 'react'
 import MessageRender from '../messageRender/MessageRender';
 import Message from '../users/message/Message';
@@ -63,14 +64,14 @@ function RightSideChat(props) {
             <div className="row d-flex flex-row" style={{ background: "#cbced1", height: "11.27%" }}>
                 <table >
                     <tr className='align-items-center' style={{position:"center"}}>
-                        <img className='rounded-circle align-self-center' alt="avatar" src={photo_preview} style={{ width: "47%", background: "#cbced1", marginLeft: "40%", marginTop: "6%", position:"center"}}></img>
+                        <img className='rounded-circle align-self-center avatar' alt="Avatar" src={photo_preview} style={{}}></img>
                         <td style={{ width: "80%", background: "#cbced1", fontSize:"125%"}}>{nick_name_preview}</td>
                         {/* <td style={{ width: "10%", background: "cadetblue" }}>icon</td> */}
                     </tr>
                 </table>
             </div>
             
-            <div className="row d-flex flex-row align-content-start flex-wrap" style={{ background: "lightskyblue", height: "79.3%", overflowY: "scroll" }}>
+            <div className="row d-flex flex-row align-content-start flex-wrap chat-background" style={{ height: "81%", overflowY: "scroll" }}>
                 {current_chat.messages.map((message, key) => {
                     return (
                         <MessageRender message={message} key={key} User={props.User} />

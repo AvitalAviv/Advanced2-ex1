@@ -34,7 +34,7 @@ function LeftSideChat(props) {
                 <table>
                     <tr>
                         <td className='align-items-center left-side-image' style={{ width: "20%", background: "#cbced1", position: "center"}}>
-                            <img className='rounded-circle' src={props.User.img_url} style={{ width: "90%", background: "#cbced1", marginLeft: "8%"}}></img>
+                        <img className='rounded-circle align-self-center avatar' alt="Avatar" src={props.User.img_url} style={{}}></img>
                         </td>
                         <td style={{ width: "55%", background: "#cbced1", fontSize: "130%", paddingLeft: "4%" }}>{props.User.nick_name}</td>
                         <td style={{ width: "20%", background: "#cbced1" }}>

@@ -1,0 +1,13 @@
+.avatar {
+    vertical-align: middle;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: 12%;
+    margin-top: 4%;
+    margin-bottom: 5%;
+  }
+
+  .chat-background {
+      background-image: URL(https://i.pinimg.com/564x/8d/12/a5/8d12a5b5d5333d6695d86f3917976ac1.jpg);
+  }
