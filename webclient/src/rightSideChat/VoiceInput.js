@@ -90,10 +90,10 @@ function VoiceInput(props) {
             </button>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add Video Audio</Modal.Title>
+                    <Modal.Title>Add Audio</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='align-self-center d-flex flex-row'>
-                    <div className='align-self-center d-flex flex-row'>
+                    <div className='align-items-center d-flex flex-row'>
                         {stream.access ? (
                             <div className="audio-container">
                                 <button type="button" class="btn btn-light" onClick={() => !recording.active && stream.recorder.start()}>

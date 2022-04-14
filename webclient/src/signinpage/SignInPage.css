@@ -4,29 +4,49 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    
 }
 
  body {
-     background: #ecf0f3
- }
+     background-color: black;
+   }
 
  .wrapper {
-     max-width: 350px;
+     max-width: 850px;
      min-height: 440px;
      margin: 80px auto;
      padding: 40px 30px 30px 30px;
      background-color: #ecf0f3;
      border-radius: 15px;
-     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff
+     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+     background: url(https://i.pinimg.com/564x/bd/ab/67/bdab67de47ed4a7b85e60fb39c3cc6dd.jpg);
+     background-repeat: no-repeat;
+     background-size: contain;
+
  }
 
  .logo {
      width: 60px;
      border-left: 3cm;
      position:relative;
-     top: 15%;
+     top: 3%;
      left: 24%;
+     margin-top: 5%;
+     margin-left: 10%;
+ }
+
+ .login-side {
+    background: rgb(24, 24, 24);
+    width: 50%; 
+    margin-left: 46.8%;
+    margin-top: -4.65%;
+    position: absolute;
+    height: 100.1%;
+    border-top-right-radius: 15px; 
+    border-bottom-right-radius: 15px;
+     
  }
 
  .logo img {
@@ -37,14 +57,16 @@
      box-shadow: 0px 0px 3px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaa7, -8px -8px 15px #fff
  }
     #Headline {
-        margin-left: -25%;
+        color: white;
+        font-size: 200%;
+        margin-left: 60%;
     }
  .wrapper .name {
      font-weight: 600;
      font-size: 1.6rem;
      letter-spacing: 1.3px;
-     padding-left: 75px;
      color: #555;
+     margin-top: 7%;
  }
 
  .wrapper .form-field input {
@@ -54,14 +76,19 @@
      background: none;
      font-size: 1.2rem;
      color: #666;
-     padding: 10px 15px 10px 10px
+     border: none;
+     margin-top: -1.5%;
  }
 
  .wrapper .form-field {
      padding-left: 10px;
      margin-bottom: 20px;
-     border-radius: 20px;
-     box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff
+     border-radius: 0;
+     margin-top: -4%;
+     border-bottom: solid 1.5px white;
+     margin-bottom: 11%;
+     width: 83%;
+     margin-left: 10%;
  }
 
  .wrapper .form-field .fas {
@@ -70,17 +97,19 @@
 
  .wrapper .btn {
      box-shadow:#555;
-     width: 100%;
+     width: 80%;
      height: 40px;
-     background-color: #03A9F4;
+     background-color: #555;
      color: #fff;
      border-radius: 25px;
-     box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
-     letter-spacing: 1.3px
+     box-shadow: 1.5px 1.5px 1.5px #b1b1b1, -1px -1px 1.6px #fff;
+     letter-spacing: 1.3px;
+     margin-top: -2;
+     margin-left: 13%;
  }
 
  .wrapper .btn:hover {
-     background-color: #039BE5
+    background-color: #555;
  }
 
  .wrapper a {
@@ -96,6 +125,6 @@
  @media(max-width: 380px) {
      .wrapper {
          margin: 30px 20px;
-         padding: 40px 15px 15px 15px
+         padding: 40px 15px 15px 15px;
      }
  }

@@ -51,20 +51,22 @@ class SignInPage extends Component {
             return (<ChatRoom DbUsers={this.DbUsers} User={this.userLogged} />);
         }
         return (
-            <div className="wrapper sign-in-page">
-                <div className="logo"> <img src={logo} alt=""></img> </div>
-                <div className="text-center mt-4 name" id='Headline'> TalkToMe </div>
-                <form className="p-3 mt-3" onSubmit={dbChecker}>
-                    <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
-                        <input type="text" name="userName" id="userName" placeholder="Username"></input></div>
-                    <div className="form-field d-flex align-items-center"> <span className="fas fa-key"></span>
-                        <input type="password" name="password" id="pwd" placeholder="Password"></input>
+                <div className="wrapper sign-in-page card">
+                    <div className='login-side'>
+                        <div className="logo"> <img src={logo} alt=""></img> </div>
+                        <div className=" name" id='Headline' style={{ marginLeft: "32%" }}> TalkToMe </div>
+                        <form className="p-3 mt-3" onSubmit={dbChecker}>
+                            <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
+                                <input type="text" name="userName" id="userName" placeholder="Username"></input></div>
+                            <div className="form-field d-flex align-items-center"> <span className="fas fa-key"></span>
+                                <input type="password" name="password" id="pwd" placeholder="Password"></input>
+                            </div>
+                            <button class="btn" >Sign in</button>
+                        </form>
+                        <br></br>
+                        <center><div className="text-center" style={{ color: "white", marginTop: "-2%" }}>Not registred? <a href="/#" onClick={signUpFunction} style={{ color: "bluesky" }}>Sign up</a></div></center>
                     </div>
-                    <button class="btn mt-3" >Sign in</button>
-                </form>
-                <br></br>
-                <center><div className="text-center fs-6">Not registred? <a href="/#" onClick={signUpFunction}>Sign up</a></div></center>
-            </div >
+                </div>
         )
     }
 }
