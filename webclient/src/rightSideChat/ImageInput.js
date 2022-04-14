@@ -10,6 +10,7 @@ function ImageInput(props) {
     const handleShow = () => setShow(true);
 
     const ClickImage = () => {
+        console.log(image_url);
         var current = new Date();
         var time_now = current.getHours() + ':' + current.getMinutes();
         var new_message = new Message(props.User.nick_name, "image", image_url, time_now);

@@ -4,6 +4,7 @@ import User from '../users/User';
 import ChatRoom from '../chatRoom/ChatRoom';
 import "./SignUpPage.css";
 import SignInPage from '../signinpage/SignInPage';
+import default_logo from "../usersPhotos/default_logo.png";
 
 class SignUp extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class SignUp extends Component {
     };
     this.dbUsers = props.DbUsers;
     this.newUser = null;
+    this.image_url = "null";
   }
   render() {
     const handleClickHere = (event) => {
@@ -26,24 +28,22 @@ class SignUp extends Component {
       var nick_name = document.getElementById("nickName").value;
       var password = document.getElementById("password1").value;
       var repeated_password = document.getElementById("password2").value;
-      var user_image = document.getElementById("file").value;
 
-      //var user_image = document.getElementById("file").files[0];
-      console.log(user_name + " " + nick_name + " " + password + " " + repeated_password + " " + user_image);
       document.getElementById("userName").value = '';
       document.getElementById("nickName").value = '';
       document.getElementById("password1").value = '';
       document.getElementById("password2").value = '';
-      document.getElementById("file").value = '';
+
+      if (this.image_url === "null") {
+        this.image_url = default_logo;
+      }
 
       // let bool_ans = Validation(user_name, nick_name, password, repeated_password, img);
       // if (!bool_ans) {
       //   return;
       // }
 
-      //add user to data base
-      console.log(user_image);
-      this.newUser = new User(user_name, nick_name, password, user_image);
+      this.newUser = new User(user_name, nick_name, password, this.image_url);
       this.dbUsers.addUser(this.newUser);
       this.setState({ isSignedIn: true });
     }
@@ -68,8 +68,9 @@ class SignUp extends Component {
             <input type="password" name="password2" id="password2" placeholder="repeat password"></input></div>
           <div>choose your profile image</div>
 
-          <label class="file"><input type="file" accept="image/*" id="file" aria-label="File browser example"></input>
-
+          <label class="file"><input type="file" onChange={(event) => {
+            this.image_url = URL.createObjectURL(event.target.files[0]);
+          }} id="image-user-input" class="form-control-file" accept="image/*"></input>
             <span class="file-custom"></span></label>
           <br></br>
           <br></br>

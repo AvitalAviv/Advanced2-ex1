@@ -7,6 +7,7 @@ import davidphoto from "../usersPhotos/david.jpg";
 import dvitphoto from "../usersPhotos/dvir.jpg";
 import nivphoto from "../usersPhotos/niv.jpg";
 import ronphoto from "../usersPhotos/ron.jpg";
+import mario from "../usersPhotos/mario.mp4";
 
 
 class DbUsers {
@@ -14,18 +15,14 @@ class DbUsers {
         var current = new Date();
         var time_now = current.getHours() + ':' + current.getMinutes();
 
+        this.db = new Map();
+        this.db.set("Omer", new User("Omer", "scrum master", "123", omerphoto));
+        this.db.set("Avital", new User("Avital", "Avitalos", "123", avitalphoto));
+        this.db.set("Ron", new User("Ron", "Ronen", "123", ronphoto));
+        this.db.set("Niv", new User("Niv", "NivNah", "123", nivphoto));
+        this.db.set("Dvir", new User("Dvir", "Dviri", "123", dvitphoto));
+        this.db.set("David", new User("David", "King", "123", davidphoto));
 
-        this.db = {
-            //key user(me), value - user (object).
-            //in the user - chat is a field.
-            "Omer": new User("Omer", "scrum master", "123", omerphoto),
-            "Avital": new User("Avital", "Avitalos", "123", avitalphoto),
-            "Ron": new User("Ron", "Ronen", "123", ronphoto),
-            "Niv": new User("Niv", "NivNah", "123", nivphoto),
-            "Dvir": new User("Dvir", "Dviri", "123", dvitphoto),
-            "David": new User("David", "King", "123", davidphoto)
-
-        }
         this.user_nickname_db = new Map();
         this.user_nickname_db.set("Omer", "scrum master");
         this.user_nickname_db.set("Ron", "Ronen");
@@ -46,37 +43,24 @@ class DbUsers {
         chat_one.addMessage(new Message("Avitalos", "text", "Naama!", time_now));
         chat_two.addMessage(new Message("Ronen", "audio", "path", time_now));
         chat_three.addMessage(new Message("NivNah", "image", nivphoto, time_now));
-        chat_four.addMessage(new Message("Dviri", "video", "path", time_now));
+        chat_four.addMessage(new Message("Dviri", "video", mario, time_now));
         chat_five.addMessage(new Message("King", "text", "How are you? Maybe well go to drink coffe sometimes", time_now));
 
         //add chats to user
-        this.db["Omer"].chats.push(chat_one);
-        this.db["Avital"].chats.push(chat_one);
-        this.db["Omer"].chats.push(chat_three);
-        this.db["Omer"].chats.push(chat_four);
-        this.db["Omer"].chats.push(chat_five);
+        this.db.get("Omer").chats.push(chat_one);
+        this.db.get("Avital").chats.push(chat_one);
+        this.db.get("Omer").chats.push(chat_three);
+        this.db.get("Omer").chats.push(chat_four);
+        this.db.get("Omer").chats.push(chat_five);
 
-        this.db["Niv"].chats.push(chat_three);
-        this.db["Dvir"].chats.push(chat_four);
-        this.db["David"].chats.push(chat_five);
-
-
-
-
-
-
-        // this.db["scrum master"].chats["Avitalos"] = chat_one;
-        // this.db["Avital"].chats["scrum master"] = chat_one;
-        // this.db["scrum master"].chats["Ronen"] = chat_two;
-        // this.db["Omer"].addChat(chat_two, "Ronen");
-        // this.db["Omer"].addChat(chat_three, "NivNah");
-        // this.db["Omer"].addChat(chat_four, "Dviri");
-        // this.db["Omer"].addChat(chat_five, "King");
+        this.db.get("Niv").chats.push(chat_three);
+        this.db.get("Dvir").chats.push(chat_four);
+        this.db.get("David").chats.push(chat_five);
     }
 
     //need to check again   
     addUser(user) {
-        this.db.push(user);
+        this.db.set(user.user_name, user);
     }
     checkUser(user_name, password) {
 
@@ -89,7 +73,7 @@ class DbUsers {
     }
 
     findUser(user_name) {
-        return this.db[user_name];
+        return this.db.get(user_name);
     }
     findUserByName(name) {
         return false;

@@ -40,8 +40,8 @@ function RightSideChat(props) {
             <Popover.Body>
                 <div class="btn-group" role="group" aria-label="...">
                     <div class="btn-group" role="group" aria-label="..." width="100%">
-                        <VideoInput />
                         <VoiceInput User={props.User} selected={props.selected[0]} setSelected={props.setSelected}/>
+                        <VideoInput User={props.User} selected={props.selected[0]} setSelected={props.setSelected} />
                         <ImageInput User={props.User} selected={props.selected[0]} setSelected={props.setSelected} />
                     </div>
                 </div>
@@ -60,7 +60,7 @@ function RightSideChat(props) {
     );
 
     return (
-        <div className="col-8 container d-flex flex-column" style={{height:"100%", background: "black", color: "black" , minHeight: "70%"}}>
+        <div className="col-8 container d-flex flex-column" style={{ height: "100%", background: "black", color: "black", minHeight: "70%" }}>
             <div className="row d-flex flex-row" style={{ background: "#cbced1", height: "11.27%" }}>
                 <table >
                     <tr className='align-items-center' style={{ position: "center" }}>
