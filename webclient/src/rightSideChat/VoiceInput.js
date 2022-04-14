@@ -3,7 +3,11 @@ import { Modal, Form , Button } from 'react-bootstrap';
 
 function VoiceInput() {
     const [show, setShow] = useState(false);
-  
+    const [stream, setStream] = useState({
+        access: false,
+        recorder: null,
+        error: ""
+      });
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
@@ -20,7 +24,11 @@ function VoiceInput() {
                 <Modal.Title>Add Video Audio</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                hello1
+                <p>
+                    <button id="btnStart">START RECORDING</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="btnStop">STOP RECORDING</button>
+                </p>
             </Modal.Body>
         </Modal>
     </>

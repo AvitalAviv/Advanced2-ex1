@@ -35,7 +35,7 @@ function LeftSideChat(props) {
     }
     var chats = props.DbUsers.db[props.User.user_name].chats;
     return (
-        <div className="col-4 container d-flex flex-column" style={{ background: "lightblue" }}>
+        <div className="col-4 container d-flex flex-column" style={{ background: "lightblue" ,  minHeight: "70%"}}>
             <div className="row d-flex flex-row" style={{ background: "white", height: "12.7%" }}>
                 <table>
                     <tr>

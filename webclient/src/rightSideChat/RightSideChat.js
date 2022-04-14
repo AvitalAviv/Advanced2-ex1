@@ -60,7 +60,7 @@ function RightSideChat(props) {
     );
 
     return (
-        <div className="col-8 container d-flex flex-column" style={{height:"100%", background: "black", color: "black" }}>
+        <div className="col-8 container d-flex flex-column" style={{height:"100%", background: "black", color: "black" , minHeight: "70%"}}>
             <div className="row d-flex flex-row" style={{ background: "#cbced1", height: "11.27%" }}>
                 <table >
                     <tr className='align-items-center' style={{position:"center"}}>
