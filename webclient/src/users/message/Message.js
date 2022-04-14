@@ -1,3 +1,4 @@
+
 class Message {
     constructor(nick_name, type, value, time) {
         this.type = type;
@@ -17,13 +18,13 @@ class Message {
         }
         if (this.type === "audio") {
             return <audio controls src={this.value} ></audio>
-            
+        }
         if (this.type === "video") {
             return (
                 <video width="320" height="240" controls>
                     <source src={this.value} type="video/mp4" />
                 </video>
-            )
+            );
         }
         return this.value;
     }
@@ -48,4 +49,5 @@ class Message {
         return this.sender;
     }
 }
+
 export default Message;
