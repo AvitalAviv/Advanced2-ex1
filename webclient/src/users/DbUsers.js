@@ -45,7 +45,7 @@ class DbUsers {
         //add messages to chat
         chat_one.addMessage(new Message("Avitalos", "text", "Naama!", time_now));
         chat_two.addMessage(new Message("Ronen", "audio", "path", time_now));
-        chat_three.addMessage(new Message("NivNah", "image", "C:\Users\omera\OneDrive - Bar-Ilan University\Desktop\advance programming\Advanced2-ex1\webclient\src\signuppage\logo.png", time_now));
+        chat_three.addMessage(new Message("NivNah", "image", nivphoto, time_now));
         chat_four.addMessage(new Message("Dviri", "video", "path", time_now));
         chat_five.addMessage(new Message("King", "text", "How are you? Maybe well go to drink coffe sometimes", time_now));
 

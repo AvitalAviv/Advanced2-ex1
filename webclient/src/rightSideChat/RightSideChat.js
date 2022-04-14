@@ -37,14 +37,14 @@ function RightSideChat(props) {
 
     const popover = (
         <Popover rootClose id="popover-basic">
-          <Popover.Body>
-            <div class="btn-group" role="group" aria-label="...">
-                <div class="btn-group" role="group" aria-label="..." width="100%">
-                    <VideoInput/>
-                    <VoiceInput/>
-                    <ImageInput User={props.User} selected={props.selected[0]}/>
+            <Popover.Body>
+                <div class="btn-group" role="group" aria-label="...">
+                    <div class="btn-group" role="group" aria-label="..." width="100%">
+                        <VideoInput />
+                        <VoiceInput />
+                        <ImageInput User={props.User} selected={props.selected[0]} setSelected={props.setSelected} />
+                    </div>
                 </div>
-            </div>
             </Popover.Body>
         </Popover>
     );
@@ -63,14 +63,14 @@ function RightSideChat(props) {
         <div className="col-8 container d-flex flex-column" style={{height:"100%", background: "black", color: "black" , minHeight: "70%"}}>
             <div className="row d-flex flex-row" style={{ background: "#cbced1", height: "11.27%" }}>
                 <table >
-                    <tr className='align-items-center' style={{position:"center"}}>
+                    <tr className='align-items-center' style={{ position: "center" }}>
                         <img className='rounded-circle align-self-center avatar' alt="Avatar" src={photo_preview} style={{}}></img>
-                        <td style={{ width: "80%", background: "#cbced1", fontSize:"125%"}}>{nick_name_preview}</td>
+                        <td style={{ width: "80%", background: "#cbced1", fontSize: "125%" }}>{nick_name_preview}</td>
                         {/* <td style={{ width: "10%", background: "cadetblue" }}>icon</td> */}
                     </tr>
                 </table>
             </div>
-            
+
             <div className="row d-flex flex-row align-content-start flex-wrap chat-background" style={{ height: "81%", overflowY: "scroll" }}>
                 {current_chat.messages.map((message, key) => {
                     return (
