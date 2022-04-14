@@ -4,6 +4,7 @@ import User from '../users/User';
 import ChatRoom from '../chatRoom/ChatRoom';
 import "./SignUpPage.css";
 import SignInPage from '../signinpage/SignInPage';
+import default_logo from "../usersPhotos/default_logo.png";
 
 class SignUp extends Component {
   constructor(props) {
@@ -33,13 +34,15 @@ class SignUp extends Component {
       document.getElementById("password1").value = '';
       document.getElementById("password2").value = '';
 
+      if (this.image_url === "null") {
+        this.image_url = default_logo;
+      }
+
       // let bool_ans = Validation(user_name, nick_name, password, repeated_password, img);
       // if (!bool_ans) {
       //   return;
       // }
 
-      //add user to data base
-      // console.log(user_image);
       this.newUser = new User(user_name, nick_name, password, this.image_url);
       this.dbUsers.addUser(this.newUser);
       this.setState({ isSignedIn: true });
