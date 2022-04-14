@@ -1,3 +1,4 @@
+//User object
 class User {
     constructor(user_name, nick_name, password, img_url) {
         this.user_name = user_name;
@@ -6,6 +7,7 @@ class User {
         this.img_url = img_url;
         this.chats = [];
     }
+    //check if the input is myself
     doesMe(user_name, password) {
         if (this.user_name === user_name && this.password === password) {
             return true;
@@ -18,6 +20,7 @@ class User {
     getPassword() {
         return this.password;
     }
+    //search the chat with the other user name
     searchChat(other_user_name) {
         for (var i = 0; i < this.chats.length; i++) {
             if (this.chats[i].two_user === other_user_name) {

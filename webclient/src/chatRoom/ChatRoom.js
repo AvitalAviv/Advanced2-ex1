@@ -4,6 +4,11 @@ import React from 'react'
 import LeftSideChat from '../leftSideChat/LeftSideChat';
 import RightSideChat from '../rightSideChat/RightSideChat';
 
+/**
+ * chat room component - render the current chat using use state.
+ * @param {user, database} props 
+ * @returns - chatroom component.
+ */
 function ChatRoom(props) {
     const [selected, setSelected] = useState([]);
     const [mode, setMode] = useState(false);

@@ -2,6 +2,11 @@ import React, { Component, useState } from 'react';
 import { Modal, Form, Button } from 'react-bootstrap';
 import Message from '../users/message/Message';
 
+/**
+ * function used to to get the image from chat
+ * @param {chat} props
+ * @returns add the image to chat list
+ */
 function ImageInput(props) {
     const [show, setShow] = useState(false);
     const [imageURL, setImageURL] = useState("null");

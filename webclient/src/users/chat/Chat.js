@@ -1,3 +1,6 @@
+/**
+ * Chat Object
+ */
 class Chat {
     constructor(one_user, two_user, one_user_photo, second_user_photo) {
         this.one_user = one_user;

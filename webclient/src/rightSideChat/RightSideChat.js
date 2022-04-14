@@ -11,7 +11,11 @@ import ImageInput from './ImageInput';
 import VideoInput from './VideoInput';
 import VoiceInput from './VoiceInput';
 
-
+/**
+ * right side of the window - the chat himself
+ * @param {user,chat} props 
+ * @returns the chat
+ */
 function RightSideChat(props) {
     let user = props.User;
     let current_chat = props.selected[0];
@@ -23,6 +27,7 @@ function RightSideChat(props) {
     }
 
 
+    // send text message
     const SendText = (event) => {
         var input = document.getElementById("user-input-textbox").value;
         document.getElementById("user-input-textbox").value = "";
@@ -40,7 +45,7 @@ function RightSideChat(props) {
             <Popover.Body>
                 <div class="btn-group" role="group" aria-label="...">
                     <div class="btn-group" role="group" aria-label="..." width="100%">
-                        <VoiceInput User={props.User} selected={props.selected[0]} setSelected={props.setSelected}/>
+                        <VoiceInput User={props.User} selected={props.selected[0]} setSelected={props.setSelected} />
                         <VideoInput User={props.User} selected={props.selected[0]} setSelected={props.setSelected} />
                         <ImageInput User={props.User} selected={props.selected[0]} setSelected={props.setSelected} />
                     </div>
@@ -49,6 +54,7 @@ function RightSideChat(props) {
         </Popover>
     );
 
+    //button to trigger the video/voice/photo window
     const ButtonClick = () => (
         <OverlayTrigger trigger="click" placement="top" overlay={popover}>
             <button type="button" id="action__button" class="btn btn-secondary btn-sm" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
@@ -71,7 +77,7 @@ function RightSideChat(props) {
                 </table>
             </div>
 
-            <div className="row d-flex flex-row align-content-start flex-wrap chat-background" style={{ height: "81%", overflowY: "scroll", paddingTop:"1%"}}>
+            <div className="row d-flex flex-row align-content-start flex-wrap chat-background" style={{ height: "81%", overflowY: "scroll", paddingTop: "1%" }}>
                 {current_chat.messages.map((message, key) => {
                     return (
                         <MessageRender message={message} key={key} User={props.User} />

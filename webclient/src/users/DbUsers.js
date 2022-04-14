@@ -9,7 +9,9 @@ import nivphoto from "../usersPhotos/niv.jpg";
 import ronphoto from "../usersPhotos/ron.jpg";
 import mario from "../usersPhotos/mario.mp4";
 
-
+/**
+ * The db of the project 
+ */
 class DbUsers {
     constructor() {
         var current = new Date();
