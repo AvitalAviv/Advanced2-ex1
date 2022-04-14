@@ -15,6 +15,13 @@ class Message {
         if (this.type === "image") {
             return <img src={this.value} alt="Responsive image" class="img-thumbnail"></img>
         }
+        if (this.type === "video") {
+            return (
+                <video width="320" height="240" controls>
+                    <source src={this.value} type="video/mp4" />
+                </video>
+            )
+        }
         return this.value;
     }
     getMessageForRevirew() {
@@ -28,7 +35,10 @@ class Message {
             return "audio";
         }
         if (this.type === "video") {
-            return "video"
+            return "video";
+        }
+        if (this.type === "image") {
+            return "image";
         }
     }
     getMessageSender() {

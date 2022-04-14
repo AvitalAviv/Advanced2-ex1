@@ -7,6 +7,7 @@ import davidphoto from "../usersPhotos/david.jpg";
 import dvitphoto from "../usersPhotos/dvir.jpg";
 import nivphoto from "../usersPhotos/niv.jpg";
 import ronphoto from "../usersPhotos/ron.jpg";
+import mario from "../usersPhotos/mario.mp4";
 
 
 class DbUsers {
@@ -46,7 +47,7 @@ class DbUsers {
         chat_one.addMessage(new Message("Avitalos", "text", "Naama!", time_now));
         chat_two.addMessage(new Message("Ronen", "audio", "path", time_now));
         chat_three.addMessage(new Message("NivNah", "image", nivphoto, time_now));
-        chat_four.addMessage(new Message("Dviri", "video", "path", time_now));
+        chat_four.addMessage(new Message("Dviri", "video", mario, time_now));
         chat_five.addMessage(new Message("King", "text", "How are you? Maybe well go to drink coffe sometimes", time_now));
 
         //add chats to user
