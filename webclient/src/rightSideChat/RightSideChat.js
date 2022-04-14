@@ -77,11 +77,11 @@ function RightSideChat(props) {
                 </table>
             </div>
 
-            <div className="row d-flex flex-row align-content-start flex-wrap chat-background" style={{ height: "81%", overflowY: "scroll", paddingTop: "1%" }}>
+            <div className="row d-flex flex-row align-content-start flex-wrap chat-background" id="box" style={{ height: "81%", overflowY: "scroll", paddingTop: "1%" }}>
                 {current_chat.messages.map((message, key) => {
                     return (
                         <MessageRender message={message} key={key} User={props.User} />
-                    )
+                    );
                 })}
             </div>
 

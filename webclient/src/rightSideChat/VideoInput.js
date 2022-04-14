@@ -40,7 +40,7 @@ function VideoInput(props) {
                         <div class="form-group align-items-center d-flex">
                             <input type="file" onChange={(event) => {
                                 video_url = URL.createObjectURL(event.target.files[0]);
-                            }} id="image-user-input" class="form-control-file" accept="mp4/*"></input>
+                            }} id="image-user-input" class="form-control-file" accept="video/mp4,video/x-m4v,video/*"></input>
                             <button type="button" onClick={ClickVideo} class="btn btn-secondary">Submit</button>
                         </div>
                     </form>
