@@ -19,5 +19,6 @@ David_IS      | KingDavid
 Dependecies:
 <li>
   React-bootstrap
+  Modal
  </li>
  
