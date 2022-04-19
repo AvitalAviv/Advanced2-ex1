@@ -44,9 +44,13 @@ class DbUsers {
 
         //add messages to chat
         chat_one.addMessage(new Message("Avitalos", "text", "Naama!", time_now));
+        chat_one.addMessage(new Message("Avitalos", "image", avitalphoto, time_now));
+        chat_two.addMessage(new Message("Ronen_even", "text", "listen to the birds singing.. :)", time_now));
         chat_two.addMessage(new Message("Ronen_even", "audio", birdsSinging, time_now));
         chat_three.addMessage(new Message("NivNah12", "image", nivphoto, time_now));
         chat_four.addMessage(new Message("Dviri8080", "video", mario, time_now));
+        chat_four.addMessage(new Message("Dviri8080", "text", "mario was a nice game!", time_now));
+        chat_four.addMessage(new Message("Dviri8080", "text", "don't you think so?", time_now));
         chat_five.addMessage(new Message("KingDavid", "text", "How are you? Maybe well go to drink coffe sometimes", time_now));
 
         //add chats to user
