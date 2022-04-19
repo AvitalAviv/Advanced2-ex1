@@ -15,10 +15,13 @@ Ron_banini    | Ronen_even
 NivNahman     | NivNah12
 David_IS      | KingDavid
 
-
+<div>
 Dependecies:
-<li>
-  React-bootstrap
-  Modal
- </li>
+  <li>
+    React-bootstrap
+  </li>
+  <li>
+    Modal
+  </li>
+</div>
  
