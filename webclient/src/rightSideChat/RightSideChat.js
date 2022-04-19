@@ -1,4 +1,4 @@
-import { Component, useState } from 'react';
+import { Component, useState , useEffect, useRef } from 'react';
 import "./RightSideChat.css"
 import backgroundImage from '../rightSideChat/background.jpg';
 import React from 'react'
@@ -26,6 +26,7 @@ function RightSideChat(props) {
         nick_name_preview = current_chat.one_user;
     }
 
+    const scrollBar = useRef(null);
 
     // send text message
     const SendText = (event) => {
@@ -65,6 +66,13 @@ function RightSideChat(props) {
         </OverlayTrigger>
     );
 
+    // //useEffect(() => {
+    //     var element = document.getElementById("scroll-bar");
+    //     if (element != null) {
+    //         element.scrollIntoView();
+    //     }
+    // });
+
     return (
         <div className="col-8 container d-flex flex-column" style={{ height: "100%", background: "black", color: "black", minHeight: "70%" }}>
             <div className="row d-flex flex-row" style={{ background: "#cbced1", height: "11.27%" }}>
@@ -77,13 +85,15 @@ function RightSideChat(props) {
                 </table>
             </div>
 
-            <div className="row d-flex flex-row align-content-start flex-wrap chat-background" id="box" style={{ height: "81%", overflowY: "scroll", paddingTop: "1%" }}>
+            <div className="row d-flex flex-row align-content-start flex-wrap chat-background" id="box" style={{ height: "81%", overflow: "auto", paddingTop: "1%" }}>
                 {current_chat.messages.map((message, key) => {
                     return (
                         <MessageRender message={message} key={key} User={props.User} />
                     );
                 })}
             </div>
+            <div ref={scrollBar}></div>
+            {/* <span id='scroll-bar'></span> */}
 
             <div className="row d-flex flex-row flex-wrap" style={{ background: "white" }}>
                 <table>

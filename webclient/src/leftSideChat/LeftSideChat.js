@@ -1,4 +1,4 @@
-import { Component, useEffect, useState } from 'react';
+import { Component, useEffect, useState , Element } from 'react';
 import "./LeftSideChat.css"
 import React from 'react'
 import ChatItem from '../chatItem/ChatItem';
@@ -13,8 +13,6 @@ import Chat from '../users/chat/Chat';
  */
 function LeftSideChat(props) {
     const [show, setShow] = useState(false);
-    const [isScrolledDown, setSCrollDown] = useState(false);
-
     /**
      * 
      * @returns new chat item component
@@ -48,8 +46,7 @@ function LeftSideChat(props) {
     useEffect(() => {
         var element = document.getElementById("scroll-bar");
         if (element != null) {
-            console.log("into if");
-            scroll.scrollIntoView();
+            element.scrollIntoView();
         }
     });
 
