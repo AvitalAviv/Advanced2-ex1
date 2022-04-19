@@ -76,7 +76,7 @@ function LeftSideChat(props) {
                 })}
             </div>
             <Modal show={show}>
-                <Modal.Header closeButton>
+                <Modal.Header closeButton onClick={hideModule}>
                     <Modal.Title id="contained-modal-title-vcenter">
                         Add new chat
                     </Modal.Title>
