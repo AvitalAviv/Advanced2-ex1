@@ -8,6 +8,7 @@ import dvitphoto from "../usersPhotos/dvir.jpg";
 import nivphoto from "../usersPhotos/niv.jpg";
 import ronphoto from "../usersPhotos/ron.jpg";
 import mario from "../usersPhotos/mario.mp4";
+import birdsSinging from "../usersPhotos/BirdsSinging.mp3";
 
 /**
  * The db of the project 
@@ -43,13 +44,15 @@ class DbUsers {
 
         //add messages to chat
         chat_one.addMessage(new Message("Avitalos", "text", "Naama!", time_now));
-        chat_two.addMessage(new Message("Ronen_even", "audio", "path", time_now));
+        chat_two.addMessage(new Message("Ronen_even", "audio", birdsSinging, time_now));
         chat_three.addMessage(new Message("NivNah12", "image", nivphoto, time_now));
         chat_four.addMessage(new Message("Dviri8080", "video", mario, time_now));
         chat_five.addMessage(new Message("KingDavid", "text", "How are you? Maybe well go to drink coffe sometimes", time_now));
 
         //add chats to user
         this.db.get("Omer_Apla").chats.push(chat_one);
+        this.db.get("Omer_Apla").chats.push(chat_two);
+
         this.db.get("Avital_os").chats.push(chat_one);
         this.db.get("Omer_Apla").chats.push(chat_three);
         this.db.get("Omer_Apla").chats.push(chat_four);
