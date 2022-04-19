@@ -20,19 +20,20 @@ class SignInPage extends Component {
     } render() {
         //check if the creditional are valid
         const dbChecker = (event) => {
-
             event.preventDefault(); //prevent refresh
-
             var userName = document.getElementById("userName").value;
             var userPassword = document.getElementById("pwd").value;
             var user = this.DbUsers.findUser(userName);
-            //need to add if user is udefine
             document.getElementById('userName').value = '';
             document.getElementById('pwd').value = '';
+            debugger;
+            if (user === undefined) {
+                AlertWindow("Wrong username or password")
+                return;
+            }
             if (user.getPassword() !== userPassword) {
-                console.log(this.DbUsers);
-                AlertWindow();
-
+                AlertWindow("Wrong username or password")
+                return;
             }
             else {
                 this.userLogged = user;
@@ -57,22 +58,22 @@ class SignInPage extends Component {
             return (<ChatRoom DbUsers={this.DbUsers} User={this.userLogged} />);
         }
         return (
-                <div className="wrapper sign-in-page card">
-                    <div className='login-side'>
-                        <div className="logo"> <img src={logo} alt=""></img> </div>
-                        <div className=" name" id='Headline' style={{ marginLeft: "32%" }}> TalkToMe </div>
-                        <form className="p-3 mt-3" onSubmit={dbChecker}>
-                            <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
-                                <input type="text" name="userName" id="userName" placeholder="Username"></input></div>
-                            <div className="form-field d-flex align-items-center"> <span className="fas fa-key"></span>
-                                <input type="password" name="password" id="pwd" placeholder="Password"></input>
-                            </div>
-                            <button class="btn" >Sign in</button>
-                        </form>
-                        <br></br>
-                        <center><div className="text-center" style={{ color: "white", marginTop: "-2%" }}>Not registred? <a href="/#" onClick={signUpFunction} style={{ color: "bluesky" }}>Sign up</a></div></center>
-                    </div>
+            <div className="wrapper sign-in-page card">
+                <div className='login-side'>
+                    <div className="logo"> <img src={logo} alt=""></img> </div>
+                    <div className=" name" id='Headline' style={{ marginLeft: "32%" }}> TalkToMe </div>
+                    <form className="p-3 mt-3" onSubmit={dbChecker}>
+                        <div className="form-field d-flex align-items-center"> <span className="far fa-user"></span>
+                            <input type="text" name="userName" id="userName" placeholder="Username"></input></div>
+                        <div className="form-field d-flex align-items-center"> <span className="fas fa-key"></span>
+                            <input type="password" name="password" id="pwd" placeholder="Password"></input>
+                        </div>
+                        <button class="btn" >Sign in</button>
+                    </form>
+                    <br></br>
+                    <center><div className="text-center" style={{ color: "white", marginTop: "-2%" }}>Not registred? <a href="/#" onClick={signUpFunction} style={{ color: "bluesky" }}>Sign up</a></div></center>
                 </div>
+            </div>
         )
     }
 }
