@@ -27,7 +27,7 @@ Dependecies:
     Modal
   </li>
 </div>
- 
+ <br>
 <lable>How to run it?</lable>
 install the following packages:
 <div>
