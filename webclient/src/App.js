@@ -18,7 +18,6 @@ class App extends Component {
         <Routes>
           <Route path="/" element={<SignInPage DbUsers={this.dbUsers} />} />
           <Route path="/home" element={<SignInPage DbUsers={this.dbUsers} />} />
-          <Route path="/chat" element={<ChatRoom DbUsers={this.DbUsers} User={this.userLogged} />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
