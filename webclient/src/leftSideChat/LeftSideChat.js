@@ -82,7 +82,7 @@ function LeftSideChat(props) {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <input placeholder="Enter user nickname" id="nick_name_other"></input>
+                    <input placeholder="Enter user username" id="nick_name_other"></input>
                 </Modal.Body>
                 <Modal.Footer>
                     <button variant="danger" onClick={hideModule}>Close</button>
