@@ -7,7 +7,7 @@ Hard-coded data:
 | Omer_Apla     | scrum master  | 12345678Aa    |
 | Avital_os     | Avitalos      | 87654321Aa    |
 
-Available users to add to Avtial_os chats:
+Available users to add to Avtial_os/Omer_Apla chats:
 
 User name     | Nick name
 ------------- | -------------
