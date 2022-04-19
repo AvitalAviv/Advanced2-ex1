@@ -1,4 +1,4 @@
-import { Component, useState } from 'react';
+import { Component, useEffect, useState } from 'react';
 import "./LeftSideChat.css"
 import React from 'react'
 import ChatItem from '../chatItem/ChatItem';
@@ -13,6 +13,7 @@ import Chat from '../users/chat/Chat';
  */
 function LeftSideChat(props) {
     const [show, setShow] = useState(false);
+    const [isScrolledDown, setSCrollDown] = useState(false);
 
     /**
      * 
@@ -43,6 +44,15 @@ function LeftSideChat(props) {
     const hideModule = () => {
         setShow(false);
     }
+
+    useEffect(() => {
+        var element = document.getElementById("scroll-bar");
+        if (element != null) {
+            console.log("into if");
+            scroll.scrollIntoView();
+        }
+    });
+
     //get the chats from the db
     var chats = props.DbUsers.db.get(props.User.user_name).chats;
     return (
@@ -74,6 +84,7 @@ function LeftSideChat(props) {
                         }}><ChatItem chat={chat} setSelected={props.setSelected} key={key} User={props.User} setMode={props.setMode} /></button>
                     )
                 })}
+                <span id='scroll-bar'></span>
             </div>
             <Modal show={show}>
                 <Modal.Header closeButton onClick={hideModule}>
