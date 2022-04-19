@@ -18,8 +18,8 @@ class DbUsers {
         var time_now = current.getHours() + ':' + current.getMinutes();
 
         this.db = new Map();
-        this.db.set("Omer", new User("Omer", "scrum master", "123", omerphoto));
-        this.db.set("Avital", new User("Avital", "Avitalos", "123", avitalphoto));
+        this.db.set("Omer_Apla", new User("Omer_Apla", "scrum master", "12345678Aa", omerphoto));
+        this.db.set("Avital_os", new User("Avital_os", "Avitalos", "87654321Aa", avitalphoto));
         this.db.set("Ron", new User("Ron", "Ronen", "123", ronphoto));
         this.db.set("Niv", new User("Niv", "NivNah", "123", nivphoto));
         this.db.set("Dvir", new User("Dvir", "Dviri", "123", dvitphoto));
@@ -31,15 +31,15 @@ class DbUsers {
         this.user_nickname_db.set("Niv", "NivNah");
         this.user_nickname_db.set("Dvir", "Dviri");
         this.user_nickname_db.set("David", "King");
-        this.user_nickname_db.set("Avital", "Avitalos");
+        this.user_nickname_db.set("Avitalos", "Avitalos");
 
 
         //creating chats between Omer to all parties
         var chat_one = new Chat("scrum master", "Avitalos", omerphoto, avitalphoto);
         var chat_two = new Chat("scrum master", "Ronen", omerphoto, ronphoto);
         var chat_three = new Chat("scrum master", "NivNah", omerphoto, nivphoto);
-        var chat_four = new Chat("Omer", "Dviri", omerphoto, dvitphoto);
-        var chat_five = new Chat("Omer", "King", omerphoto, davidphoto);
+        var chat_four = new Chat("Omer_Apla", "Dviri", omerphoto, dvitphoto);
+        var chat_five = new Chat("Omer_Apla", "King", omerphoto, davidphoto);
 
         //add messages to chat
         chat_one.addMessage(new Message("Avitalos", "text", "Naama!", time_now));
@@ -49,11 +49,11 @@ class DbUsers {
         chat_five.addMessage(new Message("King", "text", "How are you? Maybe well go to drink coffe sometimes", time_now));
 
         //add chats to user
-        this.db.get("Omer").chats.push(chat_one);
-        this.db.get("Avital").chats.push(chat_one);
-        this.db.get("Omer").chats.push(chat_three);
-        this.db.get("Omer").chats.push(chat_four);
-        this.db.get("Omer").chats.push(chat_five);
+        this.db.get("Omer_Apla").chats.push(chat_one);
+        this.db.get("Avital_os").chats.push(chat_one);
+        this.db.get("Omer_Apla").chats.push(chat_three);
+        this.db.get("Omer_Apla").chats.push(chat_four);
+        this.db.get("Omer_Apla").chats.push(chat_five);
 
         this.db.get("Niv").chats.push(chat_three);
         this.db.get("Dvir").chats.push(chat_four);
