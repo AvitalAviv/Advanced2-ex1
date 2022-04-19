@@ -1,6 +1,9 @@
 # Advanced2_ex1
 
-Hard-coded data:
+First assignment of Advanced Programming 2 course at BIU.
+For information regarding the submitters of the assignment go to /help.
+
+Hard-coded data (Users):
 
 | User name     | Nick name     | Password      | 
 | ------------- |-------------- |-------------- |
@@ -25,3 +28,13 @@ Dependecies:
   </li>
 </div>
  
+<lable>How to run it?</lable>
+install the following packages:
+<div>
+  <li>
+    npm install react-bootstrap
+  </li>
+  <li>
+    think of other
+  </li>
+</div>
