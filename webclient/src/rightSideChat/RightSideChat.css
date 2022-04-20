@@ -9,6 +9,61 @@
   }
 
   .chat-background {
-      background-image: URL(https://i.pinimg.com/564x/8d/12/a5/8d12a5b5d5333d6695d86f3917976ac1.jpg);
-      background-repeat: no-repeat;
+            background-color: #01011f;
   }
+
+  .topBarRight {
+      height: 11.27%;
+        background-image: url("topBarRightBackground-u.png");
+        background-size: cover;
+        /* background-color: rgb(173, 216, 230, 0.8); */
+      }
+
+    .sendBox {
+        background: rgba(255, 255, 255, 0.4);
+        border: none;
+        border-radius: 2rem;
+        margin-right: 1%;
+    }
+
+    .send-icon {
+        /* border-radius: 2rem; */
+    }
+
+    .send-icon-div {
+        border-radius: 2rem;
+        margin-left: -1%;
+                background: rgba(255, 255, 255, 0.4);
+    }
+
+    .sendBox::placeholder {
+        color:black;
+    }
+
+    .sendBox:focus {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .sendBox:hover {
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    .sendBox:active {
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    .send-file {
+        border-radius: 2rem;
+        background: rgba(255, 255, 255, 0.4);
+        width: 8%;
+        justify-content: center;
+        height: 10%;
+    }
+
+        .send-file-div {
+            border-radius: 2rem;
+            background: rgba(255, 255, 255, 0.4);
+            width: 8%;
+            justify-content: center;
+                    background: none;
+        }

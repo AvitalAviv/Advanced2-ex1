@@ -20,7 +20,7 @@ function ChatRoom(props) {
                 <div className="card rounded" style={{ width: "80%", height: "90%", position: "absolute", margin: "5.8%", marginTop: "2.3%", alignSelf: "center" }}>
                     <div className="row" style={{ background: "blue", blockSize: "cover", marginLeft: "-0.01%", height: "100%", width: "100%" }}>
                         <LeftSideChat User={props.User} DbUsers={props.DbUsers} setSelected={setSelected} setMode={setMode} />
-                        <div className="col-8 container d-flex flex-column" style={{ color: "white" }}></div>
+                        <div className="col-8 container d-flex flex-column" style={{ color: "white", background: "#01011f" }}></div>
                     </div>
                 </div>
             </div>

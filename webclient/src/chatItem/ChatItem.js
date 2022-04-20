@@ -24,7 +24,7 @@ function ChatItem(props) {
     }
     return (
         <div className="chat__item">
-            <div class="list-group-item list-group-item-action border-0">
+            <div class="list-group-item list-group-item-action border-0" style={{ background: "rgb(173, 216, 230, 0.8)", borderRadius: "1rem", margin: "1%" }}>
                 <div className="containter">
                     <div className="row">
                         <div className="col-2 px-2  d-flex align-items-center">

@@ -16,10 +16,14 @@ import birdsSinging from "../usersPhotos/BirdsSinging.mp3";
 class DbUsers {
     constructor() {
         var current = new Date();
-        var time_now = current.getHours() + ':' + current.getMinutes();
+        var minute = current.getMinutes();
+        if (minute < 10) {
+            minute = "0" + minute;
+        }
+        var time_now = current.getHours() + ':' + minute;
 
         this.db = new Map();
-        this.db.set("Omer_Apla", new User("Omer_Apla", "scrum master", "12345678Aa", omerphoto));
+        this.db.set("Omer_Apla", new User("Omer_Apla", "scrum master", "1", omerphoto));
         this.db.set("Avital_os", new User("Avital_os", "Avitalos", "87654321Aa", avitalphoto));
         this.db.set("Ron_banini", new User("Ron_banini", "Ronen_even", "12345678Aa", ronphoto));
         this.db.set("NivNahman", new User("NivNahman", "NivNah", "12345678Aa", nivphoto));
@@ -61,6 +65,10 @@ class DbUsers {
         this.db.get("Omer_Apla").chats.push(chat_three);
         this.db.get("Omer_Apla").chats.push(chat_four);
         this.db.get("Omer_Apla").chats.push(chat_five);
+        /* delete these*/
+        // this.db.get("Omer_Apla").chats.push(chat_three);
+        // this.db.get("Omer_Apla").chats.push(chat_four);
+        // this.db.get("Omer_Apla").chats.push(chat_five);
 
         this.db.get("NivNahman").chats.push(chat_three);
         this.db.get("Dvir_amram").chats.push(chat_four);

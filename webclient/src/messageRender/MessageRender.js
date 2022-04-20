@@ -9,9 +9,9 @@ function MessageRender(props) {
     }
     if (flag) {
         return (
-            <div class="chat-message-right pb-4">
+            <div class="chat-message-right pb-4" >
                 <div class="text-muted small text-nowrap mt-2">{props.message.time}</div>
-                <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3 user_message_{props.message.getValue()}">
+                <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3 user_message_{props.message.getValue()}" >
                     <div class="font-weight-bold mb-1 user_message_name">{props.message.nick_name}</div>
                     {props.message.getValue()}
                 </div>
@@ -20,10 +20,10 @@ function MessageRender(props) {
     }
     else {
         return (
-            <div class="chat-message-left pb-4">
+            <div class="chat-message-left pb-4" >
                 <div class="text-muted small text-nowrap mt-2">{props.message.time}</div>
-                <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3 user_message_{props.message.getValue()}">
-                    <div class="font-weight-bold mb-1 user_message_name">{props.message.nick_name}</div>
+                <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3 user_message_{props.message.getValue()}" >
+                    <div class="font-weight-bold mb-1 user_message_name" >{props.message.nick_name}</div>
                     {props.message.getValue()}
                 </div>
             </div>

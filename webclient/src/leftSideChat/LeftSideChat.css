@@ -1,29 +1,47 @@
 .avatar {
     vertical-align: middle;
-    width: 5px;
-    height: 5px;
     border-radius: 10%;
-    margin-left: 12%;
+    /* margin-left: 12%;
     margin-top: 4%;
-    margin-bottom: 5%;
+    margin-bottom: 5%; */
+    width: 100%;
   }
 
+  .topBar {
+    background-image: url("topBarBackground\ \(4\).jpg");
+      background-size: cover;
+    height: 12.7%;
+  }
 
-  .scrollbar-juicy-peach::-webkit-scrollbar-track {
+  .leftSideBack {
+      background-color: #01011f;
+      min-height: 70%;
+      height: 100%;
+     /* overflow-y: auto; */
+      /* height: 87.3%; */
+  }
+
+  .sideChatsBack {
+      overflow-y: auto;
+      max-height: 100%;
+  }
+
+.scrollbar::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-color: #F5F5F5;
+    /* background-color: #F5F5F5; */
     border-radius: 10px;
 }
 
-.scrollbar-juicy-peach::-webkit-scrollbar {
+.scrollbar::-webkit-scrollbar {
     width: 12px;
-    background-color: #F5F5F5;
+    /* background-color: #F5F5F5; */
 }
 
-.scrollbar-juicy-peach::-webkit-scrollbar-thumb {
+.scrollbar::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-image: gradient(linear, left top, right top, from(#ffecd2), to(#fcb69f));
-    background-image: linear-gradient(left, #ffecd2 0%, #fcb69f 100%);
-    background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
+    background-color: white;
+    /* background-image: gradient(linear, left bottom, left top, from(#30cfd0), to(#330867));
+    background-image: -webkit-linear-gradient(bottom, #30cfd0 0%, #330867 100%);
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); */
 }
