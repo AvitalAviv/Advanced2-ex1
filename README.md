@@ -27,6 +27,9 @@ Dependecies:
   <li>
     Modal
   </li>
+  <li>
+    React-router-dom
+  </li>
 </div>
  <br>
 <lable>How to run it?</lable>
@@ -35,7 +38,7 @@ install the following packages:
   <li>
     npm install react-bootstrap
   </li>
-  <li>
-    think of other
+  li>
+    npm install react-router-dom
   </li>
 </div>
