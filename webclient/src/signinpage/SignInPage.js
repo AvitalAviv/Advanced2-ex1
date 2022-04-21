@@ -26,7 +26,6 @@ class SignInPage extends Component {
             var user = this.DbUsers.findUser(userName);
             document.getElementById('userName').value = '';
             document.getElementById('pwd').value = '';
-            debugger;
             if (user === undefined) {
                 AlertWindow("Wrong username or password")
                 return;

@@ -30,7 +30,6 @@ function RightSideChat(props) {
 
     // send text message
     const SendText = (event) => {
-        debugger;
         var input = document.getElementById("user-input-textbox").value;
         document.getElementById("user-input-textbox").value = "";
         if (input === "") {
@@ -40,6 +39,12 @@ function RightSideChat(props) {
         var time_now = current.getHours() + ':' + current.getMinutes();
         current_chat.addMessage(new Message(props.User.nick_name, "text", input, time_now));
         props.setSelected([current_chat].concat([]));
+    }
+
+    const handleKeypress = (event) => {
+        if (event.code === "Enter"){
+            SendText(event);
+        }
     }
 
     const popover = (
@@ -94,7 +99,7 @@ function RightSideChat(props) {
             <div className="row d-flex flex-row " style={{ background: "#01011f" }}>
                 <div className=' d-flex send-file-div'><ButtonClick /></div>
                 <div className='col input-group flex-row px-2 py-1 sendBox' style={{ whiteSpace: "nowrap", width: "55%", background: "none", fontSize: "130%", paddingLeft: "4%", color: "white", paddingTop: "4.5%" }}>
-                    <input type="text" id="user-input-textbox" className="form-control sendBox" placeholder="Type your message..." style={{borderRadius: "2rem", marginLeft: "-1%"}}/> {/*DO NOT delete this style definition and put in CSS - leave this here */}
+                    <input type="text" onKeyPress={handleKeypress} id="user-input-textbox" className="form-control sendBox" placeholder="Type your message..." style={{borderRadius: "2rem", marginLeft: "-1%"}}/> {/*DO NOT delete this style definition and put in CSS - leave this here */}
                     <button onClick={(event) => { SendText(event) }} className="btn btn-secondary btn-sm send-icon-div" style={{ borderRadius: "2rem" }}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
                         <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
                     </svg></button>
