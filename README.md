@@ -3,7 +3,7 @@
 First assignment of Advanced Programming 2 course at BIU.<br>
 For information regarding the submitters of the assignment go to /help.
 
-Hard-coded data (Users):
+Hard-coded data (Users who have messages):
 
 | **User name**     | **Nick name**     | **Password**      | 
 | ------------- |-------------- |-------------- |
@@ -18,6 +18,9 @@ Ron_banini    | Ronen_even
 NivNahman     | NivNah12
 David_IS      | KingDavid
 Dvir_amram    | Dviri8080
+Avatar_Aang   | AvatarAng
+Zuko_fire     | ZukoSonOfOzay
+
 
 <div>
 Dependecies:
