@@ -7,6 +7,8 @@ import davidphoto from "../usersPhotos/david.jpg";
 import dvitphoto from "../usersPhotos/dvir.jpg";
 import nivphoto from "../usersPhotos/niv.jpg";
 import ronphoto from "../usersPhotos/ron.jpg";
+import avatarphoto from "../usersPhotos/avatar.jpg";
+import zukophoto from "../usersPhotos/zuko.jpg";
 import mario from "../usersPhotos/mario.mp4";
 import birdsSinging from "../usersPhotos/BirdsSinging.mp3";
 
@@ -23,12 +25,15 @@ class DbUsers {
         var time_now = current.getHours() + ':' + minute;
 
         this.db = new Map();
-        this.db.set("Omer_Apla", new User("Omer_Apla", "scrum master", "1", omerphoto));
+        this.db.set("Omer_Apla", new User("Omer_Apla", "scrum master", "12345678Aa", omerphoto));
         this.db.set("Avital_os", new User("Avital_os", "Avitalos", "87654321Aa", avitalphoto));
         this.db.set("Ron_banini", new User("Ron_banini", "Ronen_even", "12345678Aa", ronphoto));
         this.db.set("NivNahman", new User("NivNahman", "NivNah", "12345678Aa", nivphoto));
         this.db.set("Dvir_amram", new User("Dvir_amram", "Dviri8080", "12345678Aa", dvitphoto));
         this.db.set("David_IS", new User("David_IS", "KingDavid", "12345678Aa", davidphoto));
+        this.db.set("Avatar_Aang", new User("Avatar_Aang", "AvatarAng", "12345678Aa", avatarphoto));
+        this.db.set("Zuko_fire", new User("Zuko_fire", "ZukoSonOfOzay", "12345678Aa", zukophoto));
+
 
         this.user_nickname_db = new Map();
         this.user_nickname_db.set("Omer_Apla", "scrum master");
@@ -37,6 +42,8 @@ class DbUsers {
         this.user_nickname_db.set("Dvir_amram", "Dviri8080");
         this.user_nickname_db.set("David_IS", "KingDavid");
         this.user_nickname_db.set("Avital_os", "Avitalos");
+        this.user_nickname_db.set("Avatar_Aang", "AvatarAng");
+        this.user_nickname_db.set("Zuko_fire", "ZukoSonOfOzay");
 
 
         //creating chats between Omer to all parties
@@ -65,10 +72,6 @@ class DbUsers {
         this.db.get("Omer_Apla").chats.push(chat_three);
         this.db.get("Omer_Apla").chats.push(chat_four);
         this.db.get("Omer_Apla").chats.push(chat_five);
-        /* delete these*/
-        // this.db.get("Omer_Apla").chats.push(chat_three);
-        // this.db.get("Omer_Apla").chats.push(chat_four);
-        // this.db.get("Omer_Apla").chats.push(chat_five);
 
         this.db.get("NivNahman").chats.push(chat_three);
         this.db.get("Dvir_amram").chats.push(chat_four);

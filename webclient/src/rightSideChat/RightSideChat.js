@@ -35,14 +35,20 @@ function RightSideChat(props) {
         if (input === "") {
             return;
         }
+        //get the current time
         var current = new Date();
-        var time_now = current.getHours() + ':' + current.getMinutes();
+        var minutes = current.getMinutes();
+        if (minutes<10){
+            minutes = "0"+minutes;
+        }
+        var time_now = current.getHours() + ':' + minutes;
         current_chat.addMessage(new Message(props.User.nick_name, "text", input, time_now));
         props.setSelected([current_chat].concat([]));
     }
 
+    //for sending chats using the enter keys
     const handleKeypress = (event) => {
-        if (event.code === "Enter"){
+        if (event.code === "Enter" || event.code === "NumpadEnter"){
             SendText(event);
         }
     }
