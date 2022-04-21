@@ -38,7 +38,7 @@ install the following packages:
   <li>
     npm install react-bootstrap
   </li>
-  li>
+  <li>
     npm install react-router-dom
   </li>
 </div>
