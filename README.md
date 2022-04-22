@@ -1,7 +1,6 @@
 # Advanced2_ex1
 
 First assignment of Advanced Programming 2 course at BIU.<br>
-For information regarding the submitters of the assignment go to /help.
 
 Hard-coded data (Users who have messages):
 
@@ -26,9 +25,6 @@ Zuko_fire     | ZukoSonOfOzay
 Dependecies:
   <li>
     React-bootstrap
-  </li>
-  <li>
-    Modal
   </li>
   <li>
     React-router-dom
