@@ -53,7 +53,6 @@ class SignInPage extends Component {
         }
 
         if (this.state.isLogged) {
-            // window.location.href = '/chat';
             return (<ChatRoom DbUsers={this.DbUsers} User={this.userLogged} />);
         }
         return (
@@ -67,7 +66,7 @@ class SignInPage extends Component {
                         <div className="form-field d-flex align-items-center"> <span className="fas fa-key"></span>
                             <input type="password" name="password" id="pwd" placeholder="Password"></input>
                         </div>
-                        <button class="btn" >Sign in</button>
+                        <button className="btn" >Sign in</button>
                     </form>
                     <br></br>
                     <center><div className="text-center" style={{ color: "white", marginTop: "-2%" }}>Not registred? <a href="/#" onClick={signUpFunction} style={{ color: "bluesky" }}>Sign up</a></div></center>

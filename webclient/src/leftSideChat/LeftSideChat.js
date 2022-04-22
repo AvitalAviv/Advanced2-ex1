@@ -3,7 +3,6 @@ import "./LeftSideChat.css"
 import React from 'react'
 import ChatItem from '../chatItem/ChatItem';
 import { Modal } from 'react-bootstrap';
-import { Alert } from 'bootstrap';
 import Chat from '../users/chat/Chat';
 
 /**
@@ -14,7 +13,6 @@ import Chat from '../users/chat/Chat';
 function LeftSideChat(props) {
     const [show, setShow] = useState(false);
     /**
-     * 
      * @returns new chat item component
      */
     const handleModalClick = () => {
@@ -50,23 +48,6 @@ function LeftSideChat(props) {
         }
     });
 
-    //get the chats from the db
-    // <table>
-    //     <tr>
-    //         <td className='align-items-center left-side-image' style={{ width: "20%", background: "#cbced1", position: "center" }}>
-                // <img className='rounded-circle align-self-center avatar' alt="Avatar" src={props.User.img_url} style={{}}></img>
-    //         </td>
-    //         <td style={{ width: "55%", background: "#cbced1", fontSize: "130%", paddingLeft: "4%" }}>{props.User.nick_name}</td>
-    //         <td style={{ width: "20%", background: "#cbced1" }}>
-                // <button type="button" class="btn btn-outline-secondary d-flex align-items-center" id='side_bar_Button' onClick={showModule} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer">
-                //     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                //         <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                //         <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-                //     </svg>
-                // </button>
-    //         </td>
-    //     </tr>
-    // </table>
     var chats = props.DbUsers.db.get(props.User.user_name).chats;
     return (
         <div className="col-4 container d-flex flex-column leftSideBack">
@@ -75,10 +56,10 @@ function LeftSideChat(props) {
                 <div className='col-2 align-items-center left-side-image d-flex' style={{ background: "none", width: "20%",justifyContent: "center" }}><img className='rounded-circle align-self-center avatar' alt="Avatar" src={props.User.img_url}/></div>
                 <div className='col text-truncate' style={{ background: "orange", width: "55%", background: "none", fontSize: "130%", paddingLeft: "4%", color: "white", paddingTop: "4.5%" }}>{props.User.nick_name}</div>
                 <div className='col-2 d-flex' style={{ background: "purple", width: "20%", background: "none", justifyContent: "center" }}>
-                    <button type="button" class="btn btn-outline-secondary d-flex align-items-center" id='side_bar_Button' onClick={showModule} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer" style={{alignSelf: "center", border: "none"}}>
+                    <button type="button" className="btn btn-outline-secondary d-flex align-items-center" id='side_bar_Button' onClick={showModule} data-bs-toggle="Modal" data-bs-target="#exampleModal" data-bs-whatever="Omer" style={{alignSelf: "center", border: "none"}}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-plus-fill d-flex" viewBox="0 0 16 16" style={{color: "white"}}>
                             <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                            <path fillRule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
                         </svg>
                     </button>
                 </div>
@@ -87,7 +68,7 @@ function LeftSideChat(props) {
             <div className="row d-flex align-content-start sideChatsBack flex-row scrollbar">
                 {chats.map((chat, key) => {
                     return (
-                        <button onClick={(e) => {
+                        <button key={key} onClick={(e) => {
                             props.setSelected([chat].concat([]));
                             props.setMode(true);
                         }} style={{ background: "none", border: "none" }}><ChatItem chat={chat} setSelected={props.setSelected} key={key} User={props.User} setMode={props.setMode} /></button>
@@ -102,18 +83,18 @@ function LeftSideChat(props) {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <div class="form-group">
+                <div className="form-group">
                     {/* <label for="exampleFormControlInput1">Email address</label> */}
-                    <input type="text" class="form-control" id="nick_name_other" placeholder="Enter user username"></input>
+                    <input type="text" className="form-control" id="nick_name_other" placeholder="Enter user username"></input>
                 </div>
                     {/* <input placeholder="Enter user username" id="nick_name_other"></input> */}
                 </Modal.Body>
                 <Modal.Footer>
                     {/* <button variant="danger" onClick={hideModule}>Close</button> */}
-                    <button class="btn btn-secondary btn-sm btn-block" onClick={handleModalClick}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                    <button className="btn btn-secondary btn-sm btn-block" onClick={handleModalClick}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-plus-fill" viewBox="0 0 16 16">
                         <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                        <path fillRule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
                         </svg>
                     </button>
                 </Modal.Footer>

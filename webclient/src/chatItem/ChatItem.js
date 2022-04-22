@@ -24,7 +24,7 @@ function ChatItem(props) {
     }
     return (
         <div className="chat__item">
-            <div class="list-group-item list-group-item-action border-0" style={{ background: "rgb(173, 216, 230, 0.8)", borderRadius: "1rem", margin: "1%" }}>
+            <div className="list-group-item list-group-item-action border-0" style={{ background: "rgb(173, 216, 230, 0.8)", borderRadius: "1rem", margin: "1%" }}>
                 <div className="containter">
                     <div className="row">
                         <div className="col-2 px-2  d-flex align-items-center">
@@ -33,14 +33,14 @@ function ChatItem(props) {
                         <div className="col-10 align-items-center">
                             <div className="row">
                                 <div className="col-8 d-flex align-items-center">
-                                    <h6 class="flex-grow-1" id="side_bar_room_name">{nick_name_preview}</h6>
+                                    <h6 className="flex-grow-1" id="side_bar_room_name">{nick_name_preview}</h6>
                                 </div>
                                 <div className="col-4 d-flex align-items-center" >
-                                    <div class="flex-grow-1" id="side_bar_time"> {chat_last_message_time} </div>
+                                    <div className="flex-grow-1" id="side_bar_time"> {chat_last_message_time} </div>
                                 </div>
                             </div>
                             <div className="row">
-                                <div class="flex-grow-1" id="side_bar_last_message">{message_for_review}</div>
+                                <div className="flex-grow-1" id="side_bar_last_message">{message_for_review}</div>
                             </div>
                         </div>
                     </div>

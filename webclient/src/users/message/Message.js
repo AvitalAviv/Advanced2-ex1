@@ -21,7 +21,7 @@ class Message {
             return <div>{this.value}</div>
         }
         if (this.type === "image") {
-            return <img width="250" src={this.value} alt="Responsive image" class="img-thumbnail"></img>
+            return <img width="250" src={this.value} alt="Responsive image" className="img-thumbnail"></img>
         }
         if (this.type === "audio") {
             return <audio controls src={this.value} ></audio>

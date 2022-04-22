@@ -89,8 +89,8 @@ function VoiceInput(props) {
 
   return (
     <>
-      <button type="button" onClick={handleShow} class="btn btn-secondary">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic-fill" viewBox="0 0 16 16">
+      <button type="button" onClick={handleShow} className="btn btn-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-mic-fill" viewBox="0 0 16 16">
           <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z" />
           <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z" />
         </svg>
@@ -103,22 +103,22 @@ function VoiceInput(props) {
           <div className='align-self-center d-flex flex-row'>
             {stream.access ? (
               <div className="audio-container">
-                <button type="button" class="btn btn-light" onClick={() => !recording.active && stream.recorder.start()}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">
+                <button type="button" className="btn btn-light" onClick={() => !recording.active && stream.recorder.start()}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-play" viewBox="0 0 16 16">
                     <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z" />
                   </svg>
                 </button>
-                <button type="button" class="btn btn-light" onClick={() => stream.recorder.stop()}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stop" viewBox="0 0 16 16">
+                <button type="button" className="btn btn-light" onClick={() => stream.recorder.stop()}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-stop" viewBox="0 0 16 16">
                     <path d="M3.5 5A1.5 1.5 0 0 1 5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5zM5 4.5a.5.5 0 0 0-.5.5v6a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5V5a.5.5 0 0 0-.5-.5H5z" />
                   </svg>
                 </button>
                 <br></br>
                 {recording.available && <audio controls src={recording.url} />} <br></br>
-                <button type="button" onClick={SubmitVoice} class="btn btn-secondary">Submit</button>
+                <button type="button" onClick={SubmitVoice} className="btn btn-secondary">Submit</button>
               </div>
             ) : (
-              <button type="button" class="btn btn-light" onClick={getAccess}>Press Here to start record </button>
+              <button type="button" className="btn btn-light" onClick={getAccess}>Press Here to start record </button>
             )}
           </div>
         </Modal.Body>
