@@ -32,7 +32,7 @@ Dependecies:
 </div>
  <br>
 <lable>How to run it?</lable>
-install the following packages:
+Please first install the following packages:
 <div>
   <li>
     npm install react-bootstrap
@@ -41,3 +41,5 @@ install the following packages:
     npm install react-router-dom
   </li>
 </div>
+<br>
+Start by using npm start.
