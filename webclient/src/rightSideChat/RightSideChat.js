@@ -26,8 +26,6 @@ function RightSideChat(props) {
         nick_name_preview = current_chat.one_user;
     }
 
-    const scrollBar = useRef(null);
-
     // send text message
     const SendText = (event) => {
         var input = document.getElementById("user-input-textbox").value;
@@ -78,12 +76,6 @@ function RightSideChat(props) {
         </OverlayTrigger>
     );
 
-    // //useEffect(() => {
-    //     var element = document.getElementById("scroll-bar");
-    //     if (element != null) {
-    //         element.scrollIntoView();
-    //     }
-    // });
 
     return (
         <div className="col-8 container d-flex flex-column" style={{ height: "100%", background: "black", color: "black", minHeight: "70%" }}>
@@ -92,15 +84,13 @@ function RightSideChat(props) {
                 <div className='col text-truncate' style={{ background: "orange", width: "55%", background: "none", fontSize: "130%", paddingLeft: "4%", color: "white", paddingTop: "2.3%" }}>{nick_name_preview}</div>
             </div>
 
-            <div className="row d-flex flex-row align-content-start flex-wrap chat-background scrollbar" id="box" style={{ height: "81%", overflow: "auto", paddingTop: "1%" }}>
+            <div className="row d-flex flex-row align-content-start flex-wrap chat-background scrollbar" id="box" style={{ height: "81%", overflow: "auto", paddingTop: "1%" , display: "flex", flexDirection: "column-reverse"}}>
                 {current_chat.messages.map((message, key) => {
                     return (
                         <MessageRender message={message} key={key} User={props.User} />
                     );
                 })}
             </div>
-            <div ref={scrollBar}></div>
-            {/* <span id='scroll-bar'></span> */}
 
             <div className="row d-flex flex-row " style={{ background: "#01011f" }}>
                 <div className=' d-flex send-file-div'><ButtonClick /></div>
