@@ -19,7 +19,7 @@ function VideoInput(props) {
         var current = new Date();
         var time_now = current.getHours() + ':' + current.getMinutes();
         var new_message = new Message(props.User.nick_name, "video", video_url, time_now);
-        props.selected.messages.push(new_message);
+        props.selected.addMessage(new_message);
         props.setSelected([props.selected].concat([]));
         setShow(false);
     }

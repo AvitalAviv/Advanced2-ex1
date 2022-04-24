@@ -52,7 +52,7 @@ function RightSideChat(props) {
     }
 
     const popover = (
-        <Popover rootClose id="popover-basic">
+        <Popover rootclose={true} id="popover-basic">
             <Popover.Body>
                 <div className="btn-group" role="group" aria-label="..." >
                     <div className="btn-group" role="group" aria-label="..." width="100%">
