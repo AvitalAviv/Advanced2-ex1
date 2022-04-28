@@ -42,4 +42,4 @@ Please first install the following packages:
   </li>
 </div>
 <br>
-Start by using npm start.
+Start by using npm install and then npm start.
